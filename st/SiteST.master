@@ -1,0 +1,647 @@
+﻿<%@ Master Language="VB" %>
+
+<%@ Import Namespace="legLinq" %>
+<%@ Import Namespace="Dynamic_Data" %>
+
+<%
+    Dim a As String = ""
+    nombreUsuario.InnerHtml = MySession.Current.eUsuario.Detalle
+
+    If MySession.Current.eUsuario.Solapa10 = 1 Then
+    Else
+        Response.Redirect("/lgin.aspx")
+    End If
+
+    Dim permisos As tPermisos() = MySession.Current.permisos
+    Dim c As Control
+
+    For Each p In permisos
+        If Not p.tAcciones Is Nothing Then
+            If p.tAcciones.idSistema = "St" Then
+                If p.tAcciones.Accion.Contains("menu") Then
+                    c = FindControl(p.tAcciones.Accion)
+                    If c IsNot Nothing Then
+                        c.Visible = True
+                    Else
+                        c.Visible = False
+                    End If
+                End If
+            End If
+        End If
+    Next
+
+%>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <%-- --%><meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Dynamic Data Site</title>
+    <link rel="stylesheet" href="/js/chosen/chosen.min.css">
+
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/js/select2/select2.css">
+
+    <link rel="stylesheet" href="/js/easyautocomplete/easy-autocomplete.min.css">
+    <link rel="stylesheet" href="/css/plugin.css">
+    <link rel="stylesheet" href="/css/font.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/loader.css">
+    <style type="text/css" media="all">
+        /* fix rtl for demo */
+
+        .datepicker {
+            z-index: 9999 !important;
+        }
+
+        .chosen-rtl .chosen-drop {
+            left: -9000px;
+        }
+
+        .w20 {
+            width: 20px;
+        }
+
+        .row.no-gutter {
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+            .row.no-gutter [class*='col-']:not(:first-child),
+            .row.no-gutter [class*='col-']:not(:last-child) {
+                padding-right: 3px;
+                padding-left: 3px;
+            }
+
+        .form-group {
+            margin-bottom: 5px;
+        }
+
+        .row {
+            margin-top: 5px;
+        }
+
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        .panel {
+            overflow: auto;
+        }
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js" type="text/javascript"></script>
+    <script src="/js/chosen/chosen.jquery.min.js" type="text/javascript"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script type="text/javascript" src="/js/ingresar_fechas.js"></script>
+    <script src="/js/jquery-1.10.2.js"></script>
+    <!-- Bootstrap -->
+    <script src="/js/bootstrap.js"></script>
+
+    <script src="/js/loader.js"></script>
+
+    <!-- app -->
+    <script src="/js/app.js"></script>
+    <script src="/js/app.plugin.js"></script>
+    <script src="/js/app.data.js"></script>
+    <!-- fuelux -->
+    <script src="/js/fuelux/fuelux.js"></script>
+    <!-- datepicker -->
+    <script src="/js/datepicker/bootstrap-datepicker.js"></script>
+
+    <script type="text/javascript" src="/js/timepicker/bootstrap-timepicker.js">
+
+    <!-- slider -->
+    <script src="/js/slider/bootstrap-slider.js"></script>
+    <!-- file input -->
+    <script src="/js/file-input/bootstrap.file-input.js"></script>
+    <!-- combodate -->
+    <script src="/js/combodate/moment.min.js"></script>
+    <script src="/js/combodate/combodate.js"></script>
+    <!-- parsley -->
+    <script src="/js/parsley/parsley.min.js"></script>
+    <!-- select2 -->
+    <script src="/js/select2/select2.full.js"></script>
+    <script src="/js/typeahead/typeahead.bundle.js"></script>
+    <script src="/js/filterselect.js" type="text/javascript"></script>
+    <script src="/js/easyautocomplete/jquery.easy-autocomplete.js"></script>
+    <script>
+        function setearFoco(nomInput) {
+            $("#" + nomInput).focus();
+            $("#" + nomInput).select();
+        }
+
+    </script>
+
+
+
+
+
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+</head>
+<body>
+
+
+    <header id="header" class="navbar">
+
+
+
+        <ul class="nav navbar-nav navbar-avatar pull-right">
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <span id="nombreUsuario" runat="server" class="hidden-xs-only"></span>
+                    <span class="thumb-small avatar inline">
+                        <img src="/images/avatar.jpg" alt="Mika Sokeil" class="img-circle"></span>
+                    <b class="caret hidden-xs-only"></b>
+                </a>
+
+                <ul class="dropdown-menu pull-right">
+
+                    <li><a href="#"><span class="badge bg-danger pull-right">3</span>Notificaciones</a></li>
+                    <li class="divider"></li>
+                    <li><a href="docs.html">Ayuda</a></li>
+                    <li><a href="/lgou.aspx">Cerrar Sesion</a></li>
+                </ul>
+            </li>
+        </ul>
+        <a class="navbar-brand" href="#">&nbsp;Stock</a>
+        <button type="button" class="btn btn-link pull-left nav-toggle visible-xs" data-toggle="class:slide-nav slide-nav-left" data-target="body">
+            <i class="fa fa-bars fa-lg text-default"></i>
+        </button>
+        <ul class="nav navbar-nav hidden-xs">
+            <li>
+                <div class="m-t m-b-small" id="panel-notifications">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-comment-o fa-fw fa-lg text-default"></i><b class="badge badge-notes bg-danger count-n">2</b></a>
+                    <section class="dropdown-menu m-l-small m-t-mini">
+                        <section class="panel panel-large arrow arrow-top">
+                            <header class="panel-heading bg-white"><span class="h5"><strong>You have <span class="count-n">2</span> notifications</strong></span></header>
+                            <div class="list-group">
+                                <a href="#" class="media list-group-item">
+                                    <span class="pull-left thumb-small">
+                                        <img src="/images/avatar.jpg" alt="John said" class="img-circle"></span>
+                                    <span class="media-body block m-b-none">Moved to Bootstrap 3.0<br>
+                                        <small class="text-muted">23 June 13</small>
+                                    </span>
+                                </a>
+                                <a href="#" class="media list-group-item">
+                                    <span class="media-body block m-b-none">first v.1 (Bootstrap 2.3 based) released<br>
+                                        <small class="text-muted">19 June 13</small>
+                                    </span>
+                                </a>
+                            </div>
+                            <footer class="panel-footer text-small">
+                                <a href="#" class="pull-right"><i class="fa fa-cog"></i></a>
+                                <a href="#">See all the notifications</a>
+                            </footer>
+                        </section>
+                    </section>
+                </div>
+            </li>
+            <li>
+                <div class="m-t-small"><a class="btn btn-xs btn-info" data-toggle="modal" href="/st/oClo.aspx"><i class="fa fa-fw fa-plus"></i>Ver Ordenes Cerradas</a></div>
+            </li>
+            <li class="dropdown shift" data-toggle="shift:appendTo" data-target=".nav-primary .nav">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <i class="fa fa-cog fa-lg visible-xs visible-xs-inline"></i><span id="empresa" runat="server" class="hidden-xs-only"></span><b class="caret hidden-sm-only"></b>
+                </a>
+                <ul class="dropdown-menu">
+                    <asp:Repeater runat="server" ID="repeater1">
+                        <ItemTemplate>
+                            <li><a href="cmbEmp.aspx?idE=<%# Eval("idEmpresa")%>"><span runat="server" class="hidden-xs-only"><%# Eval("Empresa.empresa")%></span></a></li>
+                        </ItemTemplate>
+                    </asp:Repeater>
+
+
+
+                    <li class="divider hidden-xs"></li>
+                    <asp:Repeater runat="server" ID="repeater2">
+                        <ItemTemplate>
+                            <li><a href="cmbCj.aspx?idE=<%# Eval("idCaja")%>"><span runat="server" class="hidden-xs-only">Caja <%# Eval("nombre")%></span></a></li>
+                        </ItemTemplate>
+                    </asp:Repeater>
+                    <li><a href="cmbCj.aspx?idE=-100"><span runat="server" class="hidden-xs-only">usuario</span></a></li>
+                    <li class="dropdown-header">Colors</li>
+                    <li>
+                        <a href="#" data-toggle="class:bg bg-black" data-target='.navbar'>Navbar 
+              <span class="text-active">white</span>
+                            <span class="text">inverse</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" data-toggle="class:bg-light" data-target='#nav'>Nav 
+              <span class="text-active">inverse</span>
+                            <span class="text">light</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <%--<form class="navbar-form pull-left shift" action="/lg/dmfs.aspx" data-toggle="shift:appendTo" data-target=".nav-primary">
+            <input type="text" name="buscar" class="input-sm form-control" placeholder="Buscar Damnificados">
+        </form>--%>
+    </header>
+
+    <nav id="nav" class="nav-primary hidden-xs nav-vertical">
+        <ul class="nav" data-spy="affix" data-offset-top="50">
+
+            <li id="menuInicio" visible="false" runat="server"><a href="/st/dfst.aspx"><i class="fa fa-home fa-lg"></i><span>Inicio</span></a></li>
+
+            <li id="menuRepuestos" visible="false" runat="server" class="dropdown-submenu">
+                <a href="#"><i class="fa fa-th fa-lg"></i><span>Repuestos</span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="/st/rp.aspx"><i class="fa  fa-search-plus fa-lg"></i><span>Repuestos</span></a></li>
+                    <li><a href="/st/rpUs.aspx"><i class="fa fa-list-ul fa-lg"></i><span>Repuestos
+                        <br>
+                        Usados</span></a></li>
+                    <li><a href="/st/rvRp.aspx"><i class="fa  fa-check-square-o fa-lg"></i><span>Revisión de<br>
+                        Repuestos</span></a></li>
+                    <li><a href="/st/rpCf.aspx"><i class="fa  fa-plus-square-o fa-lg"></i><span>Repuestos<br>
+                        Confirmados</span></a></li>
+
+                    <li><a href="/st/envRep.aspx"><i class="fa  fa-search-plus fa-lg"></i><span>Enviar a Proveedor</span></a></li>
+                    <li><a href="/st/rcPro.aspx"><i class="fa  fa-search-plus fa-lg"></i><span>Reclamo a Proveedor</span></a></li>
+                    <li><a href="/st/rcpRep.aspx"><i class="fa  fa-search-plus fa-lg"></i><span>Recepcion de repuestos</span></a></li>
+                    <li><a href="/st/cEnv.aspx"><i class="fa  fa-search-plus fa-lg"></i><span>Consulta de Reparaciones</span></a></li>
+                    <li><a href="/st/ss.aspx"><i class="fa  fa-search-plus fa-lg"></i><span>Generar Orden de Entrega</span></a></li>
+
+                </ul>
+            </li>
+
+            <li></li>
+            <li></li>
+            <li></li>
+            <li id="menuTransferencia" visible="false" runat="server" class="dropdown-submenu">
+                <a href="#"><i class="fa fa-th fa-lg"></i><span>Transf.</span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="/st/tf.aspx">Transferencia a Depositos Satelite</a></li>
+                    <li><a href="/st/rcTf.aspx">Confirmar Recepcion de Transferencias</a></li>
+                    <li><a href="/st/tfs.aspx">Ver Transferencias</a></li>
+                </ul>
+            </li>
+
+            <li id="menuStock" visible="false" runat="server" class="dropdown-submenu">
+                <a href="#"><i class="fa fa-th fa-lg"></i><span>Stock</span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="/st/cMvs.aspx">Movimientos</a></li>
+                    <li><a href="/st/st.aspx">Stock Actual</a></li>
+                    <li><a href="/st/aj.aspx">Ajuste</a></li>
+                    <li class="dropdown-submenu">
+                        <a href="#"><i class="fa fa-th fa-lg"></i><span>Necesidad Compra</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/st/nc/nc.aspx">Necesidad Compra</a></li>
+                            <li><a href="/st/nc/cPdt.aspx">Pendientes</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+
+
+            <li id="menuCubiertas" visible="false" runat="server" class="dropdown-submenu">
+                <a href="#"><i class="fa fa-th fa-lg"></i><span>Cubiertas</span></a>
+                <ul class="dropdown-menu">
+                    <li id="menuConsultaPartidas" visible="false" runat="server"><a href="/st/cbts/pdasTot.aspx">Consulta de Partidas</a></li>
+                    <li id="menuCubiertasInternos" visible="false" runat="server"><a href="/st/cbts/pdas.aspx">Cubiertas en Internos</a></li>
+
+
+                    <li class="dropdown-submenu">
+                        <a href="#"><i class="fa fa-th fa-lg"></i><span>Partidas</span></a>
+                        <ul class="dropdown-menu">
+                            <li id="menuPartidasIngreso" visible="false" runat="server"><a href="/st/cbts/ingCub.aspx">Ingreso</a></li>
+                            <li id="menuPartidasIngresoStockInicial" visible="false" runat="server"><a href="/st/cbts/ingCubTmp.aspx">Ingreso Stock Inicial</a></li>
+                            <li id="menuPartidasCargaInicial" visible="false" runat="server"><a href="/st/cbts/crgInic.aspx">Carga Inicial x Interno</a></li>
+                        </ul>
+                    </li>
+
+
+                    <li class="dropdown-submenu">
+                        <a href="#"><i class="fa fa-th fa-lg"></i><span>Ordenes Gomeria</span></a>
+                        <ul class="dropdown-menu">
+                            <li id="menuOrdenesGomeriaGenerar" visible="false" runat="server"><a href="/st/gmria/oGmria.aspx">Generar Orden</a></li>
+                            <li id="menuOrdenesGomeriaConsulta" visible="false" runat="server"><a href="/st/gmria/cOdGom.aspx">Consulta</a></li>
+                            <li id="Li1" visible="true" runat="server"><a href="/st/gmria/hMdc.aspx">Historico de Mediciones</a></li>
+                            <li id="Li2" visible="true" runat="server"><a href="/st/gmria/prev.aspx">Preventivo</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown-submenu">
+                        <a href="#"><i class="fa fa-th fa-lg"></i><span>Envio y Recepcion</span></a>
+                        <ul class="dropdown-menu">
+                            <li id="menuEnvioRecepcionEnvio" visible="false" runat="server"><a href="/st/cbts/envCub.aspx">Envio a Proveedor</a></li>
+                            <li id="Li3" visible="true" runat="server"><a href="/st/cbts/rclCub.aspx">Reclamo a Proveedor</a></li>
+                            <li id="menuEnvioRecepcionRecepcion" visible="false" runat="server"><a href="/st/cbts/rcpCub.aspx">Recepcion</a></li>
+                            <li id="menuEnvioRecepcionConsulta" visible="false" runat="server"><a href="/st/cbts/cEnvCub.aspx">Consulta</a></li>
+                        </ul>
+                    </li>
+
+
+
+
+                    <li class="dropdown-submenu">
+                        <a href="#"><i class="fa fa-th fa-lg"></i><span>Bajas</span></a>
+                        <ul class="dropdown-menu">
+                            <li id="menuBajasBaja" visible="false" runat="server"><a href="/st/cbts/bjas.aspx">Bajas</a></li>
+                            <li id="menuBajasConsulta" visible="false" runat="server"><a href="/st/cbts/cBjas.aspx">Consulta</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li id="menuGomero" visible="false" runat="server" class="dropdown-submenu">
+                <a href="#"><i class="fa fa-th fa-lg"></i><span>Gomero</span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="/st/gmria/Odnes.aspx">Ordenes</a></li>
+                    <li><a href="/st/gmria/rvsr.aspx">Revision de Cubiertas</a></li>
+                    <li><a href="/st/gmria/fecRsm.aspx">Resumen Diario</a></li>
+                </ul>
+            </li>
+
+            <li runat="server" class="dropdown-submenu">
+                <a href="#"><i class="fa fa-th fa-lg"></i><span>Mant</span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="/st/mnt/pdtes.aspx">Tareas Pend.</a></li>
+                    <li><a href="/st/mnt/ot.aspx">OT en Curso</a></li>
+                    <li><a href="/st/mantenimiento/ordenes/consulta.aspx">Consulta Ordenes</a></li>
+                    <li><a href="/st/mnt/etdSvc.aspx">Estado de los Servicios</a></li>
+                    <li><a href="/st/mantenimiento/correctivo/alta.aspx"><i class="fa  fa-search-plus fa-lg"></i><span>Nueva Tarea</span></a></li>
+                </ul>
+            </li>
+
+            <li id="menuAuditoria" visible="false" runat="server" class="dropdown-submenu">
+                <a href="#"><i class="fa fa-th fa-lg"></i><span>Auditoria</span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="/st/audt/cAudt.aspx">Consulta</a></li>
+                    <li class="dropdown-submenu">
+                        <a href="#"><i class="fa fa-th fa-lg"></i><span>Gomeria</span></a>
+                        <ul class="dropdown-menu">
+                            <%--<li><a href="/st/gmria/Odnes.aspx">Baja por error</a></li>--%>
+                            <li><a href="/st/audt/bjCbt.aspx">Baja de Cubierta en Deposito</a></li>
+                            <li><a href="/st/audt/bjCbtch.aspx">Baja de Cubiertas x Coche</a></li>
+                            <li><a href="/st/audt/cmbEst.aspx">Cambio de Estado</a></li>
+                            <li><a href="/st/audt/cmbMM.aspx">Cambio Marca/Modelo</a></li>
+                            <li><a href="/st/audt/dltOrd.aspx">Eliminar Orden Envio a Prov.</a></li>
+                            <li><a href="/st/audt/dltOrdGria.aspx">Eliminar Orden Gomeria</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown-submenu">
+                        <a href="#"><i class="fa fa-th fa-lg"></i><span>Repuestos</span></a>
+                        <ul class="dropdown-menu">
+                            <%--<li><a href="/st/audt/rbrOE.aspx">Reabrir Orden de Entrega</a></li>--%>
+                            <li><a href="/st/audt/dltOrdEnvProv.aspx">Eliminar Orden Envio a Prov. </a></li>
+                        </ul>
+                    </li>
+
+
+                    <li class="dropdown-submenu">
+                        <a href="#"><i class="fa fa-th fa-lg"></i><span>Mantenimiento</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/st/mnt/audt/dltOd.aspx">Baja de Orden</a></li>
+                            <li><a href="/st/mnt/audt/rbOd.aspx">Reapertura de Orden</a></li>
+                        </ul>
+                    </li>
+
+
+
+                </ul>
+            </li>
+
+            <%--<li><a href="/lg/rclms.aspx"><i class="fa fa-money fa-lg"></i><span>Ordenes de Entrega</span></a></li>
+            <li><a href="/lg/rcps.aspx"><i class="fa fa-dollar fa-lg"></i><span>Recuperos<br>
+                </span></a></li>
+            <li><a href="/pages/es/vt.aspx?t=m"><i class="fa fa-dollar fa-lg"></i><span>Compañias<br>
+                </span></a></li>
+            <li><a href="/pages/es/cCte.aspx"><i class="fa fa-list-ul fa-lg"></i><span>Mediacion<br>
+                </span></a></li>
+            <li class="dropdown-submenu">
+                <a href="#"><i class="fa fa-th fa-lg"></i><span>Varios</span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="/lg/abg.aspx">Abogados</a></li>
+                    <li><a href="icons.html"><b class="badge pull-right">302</b>Icons</a></li>
+                    <li><a href="grid.html">Grid</a></li>
+                    <li><a href="widgets.html"><b class="badge bg-primary pull-right">8</b>Widgets</a></li>
+                    <li><a href="components.html"><b class="badge pull-right">18</b>Components</a></li>
+                    <li><a href="portlet.html">Portlet</a></li>
+                </ul>
+            </li>--%>
+        </ul>
+    </nav>
+
+    <asp:ScriptManager runat="server" EnablePartialRendering="false" />
+
+
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+    </asp:ContentPlaceHolder>
+
+
+    <footer id="footer">
+        <div class="text-center padder clearfix">
+            <p>
+                <small>&copy; AWP SA 2016, Sistema de gestion</small><br>
+                <br>
+                <a href="#" class="btn btn-xs btn-circle btn-twitter"><i class="fa fa-twitter"></i></a>
+                <a href="#" class="btn btn-xs btn-circle btn-facebook"><i class="fa fa-facebook"></i></a>
+                <a href="#" class="btn btn-xs btn-circle btn-gplus"><i class="fa fa-google-plus"></i></a>
+
+            </p>
+        </div>
+    </footer>
+
+
+
+
+    <script type="text/javascript">
+
+        //$.ajaxSetup({
+        //    contentType: "application/json; charset=utf-8"
+        //});
+
+        $('.timepicker').timepicker({
+            template: false,
+            showInputs: false,
+            minuteStep: 5
+        });
+
+        $('.timepicker2').timepicker({
+            template: false,
+            showInputs: false,
+            showMeridian: false,
+            minuteStep: 5
+        });
+
+        $(document).ready(function () {
+            $(".js-example-basic-single").select2();
+        });
+
+        //$(".chosen-select").chosen({ search_contains: true })
+
+        $("input").focus(function () {
+            this.select();
+        });
+
+        $(".select2").select2();
+
+        var options = {
+            //url: "/ws/ws.asmx/HelloWorldXML",
+            url: function (phrase) {
+                return "/services/ws.asmx/getRepuestos?desc=" + phrase;
+            },
+
+            dataType: "xml",
+            xmlElementName: "jsonAutocomplete",
+
+            getValue: function (element) {
+                return $(element).find("text").text();
+            },
+
+            list: {
+                maxNumberOfElements: 100,
+                match: {
+                    enabled: false
+                },
+                onChooseEvent: function () {
+                    var value = $("#autoCompleteProductos").getSelectedItemData();
+                    value = $(value).find("id").text();
+                    //alert(value);
+                    $("#tbCodigo").val(value).trigger("change");
+                    $("#Button1").click();
+                }
+            }
+        };
+
+        var optionsPatente = {
+            url: function (phrase) {
+                return "/services/ws.asmx/getCoches?desc=" + phrase;
+            },
+
+            dataType: "xml",
+            xmlElementName: "jsonAutocomplete",
+
+            getValue: function (element) {
+                return $(element).find("text").text();
+            },
+
+            list: {
+                maxNumberOfElements: 100,
+                match: {
+                    enabled: false
+                },
+                onChooseEvent: function () {
+                    var value = $("#autoCompletePatente").getSelectedItemData();
+                    value = $(value).find("id").text();
+                    //alert(value);
+                    $("#nroCoche").val(value).trigger("change");
+                    $("#Button1").click();
+                }
+            }
+        };
+
+        var optionsTarea = {
+            url: function (phrase) {
+                return "/services/ws.asmx/getTareas?desc=" + phrase;
+            },
+
+            dataType: "xml",
+            xmlElementName: "jsonAutocomplete",
+
+            getValue: function (element) {
+                return $(element).find("text").text();
+            },
+
+            list: {
+                maxNumberOfElements: 100,
+                match: {
+                    enabled: false
+                },
+                onChooseEvent: function () {
+                    var value = $("#autoCompleteTarea").getSelectedItemData();
+                    value = $(value).find("id").text();
+                    //alert(value);
+                    $("#codigoTarea").val(value).trigger("change");
+                    $("#Button2").click();
+                }
+            }
+        };
+
+        $("#autoCompleteProductos").easyAutocomplete(options);
+        $("#autoCompletePatente").easyAutocomplete(optionsPatente);
+        $("#autoCompleteTarea").easyAutocomplete(optionsTarea);
+
+
+
+        function ShowLoading(e) {
+
+            Loader.open();
+
+        }
+
+    </script>
+
+
+    <script>
+        //function enterAsTab(campo) {
+
+        //    if (window.event.keyCode == 13) { document.getElementById(campo).focus(); return false; }
+
+        //}
+
+        //function clickButton(button) {
+        //    if (window.event.keyCode == 13) { document.getElementById(button).click(); return true; }
+        //}
+
+        //function Enter(field, event,proximo) {
+        //    var keyCode = event.keyCode ? event.keyCode : event.which ? event.which : event.charCode;
+        //    if (keyCode == 13) {
+        //        field.form.elements[proximo].focus();
+        //        //var i;
+        //        //for (i = 0; i < field.form.elements.length; i++)
+        //        //    if (field == field.form.elements[i])
+        //        //        break;
+        //        //i = (i + 1) % field.form.elements.length;
+        //        //field.form.elements[i].focus();
+        //        return false;
+        //    }
+        //    else
+        //        return true;
+
+        //}
+
+        $('.filterSelect').filterSelect({
+            allowEmpty: true
+        });
+
+        $(".clickButton").keypress(function (event) {
+            if (event.keyCode == 13) {
+                event.preventDefault();
+                var boton = $(this).data("button");
+                $("#" + boton).click();
+            }
+        });
+
+        $(".entTab").keypress(function (event) {
+            if (event.keyCode == 13) {
+                event.preventDefault();
+                var next = $(this).data("next");
+
+                $("#" + next).focus();
+            }
+        });
+
+        //$('#mainmenu').on('click', 'a', function)
+
+        //$("input").live('focus', function () {
+        //    $(this).select();
+        //});
+
+    </script>
+
+
+
+</body>
+</html>
+

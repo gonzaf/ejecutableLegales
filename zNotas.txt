@@ -1,0 +1,17 @@
+﻿
+
+HeaderStyle-CssClass="text-center"
+
+
+
+pasar dos argumentos en un command en gridview
+
+<asp:LinkButton ID="lbIngresar" ToolTip="Ver Orden" OnCommand="lbIngresar_Command" CommandArgument='<%#String.Concat(Eval("idOrden"), "/", Eval("idAccion")) %>' runat="server"><%# Eval("tarea") %></asp:LinkButton>
+Dim id As String = e.CommandArgument.ToString.Split("/")(0)
+Dim idAccion As String = e.CommandArgument.ToString.Split("/")(1)
+
+
+
+
+
+

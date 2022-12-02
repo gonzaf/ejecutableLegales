@@ -9306,9 +9306,27 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Dynamic_Data.nc._tbIdArticulo">
+<member name="F:Dynamic_Data.nc._tbCodigo">
 <summary>
-Control tbIdArticulo.
+Control tbCodigo.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Dynamic_Data.nc._ddRepuestos">
+<summary>
+Control ddRepuestos.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Dynamic_Data.nc._ldsRep">
+<summary>
+Control ldsRep.
 </summary>
 <remarks>
 Campo generado automáticamente.

@@ -26,16 +26,21 @@
                                             <asp:Label ID="Label2" runat="server" Text="Label">---</asp:Label>
                                             <asp:DropDownList ID="ddDepositos" AppendDataBoundItems="true" runat="server" AutoPostBack="true" CssClass="form-control input-sm entTab" DataTextField="Deposito" DataValueField="idDeposito">
                                             </asp:DropDownList>
-                                            <asp:DropDownList ID="ddRubro" AppendDataBoundItems="true" DataSourceID="LinqDataSource1" DataTextField="rubro" DataValueField="idRubro" runat="server" AutoPostBack="true" CssClass="form-control col-6 input-sm entTab">
+                                            <asp:DropDownList ID="ddRubro" AppendDataBoundItems="true" DataSourceID="LinqDataSource1" OnSelectedIndexChanged="ddRubro_SelectedIndexChanged" DataTextField="rubro" DataValueField="idRubro" runat="server" AutoPostBack="true" CssClass="form-control col-6 input-sm entTab">
                                                 <asp:ListItem Text="Todos los Rubros" Value="-2" Selected="True"></asp:ListItem>
                                             </asp:DropDownList>
                                             <asp:LinqDataSource ID="LinqDataSource1" runat="server" ContextTypeName="legLinq.LegalesDataContext" EntityTypeName="" OrderBy="rubro" TableName="vStRubrosN">
+                                                
                                             </asp:LinqDataSource>
 
                                             <asp:DropDownList ID="ddsubrubro" AppendDataBoundItems="true" DataSourceID="LinqDataSource2" DataTextField="subrubro" DataValueField="idsubRubro" runat="server" AutoPostBack="true" CssClass="form-control col-6 input-sm entTab">
                                                 <asp:ListItem Text="Todos los SubRubros" Value="-2" Selected="True"></asp:ListItem>
                                             </asp:DropDownList>
-                                            <asp:LinqDataSource ID="LinqDataSource2" runat="server" ContextTypeName="legLinq.LegalesDataContext" EntityTypeName="" OrderBy="subrubro" TableName="vStSubRubrosN">
+                                            <asp:LinqDataSource ID="LinqDataSource2" runat="server" ContextTypeName="legLinq.LegalesDataContext" EntityTypeName="" OrderBy="subrubro" TableName="vStSubRubrosN" Where='(@ddr == idRubro or @ddr == -2)'>
+                                                <WhereParameters>
+                                                    <asp:ControlParameter ControlID="ddrubro" DefaultValue="-1" Name="ddr" Type="Int16" PropertyName="SelectedValue" />
+                                                    <%--<asp:ControlParameter ControlID="ddsubrubro" DefaultValue="-1" Name="dds" Type="String" PropertyName="SelectedValue" />--%>
+                                                </WhereParameters>
                                             </asp:LinqDataSource>
 
 
@@ -163,31 +168,41 @@
                                 <section class="panel">
                                     <header class="panel-heading">
                                         <span class="label bg-danger pull-right">Repuestos</span>
+                                        Casos Especiales&nbsp;&nbsp; 
+                                        
+                                    </header>
+                                    <div class="panel">
+
                                         <div class="form-inline">
-                                            Casos Especiales&nbsp;&nbsp; 
-                                              <asp:DropDownList ID="ddTipo" runat="server" CssClass="form-control col-6 input-sm entTab">
-                                                  <asp:ListItem Text="Repuestos Sin Stock" Value="2" Selected="True"></asp:ListItem>
-                                                  <asp:ListItem Text="Compra Extraordinaria por Oportunidad" Value="3"></asp:ListItem>
-                                                  <asp:ListItem Text="Compra Extraordinaria por Necesidad" Value="4"></asp:ListItem>
-                                              </asp:DropDownList>
-                                            <asp:TextBox ID="tbIdArticulo" CssClass="form-control input-sm" Width="100" placeholder="# Articulo" runat="server"></asp:TextBox>
-                                            <%--<asp:TextBox ID="TextBox6" CssClass="form-control input-sm " Width="150" placeholder="Articulo" runat="server"></asp:TextBox>--%>
+                                            <div class="form-group">
+                                                <label for="ddTipo">Tipo</label>
+                                                <asp:DropDownList ID="ddTipo" runat="server" CssClass="form-control col-6 input-sm entTab">
+                                                    <asp:ListItem Text="Repuestos Sin Stock" Value="2" Selected="True"></asp:ListItem>
+                                                    <asp:ListItem Text="Compra Extraordinaria por Oportunidad" Value="3"></asp:ListItem>
+                                                    <asp:ListItem Text="Compra Extraordinaria por Necesidad" Value="4"></asp:ListItem>
+                                                </asp:DropDownList>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="ddTipo">Codigo</label>
+                                                <asp:TextBox ID="tbCodigo" AutoComplete="off" CssClass="form-control input-sm" ClientIDMode="Static" Width="100" placeholder="# Articulo" runat="server"></asp:TextBox>
+                                            </div>
+                                            <div class="form-group">
+                                                <%-- <asp:TextBox ID="autoCompleteProductos" ClientIDMode="Static" runat="server" Width="300" CssClass="form-control input-sm"></asp:TextBox>
+                                                <asp:Button ID="Button1" ClientIDMode="Static" runat="server" Style="display: none" Text="" Display="Dynamic" />--%>
+                                                <asp:DropDownList ID="ddRepuestos" ClientIDMode="Static" AppendDataBoundItems="true" DataSourceID="ldsRep" DataTextField="articulo" DataValueField="idArticulo" runat="server" CssClass="form-control col-6 input-sm entTab">
+                                                    <asp:ListItem Text="Seleccione un Articulo" Value="-2" Selected="True"></asp:ListItem>
+                                                </asp:DropDownList>
+                                                <asp:LinqDataSource ID="ldsRep" runat="server" ContextTypeName="legLinq.LegalesDataContext" EntityTypeName="" OrderBy="articulo" TableName="vStArticulos">
+                                                </asp:LinqDataSource>
+                                            </div>
 
-
-                                            <asp:Label ID="Label3" runat="server" Text="Label">---</asp:Label>
-                                            <asp:TextBox ID="tbCant" CssClass="form-control input-sm " Width="150" placeholder="Cantidad" runat="server"></asp:TextBox>
+                                            <asp:Label ID="Label3" runat="server" Text="Label">Cantidad</asp:Label>
+                                            <asp:TextBox ID="tbCant" CssClass="form-control input-sm " Width="80" placeholder="Cantidad" runat="server"></asp:TextBox>
                                             <asp:Button ID="bAgregar" runat="server" Text="Agregar" OnClick="bAgregar_Click" Visible="true" CssClass="btn btn-primary btn-xs" />
 
                                         </div>
-                                    </header>
 
 
-
-
-
-
-                                    <div class="panel">
-                                      
                                         <asp:GridView ID="GridView3" runat="server" DataKeyNames="idArticulo" AutoGenerateColumns="False" DataSourceID="dsCasosEspeciales" CssClass="table table-striped m-b-none text-small" BorderStyle="None" GridLines="None" OnSelectedIndexChanged="gvPartes_SelectedIndexChanged" OnPreRender="GVPreRender">
                                             <Columns>
 
@@ -309,7 +324,61 @@
 
     <script>
 
-        var objDiv = document.getElementById("divCaja");
+        var ddRepuestos = document.getElementById("ddRepuestos");
+        var tbCodigo = document.getElementById("tbCodigo");
+
+        $("#tbCodigo").keyup(function () {
+            valor = $("#tbCodigo").val();
+
+            var exists = false;
+            $('#ddRepuestos  option').each(function () {
+                if (this.value == valor) {
+                    exists = true;
+                }
+            });
+
+            if (exists) {
+                $('#ddRepuestos option[value=' + valor + ']').attr('selected', 'selected');
+            } else {
+                $('#ddRepuestos option[value=' + -2 + ']').attr('selected', 'selected');
+            }
+
+        });
+
+        $("#ddRepuestos").change(function () {
+            $("#tbCodigo").val($('#ddRepuestos').val());
+        });
+
+
+
+        function seleccionar() {
+
+            if (document.form.idLegajoTexto.value.length > 0) {
+
+
+                caracteres = document.form.idLegajoTexto.value.length;
+                encontro = 0;
+                for (x = 0; x < document.form.idLegajo.options.length; x++) {
+                    //if(document.form.idLegajo.options[x].value.slice(0,caracteres)==document.form.idLegajoTexto.value){
+                    if (document.form.idLegajo.options[x].value == document.form.idLegajoTexto.value) {
+                        document.form.idLegajo.selectedIndex = x;
+                        encontro = 1;
+                        break;
+                    }
+                }
+
+                if (encontro != 1) {
+                    document.form.idLegajo.selectedIndex = 0;
+                }
+
+
+            }
+
+            //document.form.idLegajo.value = document.form.idLegajoTexto.value;
+        }
+
+
+
         //objDiv.scrollTop = objDiv.scrollHeight;
 
         function set(textbox, cant, cb) {

@@ -65,7 +65,7 @@
 
                                             <asp:Label Text="" ID="lError" runat="server" ForeColor="Red"></asp:Label>
 
-                                            <asp:GridView ID="gvPartes" runat="server" DataKeyNames="id" AutoGenerateColumns="False" CssClass="table table-striped m-b-none text-small" BorderStyle="None" GridLines="None"  OnPreRender="GVPreRender">
+                                            <asp:GridView ID="gvPartes" runat="server" DataKeyNames="id" AutoGenerateColumns="False" CssClass="table table-striped m-b-none text-small" BorderStyle="None" GridLines="None" OnPreRender="GVPreRender">
                                                 <Columns>
                                                     <asp:TemplateField HeaderText="Fecha Inicio" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="120px">
                                                         <ItemTemplate>
@@ -101,15 +101,13 @@
                                                                 <asp:ListItem Text="Interrumpir" Enabled="false" Value="4"></asp:ListItem>
                                                             </asp:DropDownList>
                                                             <asp:DropDownList ID="ddDescartar" Visible="false" DataTextField="tipo" DataValueField="id" AppendDataBoundItems="false" CssClass="form-control input-sm entTab" data-next="ddMecanico" ClientIDMode="Static" runat="server">
-                                                               
                                                             </asp:DropDownList>
                                                             <asp:DropDownList ID="ddInterrumpir" Visible="false" DataTextField="tipo" DataValueField="id" AppendDataBoundItems="false" CssClass="form-control input-sm entTab" data-next="ddMecanico" ClientIDMode="Static" runat="server">
-                                                               
                                                             </asp:DropDownList>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
 
-                                                   
+
                                                     <asp:TemplateField HeaderText="Fecha" ItemStyle-HorizontalAlign="center" HeaderStyle-CssClass="text-center">
                                                         <ItemTemplate>
                                                             <%--<asp:HiddenField ID="hf" Value='<%# String.Concat(Eval("idCoche"), "-", Eval("idTipoAlerta"), "-", Eval("idDeposito"), "-" & Eval("idPartida"), "-" & Eval("id"))%>' runat="server" />--%>
@@ -119,7 +117,7 @@
                                                             <asp:RadioButton ID="RadioButton1" runat="server" Text="Realizado" GroupName="SelectGroup" />--%>
                                                             <%--<asp:RadioButton ID="cbPosponer" runat="server"  Text="Posponer" GroupName="SelectGroup" />--%>
                                                             <asp:TextBox ID="tbFecha" runat="server" ClientIDMode="Static" CssClass="input-sm form-control datepicker" Width="80px"></asp:TextBox>
-                                                            
+
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
 
@@ -131,7 +129,7 @@
                                                             <asp:RadioButton ID="cbGuardarDesc" runat="server" Text="Descartar" GroupName="SelectGroup" />
                                                             <asp:RadioButton ID="RadioButton1" runat="server" Text="Realizado" GroupName="SelectGroup" />--%>
                                                             <%--<asp:RadioButton ID="cbPosponer" runat="server"  Text="Posponer" GroupName="SelectGroup" />--%>
-                                                            
+
                                                             <asp:TextBox AutoComplete="off" ID="tbHora" runat="server" ClientIDMode="Static" CssClass="input-sm form-control timepicker2" Width="80px"></asp:TextBox>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
@@ -150,10 +148,102 @@
 
                                         </div>
 
+                                        <section class="panel">
+                                            <header class="panel-heading font-bold">VTV</header>
+                                            <div class="panel-body">
+                                                <div class="row">
+                                                    <div class="form-group">
+                                                        <div class="col-sm-2">
+                                                            <label class=" control-label">Turno</label>
+
+                                                            <asp:TextBox ID="TextBox2" ClientIDMode="Static" data-button="Button1" AutoCompleteType="Disabled" runat="server" CssClass="form-control input-sm clickButton">10/10/2023</asp:TextBox>
+
+                                                        </div>
+                                                        <div class="col-sm-2">
+                                                            <label class="control-label">Traslado </label>
+                                                            <asp:TextBox ID="TextBox3" Enabled="false" ClientIDMode="Static" data-button="Button1" AutoCompleteType="Disabled" runat="server" CssClass="form-control input-sm clickButton">Juan Carlos Lopez</asp:TextBox>
+                                                        </div>
+                                                        <div class="col-sm-2">
+                                                            <label class=" control-label">Observaciones</label>
+                                                            <asp:TextBox ID="TextBox4" ClientIDMode="Static" runat="server" CssClass="form-control input-sm"></asp:TextBox>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <br />
+                                                <br />
+                                               <asp:Label runat="server" Text="Apto" Font-Size="X-Large" Font-Bold="true" />
+                                                <div class="row">
+                                                    <div class="form-group">
+                                                        <div class="col-sm-2">
+                                                            <label class="control-label">Fecha Prox. Vto </label>
+                                                            <asp:TextBox ID="TextBox5" runat="server" ClientIDMode="Static" CssClass="input-sm form-control datepicker"></asp:TextBox>
+                                                        </div>
+                                                        <div class="col-sm-2">
+                                                            <label class=" control-label">Nro.Inspeccion</label>
+
+                                                            <asp:TextBox ID="TextBox6" ClientIDMode="Static" data-button="Button1" AutoCompleteType="Disabled" runat="server" CssClass="form-control input-sm clickButton"></asp:TextBox>
+
+                                                        </div>
 
 
+                                                        <div class="col-sm-2">
+                                                            <label class=" control-label">Nro.Oblea</label>
 
+                                                            <asp:TextBox ID="TextBox7" ClientIDMode="Static" data-button="Button1" AutoCompleteType="Disabled" runat="server" CssClass="form-control input-sm clickButton"></asp:TextBox>
+
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                 <br />
+                                                <br />
+                                                <asp:Label runat="server" Text="No Apto" Font-Size="X-Large" Font-Bold="true" />
+                                                <div class="row">
+                                                    <div class="form-group">
+                                                       
+                                                         <div class="col-sm-2">
+                                                            <label class=" control-label">Motivo del Rechazo</label>
+
+                                                            <asp:TextBox ID="TextBox8" ClientIDMode="Static" data-button="Button1" AutoCompleteType="Disabled" runat="server" CssClass="form-control input-sm clickButton"></asp:TextBox>
+
+                                                        </div>
+                                                        <div class="col-sm-2">
+                                                            <label class=" control-label">Asignaco Mecanico</label>
+
+                                                            <asp:TextBox ID="TextBox9" ClientIDMode="Static" data-button="Button1" AutoCompleteType="Disabled" runat="server" CssClass="form-control input-sm clickButton"></asp:TextBox>
+
+                                                        </div>
+
+
+                                                        <div class="col-sm-5">
+                                                            <label class=" control-label">Observaciones</label>
+
+                                                            <asp:TextBox ID="TextBox10" ClientIDMode="Static" data-button="Button1" AutoCompleteType="Disabled" runat="server" CssClass="form-control input-sm clickButton"></asp:TextBox>
+
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </section>
                                     </section>
+
+                                    <div class="form-group text-center">
+                                        <div class="col-lg-12">
+                                            <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal">
+                                                Agregar Tarea
+                                            </button>
+
+                                            <br />
+                                            <br />
+                                            <br />
+                                        </div>
+                                    </div>
+
+
                                     <%--</div>--%>
                                     <div class="form-group text-center">
                                         <div class="col-lg-12">
@@ -182,6 +272,66 @@
 
 
                 </div>
+
+
+
+
+
+
+                <div class="modal fade" id="myModal" data-background="false" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel">Agregar Tarea</h4>
+                            </div>
+                            <div class="modal-body">
+
+                                <div class="row">
+                                    <div class="form-group">
+                                        <div class="col-sm-3">
+                                            <label class=" control-label">Codigo Tarea</label>
+                                            <div class="">
+                                                <asp:TextBox ID="tbCodBarraNuevo" ClientIDMode="Static" data-button="Button1" AutoCompleteType="Disabled" runat="server" CssClass="form-control input-sm clickButton"></asp:TextBox>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <label class="control-label">Tarea </label>
+                                            <asp:TextBox ID="TextBox1" Enabled="false" ClientIDMode="Static" data-button="Button1" AutoCompleteType="Disabled" runat="server" CssClass="form-control input-sm clickButton"></asp:TextBox>
+
+                                        </div>
+
+                                        <div class="col-sm-6">
+                                            <label class=" control-label">Observaciones</label>
+                                            <asp:TextBox ID="tbDescripcion" ClientIDMode="Static" runat="server" CssClass="form-control input-sm"></asp:TextBox>
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Agregar</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -78,6 +78,10 @@
                                             &nbsp;&nbsp;
                                             <asp:CheckBox ID="cbCorrectivo" runat="server" Checked="true" Text="Correctivo" />
                                             &nbsp;&nbsp;
+                                            <asp:CheckBox ID="cbAuxilio" runat="server" Checked="true" Text="Auxilio" />
+                                            &nbsp;&nbsp;
+                                            <asp:CheckBox ID="cbVtv" runat="server" Checked="true" Text="VTV" />
+                                            &nbsp;&nbsp;
                                             <asp:CheckBox ID="cbSoloInterrumpidos" runat="server" Text="Solo Interrumpidos" />
                                             &nbsp;&nbsp;
                                             <asp:CheckBox ID="cbVerUltimasTareas" ClientIDMode="Static" runat="server" Checked="false" Text="Ver Ultimas Tareas" />

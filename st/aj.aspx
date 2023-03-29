@@ -32,7 +32,7 @@
             <form id="form2" runat="server">
                 <input type="hidden" id="imprimir" name="imprimir" value="true" />
                 <div class="row no-gutter">
-                    <div class="col-sm-5">
+                    <div class="col-sm-6">
                         <section class="panel">
                             <div class="panel-body">
                                 <section class="panel">

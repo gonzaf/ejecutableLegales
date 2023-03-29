@@ -989,6 +989,15 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
+<member name="F:Dynamic_Data.eOt._muestraModal">
+<summary>
+Control muestraModal.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
 <member name="F:Dynamic_Data.eOt._ddPrioridad">
 <summary>
 Control ddPrioridad.
@@ -1037,6 +1046,42 @@ Para modificarlo, mueva la declaración del campo del archivo del diseñador al 
 <member name="F:Dynamic_Data.eOt._gvPartes">
 <summary>
 Control gvPartes.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Dynamic_Data.eOt._imprimir">
+<summary>
+Control imprimir.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Dynamic_Data.eOt._guardar">
+<summary>
+Control guardar.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Dynamic_Data.eOt._cerrar">
+<summary>
+Control cerrar.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Dynamic_Data.eOt._cancelar">
+<summary>
+Control cancelar.
 </summary>
 <remarks>
 Campo generado automáticamente.
@@ -1124,63 +1169,54 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Dynamic_Data.eOt._imprimir">
+<member name="F:Dynamic_Data.eOt._codigoTarea">
 <summary>
-Control imprimir.
+Control codigoTarea.
 </summary>
 <remarks>
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Dynamic_Data.eOt._guardar">
+<member name="F:Dynamic_Data.eOt._autoCompleteTarea">
 <summary>
-Control guardar.
+Control autoCompleteTarea.
 </summary>
 <remarks>
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Dynamic_Data.eOt._cerrar">
+<member name="F:Dynamic_Data.eOt._Button2">
 <summary>
-Control cerrar.
+Control Button2.
 </summary>
 <remarks>
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Dynamic_Data.eOt._cancelar">
+<member name="F:Dynamic_Data.eOt._tbObservaciones">
 <summary>
-Control cancelar.
+Control tbObservaciones.
 </summary>
 <remarks>
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Dynamic_Data.eOt._tbCodBarraNuevo">
+<member name="F:Dynamic_Data.eOt._bCancelarAgregar">
 <summary>
-Control tbCodBarraNuevo.
+Control bCancelarAgregar.
 </summary>
 <remarks>
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Dynamic_Data.eOt._TextBox1">
+<member name="F:Dynamic_Data.eOt._bGuardarAgregar">
 <summary>
-Control TextBox1.
-</summary>
-<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member>
-<member name="F:Dynamic_Data.eOt._tbDescripcion">
-<summary>
-Control tbDescripcion.
+Control bGuardarAgregar.
 </summary>
 <remarks>
 Campo generado automáticamente.

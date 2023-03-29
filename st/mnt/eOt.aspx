@@ -24,7 +24,7 @@
                                             <asp:DropDownList ID="ddMecanico" Enabled="false" AppendDataBoundItems="true" DataTextField="apellido" DataValueField="idLegajo" runat="server" AutoPostBack="false" CssClass="form-control col-6 input-sm entTab">
                                                 <asp:ListItem Text="Selecciones un Mecanico" Value="-2" Selected="True"></asp:ListItem>
                                             </asp:DropDownList>
-
+                                            <asp:HiddenField runat="server" ID="muestraModal" EnableViewState="true" Value="false" ClientIDMode="Static" />
 
                                             <asp:DropDownList ID="ddPrioridad" Visible="false" Enabled="false" AppendDataBoundItems="true" runat="server" AutoPostBack="true" CssClass="form-control input-sm entTab">
                                                 <asp:ListItem Text="Prioridad" Value="-1" Selected="True"></asp:ListItem>
@@ -148,7 +148,41 @@
 
                                         </div>
 
-                                        <section class="panel">
+
+                                           <div class="form-group text-center">
+                                        <div class="col-lg-12">
+                                            <button type="button" class="btn btn-primary btn-xs" onclick="mostrarModal()">
+                                                Agregar Tarea
+                                            </button>
+
+                                            <br />
+                                            <br />
+                                            <br />
+                                        </div>
+                                    </div>
+
+
+                                       
+                                    </section>
+
+                                
+
+                                    <%--</div>--%>
+                                    <div class="form-group text-center">
+                                        <div class="col-lg-12">
+                                            <asp:Button ID="imprimir" runat="server" Text="Imprimir" OnClientClick="return finalizar();" Visible="false" CssClass="btn btn-primary btn-xs" />
+
+                                            <asp:Button ID="guardar" runat="server" Text="Guardar" OnClientClick="return finalizar();" Visible="true" CssClass="btn btn-primary btn-xs" />
+
+                                            <asp:Button ID="cerrar" runat="server" Text="Cerrar Orden" OnClientClick="return finalizar();" Visible="true" CssClass="btn btn-primary btn-xs" />
+
+                                            <asp:Button ID="cancelar" runat="server" OnClick="cancelar_Click" Enabled="true" Text="Cancelar" Visible="true" CssClass="btn btn-white btn-xs" />
+                                        </div>
+                                    </div>
+
+
+
+                                     <section style="visibility:hidden" class="panel">
                                             <header class="panel-heading font-bold">VTV</header>
                                             <div class="panel-body">
                                                 <div class="row">
@@ -171,7 +205,7 @@
                                                 </div>
                                                 <br />
                                                 <br />
-                                               <asp:Label runat="server" Text="Apto" Font-Size="X-Large" Font-Bold="true" />
+                                                <asp:Label runat="server" Text="Apto" Font-Size="X-Large" Font-Bold="true" />
                                                 <div class="row">
                                                     <div class="form-group">
                                                         <div class="col-sm-2">
@@ -196,13 +230,13 @@
                                                     </div>
                                                 </div>
 
-                                                 <br />
+                                                <br />
                                                 <br />
                                                 <asp:Label runat="server" Text="No Apto" Font-Size="X-Large" Font-Bold="true" />
                                                 <div class="row">
                                                     <div class="form-group">
-                                                       
-                                                         <div class="col-sm-2">
+
+                                                        <div class="col-sm-2">
                                                             <label class=" control-label">Motivo del Rechazo</label>
 
                                                             <asp:TextBox ID="TextBox8" ClientIDMode="Static" data-button="Button1" AutoCompleteType="Disabled" runat="server" CssClass="form-control input-sm clickButton"></asp:TextBox>
@@ -229,34 +263,6 @@
                                             </div>
 
                                         </section>
-                                    </section>
-
-                                    <div class="form-group text-center">
-                                        <div class="col-lg-12">
-                                            <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal">
-                                                Agregar Tarea
-                                            </button>
-
-                                            <br />
-                                            <br />
-                                            <br />
-                                        </div>
-                                    </div>
-
-
-                                    <%--</div>--%>
-                                    <div class="form-group text-center">
-                                        <div class="col-lg-12">
-                                            <asp:Button ID="imprimir" runat="server" Text="Imprimir" OnClientClick="return finalizar();" Visible="false" CssClass="btn btn-primary btn-xs" />
-
-                                            <asp:Button ID="guardar" runat="server" Text="Guardar" OnClientClick="return finalizar();" Visible="true" CssClass="btn btn-primary btn-xs" />
-
-                                            <asp:Button ID="cerrar" runat="server" Text="Cerrar Orden" OnClientClick="return finalizar();" Visible="true" CssClass="btn btn-primary btn-xs" />
-
-                                            <asp:Button ID="cancelar" runat="server" OnClick="cancelar_Click" Enabled="true" Text="Cancelar" Visible="true" CssClass="btn btn-white btn-xs" />
-                                        </div>
-                                    </div>
-
                                 </section>
                             </div>
                         </section>
@@ -289,22 +295,26 @@
 
                                 <div class="row">
                                     <div class="form-group">
-                                        <div class="col-sm-3">
+                                        <div class="col-sm-2">
                                             <label class=" control-label">Codigo Tarea</label>
-                                            <div class="">
-                                                <asp:TextBox ID="tbCodBarraNuevo" ClientIDMode="Static" data-button="Button1" AutoCompleteType="Disabled" runat="server" CssClass="form-control input-sm clickButton"></asp:TextBox>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-sm-3">
-                                            <label class="control-label">Tarea </label>
-                                            <asp:TextBox ID="TextBox1" Enabled="false" ClientIDMode="Static" data-button="Button1" AutoCompleteType="Disabled" runat="server" CssClass="form-control input-sm clickButton"></asp:TextBox>
-
+                                            
+                                                <asp:TextBox ID="codigoTarea" ClientIDMode="Static" data-button="Button2" AutoCompleteType="Disabled" runat="server" CssClass="form-control input-sm clickButton"></asp:TextBox>
+                                            
                                         </div>
 
                                         <div class="col-sm-6">
+                                            <label for="autoCompleteTarea">Descripción Tarea</label>
+                                          
+                                            <asp:TextBox ID="autoCompleteTarea" Width="400px" ClientIDMode="Static" runat="server" CssClass="form-control input-sm"></asp:TextBox>
+                                            <asp:Button ID="Button2" ClientIDMode="Static" runat="server" Style="display: none" Text="" Display="Dynamic" />
+
+                                            
+                                                   
+                                        </div>
+
+                                        <div class="col-sm-4">
                                             <label class=" control-label">Observaciones</label>
-                                            <asp:TextBox ID="tbDescripcion" ClientIDMode="Static" runat="server" CssClass="form-control input-sm"></asp:TextBox>
+                                            <asp:TextBox ID="tbObservaciones" ClientIDMode="Static" runat="server" CssClass="form-control input-sm"></asp:TextBox>
                                         </div>
 
                                     </div>
@@ -313,8 +323,8 @@
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-primary" data-dismiss="modal">Agregar</button>
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                   <asp:Button ID="bCancelarAgregar" OnClick="bCancelarAgregar_Click" CssClass="btn btn-default btn-xs" OnClientClick="verificar()" ClientIDMode="Static" runat="server" Text="Cancelar" Display="Dynamic" />
+                                    <asp:Button ID="bGuardarAgregar" OnClick="bGuardarAgregar_Click"  CssClass="btn btn-primary btn-xs" ClientIDMode="Static" runat="server" Text="Guardar" Display="Dynamic" />
                             </div>
                         </div>
                     </div>
@@ -351,6 +361,37 @@
 
 
     <script>
+
+
+        if ($('#muestraModal').val() == 'true') {
+            $('#myModal').modal('show');
+        }
+
+
+        function mostrarModal() {
+
+            $('#muestraModal').val(true);
+            
+            $('#myModal').modal('show');
+            $('#codigoTarea').focus();
+        }
+
+
+        //function verificar() {
+
+        //    // tbDolares tbContado tbMay1 tbLista tbSuc1 tbMay2
+        //    if (parseFloatG($("#tbContado").val()) > 0 || parseFloatG($("#tbDolares").val()) > 0 || parseFloatG($("#tbMay1").val()) > 0 ||
+        //        parseFloatG($("#tbLista").val()) > 0 || parseFloatG($("#tbSuc1").val()) > 0 || parseFloatG($("#tbMay2").val()) > 0) {
+        //        var actualiza = confirm('Queres Actualizar los Precios de Venta de Todos Los Productos?');
+        //        if (actualiza) {
+        //            $("#actualiza").val(true);
+        //        } else { $("#actualiza").val(false); }
+        //        return true;
+        //    } else {
+        //        $("#actualiza").val = false;
+        //    }
+
+        //}
 
         var objDiv = document.getElementById("divCaja");
         //objDiv.scrollTop = objDiv.scrollHeight;

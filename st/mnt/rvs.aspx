@@ -65,6 +65,8 @@
                                                             <asp:HiddenField ID="hfIdTarea" ClientIDMode="Static" runat="server" Value='<%# Eval("idTarea")%>' />
                                                             <asp:HiddenField ID="hfkmsPasados" ClientIDMode="Static" runat="server" Value='<%# Eval("kmsPasados")%>' />
                                                             <asp:HiddenField ID="hfFueraTolerancia" ClientIDMode="Static" runat="server" Value='<%# Eval("fueraTolerancia")%>' />
+                                                            <asp:HiddenField ID="hfCondicionante" ClientIDMode="Static" runat="server" Value='<%# Eval("condicionante")%>' />
+                                                            <asp:HiddenField ID="hfId" ClientIDMode="Static" runat="server" Value='<%# Eval("id")%>' />
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
                                                     <asp:BoundField DataField="kmsUltServ" HeaderText="Kms.Ult.Serv." ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" SortExpression="Linea"></asp:BoundField>

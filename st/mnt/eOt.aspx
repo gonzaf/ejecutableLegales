@@ -146,71 +146,63 @@
                                                 </Columns>
                                             </asp:GridView>
 
+
+
+
                                         </div>
 
 
-                                           <div class="form-group text-center">
-                                        <div class="col-lg-12">
-                                            <button type="button" class="btn btn-primary btn-xs" onclick="mostrarModal()">
-                                                Agregar Tarea
-                                            </button>
+                                        <div class="form-group text-center">
+                                            <div class="col-lg-12">
+                                                <button type="button" class="btn btn-primary btn-xs" onclick="mostrarModal()">
+                                                    Agregar Tarea
+                                                </button>
 
-                                            <br />
-                                            <br />
-                                            <br />
+                                                <br />
+                                                <br />
+                                                <br />
+                                            </div>
                                         </div>
-                                    </div>
 
 
-                                       
-                                    </section>
-
-                                
-
-                                    <%--</div>--%>
-                                    <div class="form-group text-center">
-                                        <div class="col-lg-12">
-                                            <asp:Button ID="imprimir" runat="server" Text="Imprimir" OnClientClick="return finalizar();" Visible="false" CssClass="btn btn-primary btn-xs" />
-
-                                            <asp:Button ID="guardar" runat="server" Text="Guardar" OnClientClick="return finalizar();" Visible="true" CssClass="btn btn-primary btn-xs" />
-
-                                            <asp:Button ID="cerrar" runat="server" Text="Cerrar Orden" OnClientClick="return finalizar();" Visible="true" CssClass="btn btn-primary btn-xs" />
-
-                                            <asp:Button ID="cancelar" runat="server" OnClick="cancelar_Click" Enabled="true" Text="Cancelar" Visible="true" CssClass="btn btn-white btn-xs" />
-                                        </div>
-                                    </div>
-
-
-
-                                     <section style="visibility:hidden" class="panel">
+                                        <section id="seccionVTV" runat="server" class="panel">
                                             <header class="panel-heading font-bold">VTV</header>
                                             <div class="panel-body">
                                                 <div class="row">
                                                     <div class="form-group">
-                                                        <div class="col-sm-2">
+                                                        <div class="col-sm-1">
                                                             <label class=" control-label">Turno</label>
-
-                                                            <asp:TextBox ID="TextBox2" ClientIDMode="Static" data-button="Button1" AutoCompleteType="Disabled" runat="server" CssClass="form-control input-sm clickButton">10/10/2023</asp:TextBox>
-
+                                                            <asp:TextBox ID="tbFechaTurnoVTV" ClientIDMode="Static" data-button="Button1" AutoCompleteType="Disabled" runat="server" CssClass="form-control input-sm datepicker"></asp:TextBox>
                                                         </div>
                                                         <div class="col-sm-2">
                                                             <label class="control-label">Traslado </label>
-                                                            <asp:TextBox ID="TextBox3" Enabled="false" ClientIDMode="Static" data-button="Button1" AutoCompleteType="Disabled" runat="server" CssClass="form-control input-sm clickButton">Juan Carlos Lopez</asp:TextBox>
+                                                            <asp:DropDownList ID="ddMecanicos" ClientIDMode="Static" AppendDataBoundItems="true" runat="server" AutoPostBack="true" CssClass="form-control input-sm entTab" DataTextField="Apellido" DataValueField="idLegajo">
+                                                                <asp:ListItem Text="Mecanico" Value="-1" Selected="True"></asp:ListItem>
+                                                            </asp:DropDownList>
                                                         </div>
                                                         <div class="col-sm-2">
                                                             <label class=" control-label">Observaciones</label>
                                                             <asp:TextBox ID="TextBox4" ClientIDMode="Static" runat="server" CssClass="form-control input-sm"></asp:TextBox>
                                                         </div>
+                                                        <div class="col-sm-2">
+                                                            <label class="control-label">Estado </label>
+                                                            <asp:DropDownList ID="ddEstado" ClientIDMode="Static" OnSelectedIndexChanged="ddEstado_SelectedIndexChanged" AppendDataBoundItems="true" runat="server" AutoPostBack="true" CssClass="form-control input-sm entTab">
+                                                                <asp:ListItem Text="Pendiente" Value="Pendiente" Selected="True"></asp:ListItem>
+                                                                <asp:ListItem Text="Apto" Value="Apto"></asp:ListItem>
+                                                                <asp:ListItem Text="No Apto" Value="No Apto"></asp:ListItem>
+                                                                <asp:ListItem Text="Condicional" Value="Condicional"></asp:ListItem>
+                                                            </asp:DropDownList>
+                                                        </div>
+
                                                     </div>
                                                 </div>
-                                                <br />
-                                                <br />
-                                                <asp:Label runat="server" Text="Apto" Font-Size="X-Large" Font-Bold="true" />
-                                                <div class="row">
+                                                <asp:Label ID="resultado" Visible="false" runat="server" Text="Resultado" Font-Size="X-Large" Font-Bold="true" />
+                                                <div id="resultadoApto" runat="server" class="row">
                                                     <div class="form-group">
+
                                                         <div class="col-sm-2">
                                                             <label class="control-label">Fecha Prox. Vto </label>
-                                                            <asp:TextBox ID="TextBox5" runat="server" ClientIDMode="Static" CssClass="input-sm form-control datepicker"></asp:TextBox>
+                                                            <asp:TextBox ID="tbFechaProxVtoVTV" runat="server" ClientIDMode="Static" CssClass="input-sm form-control datepicker"></asp:TextBox>
                                                         </div>
                                                         <div class="col-sm-2">
                                                             <label class=" control-label">Nro.Inspeccion</label>
@@ -218,7 +210,6 @@
                                                             <asp:TextBox ID="TextBox6" ClientIDMode="Static" data-button="Button1" AutoCompleteType="Disabled" runat="server" CssClass="form-control input-sm clickButton"></asp:TextBox>
 
                                                         </div>
-
 
                                                         <div class="col-sm-2">
                                                             <label class=" control-label">Nro.Oblea</label>
@@ -229,24 +220,22 @@
 
                                                     </div>
                                                 </div>
-
-                                                <br />
-                                                <br />
-                                                <asp:Label runat="server" Text="No Apto" Font-Size="X-Large" Font-Bold="true" />
-                                                <div class="row">
+                                                <div id="resultadoNoApto" runat="server" class="row">
                                                     <div class="form-group">
 
                                                         <div class="col-sm-2">
                                                             <label class=" control-label">Motivo del Rechazo</label>
-
-                                                            <asp:TextBox ID="TextBox8" ClientIDMode="Static" data-button="Button1" AutoCompleteType="Disabled" runat="server" CssClass="form-control input-sm clickButton"></asp:TextBox>
-
+                                                            <asp:DropDownList ID="ddMotivoRechazo" DataSourceID="LinqDataSource1" AppendDataBoundItems="true" DataTextField="Motivo" DataValueField="id" runat="server" CssClass="form-control col-6 input-sm entTab">
+                                                                                                                            </asp:DropDownList>
+                                                            <asp:LinqDataSource ID="LinqDataSource1" runat="server" ContextTypeName="legLinq.LegalesDataContext" EntityTypeName="" OrderBy="Motivo" TableName="mVTVMotivosRechazos">
+                                                            </asp:LinqDataSource>
                                                         </div>
                                                         <div class="col-sm-2">
-                                                            <label class=" control-label">Asignaco Mecanico</label>
+                                                            <label class=" control-label">Nuevo Mecanico</label>
 
-                                                            <asp:TextBox ID="TextBox9" ClientIDMode="Static" data-button="Button1" AutoCompleteType="Disabled" runat="server" CssClass="form-control input-sm clickButton"></asp:TextBox>
-
+                                                           <asp:DropDownList ID="ddNuevoMecanico" ClientIDMode="Static" AppendDataBoundItems="true" runat="server" AutoPostBack="true" CssClass="form-control input-sm entTab" DataTextField="Apellido" DataValueField="idLegajo">
+                                                                <asp:ListItem Text="Mecanico" Value="-1" Selected="True"></asp:ListItem>
+                                                            </asp:DropDownList>
                                                         </div>
 
 
@@ -263,6 +252,27 @@
                                             </div>
 
                                         </section>
+
+                                    </section>
+
+
+
+                                    <%--</div>--%>
+                                    <div class="form-group text-center">
+                                        <div class="col-lg-12">
+                                            <asp:Button ID="imprimir" runat="server" Text="Imprimir" OnClientClick="return finalizar();" Visible="false" CssClass="btn btn-primary btn-xs" />
+
+                                            <asp:Button ID="guardar" runat="server" Text="Guardar" OnClientClick="return finalizar();" Visible="true" CssClass="btn btn-primary btn-xs" />
+
+                                            <asp:Button ID="cerrar" runat="server" Text="Cerrar Orden" OnClientClick="return finalizar();" Visible="true" CssClass="btn btn-primary btn-xs" />
+
+                                            <asp:Button ID="cancelar" runat="server" OnClick="cancelar_Click" Enabled="true" Text="Cancelar" Visible="true" CssClass="btn btn-white btn-xs" />
+                                        </div>
+                                    </div>
+
+
+
+
                                 </section>
                             </div>
                         </section>
@@ -297,19 +307,19 @@
                                     <div class="form-group">
                                         <div class="col-sm-2">
                                             <label class=" control-label">Codigo Tarea</label>
-                                            
-                                                <asp:TextBox ID="codigoTarea" ClientIDMode="Static" data-button="Button2" AutoCompleteType="Disabled" runat="server" CssClass="form-control input-sm clickButton"></asp:TextBox>
-                                            
+
+                                            <asp:TextBox ID="codigoTarea" ClientIDMode="Static" data-button="Button2" AutoCompleteType="Disabled" runat="server" CssClass="form-control input-sm clickButton"></asp:TextBox>
+
                                         </div>
 
                                         <div class="col-sm-6">
                                             <label for="autoCompleteTarea">Descripción Tarea</label>
-                                          
+
                                             <asp:TextBox ID="autoCompleteTarea" Width="400px" ClientIDMode="Static" runat="server" CssClass="form-control input-sm"></asp:TextBox>
                                             <asp:Button ID="Button2" ClientIDMode="Static" runat="server" Style="display: none" Text="" Display="Dynamic" />
 
-                                            
-                                                   
+
+
                                         </div>
 
                                         <div class="col-sm-4">
@@ -323,8 +333,8 @@
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                   <asp:Button ID="bCancelarAgregar" OnClick="bCancelarAgregar_Click" CssClass="btn btn-default btn-xs" OnClientClick="verificar()" ClientIDMode="Static" runat="server" Text="Cancelar" Display="Dynamic" />
-                                    <asp:Button ID="bGuardarAgregar" OnClick="bGuardarAgregar_Click"  CssClass="btn btn-primary btn-xs" ClientIDMode="Static" runat="server" Text="Guardar" Display="Dynamic" />
+                                <asp:Button ID="bCancelarAgregar" OnClick="bCancelarAgregar_Click" CssClass="btn btn-default btn-xs" OnClientClick="verificar()" ClientIDMode="Static" runat="server" Text="Cancelar" Display="Dynamic" />
+                                <asp:Button ID="bGuardarAgregar" OnClick="bGuardarAgregar_Click" CssClass="btn btn-primary btn-xs" ClientIDMode="Static" runat="server" Text="Guardar" Display="Dynamic" />
                             </div>
                         </div>
                     </div>
@@ -371,7 +381,7 @@
         function mostrarModal() {
 
             $('#muestraModal').val(true);
-            
+
             $('#myModal').modal('show');
             $('#codigoTarea').focus();
         }

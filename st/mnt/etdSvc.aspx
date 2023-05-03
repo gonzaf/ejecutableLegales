@@ -78,6 +78,8 @@
                                             &nbsp;&nbsp;
                                             <asp:CheckBox Visible="false" ID="cbCorrectivo" runat="server" Checked="false" Text="Correctivo" />
                                             &nbsp;&nbsp;
+                                            <asp:CheckBox Visible="false" ID="cbVtv" runat="server" Checked="true" Text="VTV" />
+                                            &nbsp;&nbsp;
                                             <asp:CheckBox Visible="false" ID="cbSoloInterrumpidos" runat="server" Text="Solo Interrumpidos" />
                                             &nbsp;&nbsp;
                                             <asp:CheckBox Visible="false" ID="cbVerUltimasTareas" ClientIDMode="Static" runat="server" Checked="false" Text="Ver Ultimas Tareas" />

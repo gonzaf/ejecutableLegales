@@ -1061,6 +1061,15 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
+<member name="F:Dynamic_Data.eOt._tbFecVenc">
+<summary>
+Control tbFecVenc.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
 <member name="F:Dynamic_Data.eOt._tbFechaTurnoVTV">
 <summary>
 Control tbFechaTurnoVTV.
@@ -1070,18 +1079,18 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Dynamic_Data.eOt._ddMecanicos">
+<member name="F:Dynamic_Data.eOt._ddMecanicosVtv">
 <summary>
-Control ddMecanicos.
+Control ddMecanicosVtv.
 </summary>
 <remarks>
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Dynamic_Data.eOt._TextBox4">
+<member name="F:Dynamic_Data.eOt._tbObsVtv">
 <summary>
-Control TextBox4.
+Control tbObsVtv.
 </summary>
 <remarks>
 Campo generado automáticamente.
@@ -1124,18 +1133,18 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Dynamic_Data.eOt._TextBox6">
+<member name="F:Dynamic_Data.eOt._tbNroInspeccion">
 <summary>
-Control TextBox6.
+Control tbNroInspeccion.
 </summary>
 <remarks>
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Dynamic_Data.eOt._TextBox7">
+<member name="F:Dynamic_Data.eOt._tbNroOblea">
 <summary>
-Control TextBox7.
+Control tbNroOblea.
 </summary>
 <remarks>
 Campo generado automáticamente.
@@ -1169,18 +1178,9 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Dynamic_Data.eOt._ddNuevoMecanico">
+<member name="F:Dynamic_Data.eOt._tbObsVtvRechazo">
 <summary>
-Control ddNuevoMecanico.
-</summary>
-<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member>
-<member name="F:Dynamic_Data.eOt._TextBox10">
-<summary>
-Control TextBox10.
+Control tbObsVtvRechazo.
 </summary>
 <remarks>
 Campo generado automáticamente.
@@ -1541,6 +1541,15 @@ Para modificarlo, mueva la declaración del campo del archivo del diseñador al 
 <member name="F:Dynamic_Data.etdSvc._cbCorrectivo">
 <summary>
 Control cbCorrectivo.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Dynamic_Data.etdSvc._cbVtv">
+<summary>
+Control cbVtv.
 </summary>
 <remarks>
 Campo generado automáticamente.

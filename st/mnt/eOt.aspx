@@ -165,62 +165,66 @@
                                         </div>
 
 
-                                        <section id="seccionVTV" runat="server" class="panel">
+                                        <section id="seccionVTV" visible="false" runat="server" class="panel">
                                             <header class="panel-heading font-bold">VTV</header>
                                             <div class="panel-body">
                                                 <div class="row">
                                                     <div class="form-group">
                                                         <div class="col-sm-1">
+                                                            <label class=" control-label">Fec.Venc</label>
+                                                            <asp:TextBox ID="tbFecVenc" ClientIDMode="Static" Enabled="false" data-button="Button1" AutoComplete="off" runat="server" CssClass="form-control input-sm datepicker"></asp:TextBox>
+                                                        </div>
+                                                        <div class="col-sm-1">
                                                             <label class=" control-label">Turno</label>
-                                                            <asp:TextBox ID="tbFechaTurnoVTV" ClientIDMode="Static" data-button="Button1" AutoCompleteType="Disabled" runat="server" CssClass="form-control input-sm datepicker"></asp:TextBox>
+                                                            <asp:TextBox ID="tbFechaTurnoVTV" ClientIDMode="Static" data-button="Button1" AutoComplete="off" runat="server" CssClass="form-control input-sm datepicker"></asp:TextBox>
                                                         </div>
                                                         <div class="col-sm-2">
                                                             <label class="control-label">Traslado </label>
-                                                            <asp:DropDownList ID="ddMecanicos" ClientIDMode="Static" AppendDataBoundItems="true" runat="server" AutoPostBack="true" CssClass="form-control input-sm entTab" DataTextField="Apellido" DataValueField="idLegajo">
+                                                            <asp:DropDownList ID="ddMecanicosVtv" ClientIDMode="Static" AppendDataBoundItems="true" runat="server" AutoPostBack="true" CssClass="form-control input-sm entTab" DataTextField="Apellido" DataValueField="idLegajo">
                                                                 <asp:ListItem Text="Mecanico" Value="-1" Selected="True"></asp:ListItem>
                                                             </asp:DropDownList>
                                                         </div>
                                                         <div class="col-sm-2">
                                                             <label class=" control-label">Observaciones</label>
-                                                            <asp:TextBox ID="TextBox4" ClientIDMode="Static" runat="server" CssClass="form-control input-sm"></asp:TextBox>
+                                                            <asp:TextBox ID="tbObsVtv" ClientIDMode="Static" runat="server" CssClass="form-control input-sm"></asp:TextBox>
                                                         </div>
                                                         <div class="col-sm-2">
                                                             <label class="control-label">Estado </label>
                                                             <asp:DropDownList ID="ddEstado" ClientIDMode="Static" OnSelectedIndexChanged="ddEstado_SelectedIndexChanged" AppendDataBoundItems="true" runat="server" AutoPostBack="true" CssClass="form-control input-sm entTab">
-                                                                <asp:ListItem Text="Pendiente" Value="Pendiente" Selected="True"></asp:ListItem>
-                                                                <asp:ListItem Text="Apto" Value="Apto"></asp:ListItem>
-                                                                <asp:ListItem Text="No Apto" Value="No Apto"></asp:ListItem>
-                                                                <asp:ListItem Text="Condicional" Value="Condicional"></asp:ListItem>
+                                                                <asp:ListItem Text="Pendiente" Value="1" Selected="True"></asp:ListItem>
+                                                                <asp:ListItem Text="Apto" Value="2"></asp:ListItem>
+                                                                <asp:ListItem Text="No Apto" Value="3"></asp:ListItem>
+                                                                <asp:ListItem Text="Condicional" Value="4"></asp:ListItem>
                                                             </asp:DropDownList>
                                                         </div>
 
                                                     </div>
                                                 </div>
                                                 <asp:Label ID="resultado" Visible="false" runat="server" Text="Resultado" Font-Size="X-Large" Font-Bold="true" />
-                                                <div id="resultadoApto" runat="server" class="row">
+                                                <div id="resultadoApto" visible="false" runat="server" class="row">
                                                     <div class="form-group">
 
-                                                        <div class="col-sm-2">
-                                                            <label class="control-label">Fecha Prox. Vto </label>
-                                                            <asp:TextBox ID="tbFechaProxVtoVTV" runat="server" ClientIDMode="Static" CssClass="input-sm form-control datepicker"></asp:TextBox>
+                                                        <div class="col-sm-1">
+                                                            <label class="control-label">Prox.Vto</label>
+                                                            <asp:TextBox ID="tbFechaProxVtoVTV" runat="server" AutoComplete="off" ClientIDMode="Static" CssClass="input-sm form-control datepicker"></asp:TextBox>
                                                         </div>
                                                         <div class="col-sm-2">
                                                             <label class=" control-label">Nro.Inspeccion</label>
 
-                                                            <asp:TextBox ID="TextBox6" ClientIDMode="Static" data-button="Button1" AutoCompleteType="Disabled" runat="server" CssClass="form-control input-sm clickButton"></asp:TextBox>
+                                                            <asp:TextBox ID="tbNroInspeccion" ClientIDMode="Static" data-button="Button1" AutoCompleteType="Disabled" runat="server" CssClass="form-control input-sm clickButton"></asp:TextBox>
 
                                                         </div>
 
                                                         <div class="col-sm-2">
                                                             <label class=" control-label">Nro.Oblea</label>
 
-                                                            <asp:TextBox ID="TextBox7" ClientIDMode="Static" data-button="Button1" AutoCompleteType="Disabled" runat="server" CssClass="form-control input-sm clickButton"></asp:TextBox>
+                                                            <asp:TextBox ID="tbNroOblea" ClientIDMode="Static" data-button="Button1" AutoCompleteType="Disabled" runat="server" CssClass="form-control input-sm clickButton"></asp:TextBox>
 
                                                         </div>
 
                                                     </div>
                                                 </div>
-                                                <div id="resultadoNoApto" runat="server" class="row">
+                                                <div id="resultadoNoApto" visible="false" runat="server" class="row">
                                                     <div class="form-group">
 
                                                         <div class="col-sm-2">
@@ -230,19 +234,10 @@
                                                             <asp:LinqDataSource ID="LinqDataSource1" runat="server" ContextTypeName="legLinq.LegalesDataContext" EntityTypeName="" OrderBy="Motivo" TableName="mVTVMotivosRechazos">
                                                             </asp:LinqDataSource>
                                                         </div>
-                                                        <div class="col-sm-2">
-                                                            <label class=" control-label">Nuevo Mecanico</label>
-
-                                                           <asp:DropDownList ID="ddNuevoMecanico" ClientIDMode="Static" AppendDataBoundItems="true" runat="server" AutoPostBack="true" CssClass="form-control input-sm entTab" DataTextField="Apellido" DataValueField="idLegajo">
-                                                                <asp:ListItem Text="Mecanico" Value="-1" Selected="True"></asp:ListItem>
-                                                            </asp:DropDownList>
-                                                        </div>
-
-
                                                         <div class="col-sm-5">
                                                             <label class=" control-label">Observaciones</label>
 
-                                                            <asp:TextBox ID="TextBox10" ClientIDMode="Static" data-button="Button1" AutoCompleteType="Disabled" runat="server" CssClass="form-control input-sm clickButton"></asp:TextBox>
+                                                            <asp:TextBox ID="tbObsVtvRechazo" ClientIDMode="Static" data-button="Button1" AutoCompleteType="Disabled" runat="server" CssClass="form-control input-sm clickButton"></asp:TextBox>
 
                                                         </div>
 

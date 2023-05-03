@@ -65,6 +65,7 @@
                                                             <asp:HiddenField ID="hfFueraTolerancia" ClientIDMode="Static" runat="server" Value='<%# Eval("fueraTolerancia")%>' />
                                                             <asp:HiddenField ID="hfOrigen" ClientIDMode="Static" runat="server" Value='<%# Eval("origen")%>' />
                                                             <asp:HiddenField ID="hfidOrigen" ClientIDMode="Static" runat="server" Value='<%# Eval("id")%>' />
+                                                            <asp:HiddenField ID="hfFecha" ClientIDMode="Static" runat="server" Value='<%# Eval("fecha")%>' />
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
                                                     <asp:BoundField DataField="kmsUltServ" HeaderText="Kms.Ult.Serv." ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" SortExpression="Linea"></asp:BoundField>

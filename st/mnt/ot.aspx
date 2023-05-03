@@ -71,16 +71,15 @@
                                                     <asp:BoundField DataField="nroCoche" HeaderText="Interno"></asp:BoundField>
                                                     <asp:BoundField DataField="descripcion" HeaderText="Tarea"></asp:BoundField>
 
-                                                    <asp:TemplateField HeaderText="Estado" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="30px">
+                                                   <%-- <asp:TemplateField HeaderText="Estado" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="30px">
                                                         <ItemTemplate>
-                                                            <asp:Label ID="Label112" runat="server" Text='Rechazada'></asp:Label>
-                                                            <%-- <asp:HiddenField ID="hfCant" ClientIDMode="Static" runat="server" Value='<%# Eval("cant")%>' />
-                                                            <asp:HiddenField ID="hfidDetalle" ClientIDMode="Static" runat="server" Value='<%# Eval("idMov")%>' />--%>
+                                                            <asp:Label ID="Label112" runat="server" Text='<%#IIf(Eval("estado") = 1, "Pendiente", IIf(Eval("estado") = 2, "Apto") %>'></asp:Label>
+                                                           
                                                         </ItemTemplate>
-                                                    </asp:TemplateField>
+                                                    </asp:TemplateField>--%>
                                                     <asp:TemplateField HeaderText="Turno" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="30px">
                                                         <ItemTemplate>
-                                                            <asp:Label ID="Label222" runat="server" Text='<%# Format(Eval("fecha"), "dd/MM/yy")%>'></asp:Label>
+                                                            <asp:Label ID="Label222" runat="server" Text='<%# Format(Eval("fechaTurno"), "dd/MM/yy")%>'></asp:Label>
                                                             <%-- <asp:HiddenField ID="hfCant" ClientIDMode="Static" runat="server" Value='<%# Eval("cant")%>' />
                                                             <asp:HiddenField ID="hfidDetalle" ClientIDMode="Static" runat="server" Value='<%# Eval("idMov")%>' />--%>
                                                         </ItemTemplate>

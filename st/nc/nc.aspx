@@ -192,7 +192,7 @@
                                                 <asp:DropDownList ID="ddRepuestos" ClientIDMode="Static" AppendDataBoundItems="true" DataSourceID="ldsRep" DataTextField="articulo" DataValueField="idArticulo" runat="server" CssClass="form-control col-6 input-sm entTab">
                                                     <asp:ListItem Text="Seleccione un Articulo" Value="-2" Selected="True"></asp:ListItem>
                                                 </asp:DropDownList>
-                                                <asp:LinqDataSource ID="ldsRep" runat="server" ContextTypeName="legLinq.LegalesDataContext" EntityTypeName="" OrderBy="articulo" TableName="vStArticulos">
+                                                <asp:LinqDataSource ID="ldsRep" runat="server" ContextTypeName="legLinq.LegalesDataContext" EntityTypeName="" OrderBy="articulo" TableName="vStArticulos" Where="baja = 0">
                                                 </asp:LinqDataSource>
                                             </div>
 

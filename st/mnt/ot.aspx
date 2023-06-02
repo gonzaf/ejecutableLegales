@@ -27,7 +27,7 @@
                                             <asp:LinqDataSource ID="LinqDataSource1" runat="server" ContextTypeName="legLinq.LegalesDataContext" EntityTypeName="" OrderBy="Descripcion" TableName="tLinea">
                                             </asp:LinqDataSource>
                                             &nbsp;&nbsp; 
-                                               <asp:DropDownList ID="ddCabeceras" AppendDataBoundItems="true" runat="server" CssClass="form-control input-sm entTab" DataTextField="Nombre" DataValueField="idCabecera">
+                                               <asp:DropDownList ID="ddCabeceras" Visible="false" AppendDataBoundItems="true" runat="server" CssClass="form-control input-sm entTab" DataTextField="Nombre" DataValueField="idCabecera">
                                                    <asp:ListItem Text="Todos las Cabeceras" Value="-2" Selected="True"></asp:ListItem>
                                                </asp:DropDownList>
                                             &nbsp;&nbsp; 

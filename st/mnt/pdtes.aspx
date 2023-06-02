@@ -131,7 +131,10 @@
                                                     </asp:TemplateField>
                                                     <asp:TemplateField HeaderText="Tarea" ItemStyle-HorizontalAlign="left" HeaderStyle-HorizontalAlign="Center">
                                                         <ItemTemplate>
-                                                            <asp:Label ID="Labelsssa2" runat="server" Text='<%#String.Concat(Eval("tarea"), " (", Eval("idTarea"), ")") %>'></asp:Label>
+                                                            <asp:Label ID="Labelsssa2" runat="server" 
+                                                                BackColor='<%# IIf(Eval("origen") = "VTV" And Eval("kmsParciales") = -333, Drawing.Color.Red, IIf(Eval("origen") = "VTV" And Eval("kmsParciales") = -444, Drawing.Color.Green, Drawing.Color.White)) %>' 
+                                                                foreColor='<%# IIf(Eval("origen") = "VTV" And Eval("kmsParciales") = -333, Drawing.Color.white, IIf(Eval("origen") = "VTV" And Eval("kmsParciales") = -444, Drawing.Color.white, Drawing.Color.black)) %>'
+                                                                Text='<%#String.Concat(Eval("tarea"), " (", Eval("idTarea"), ")") %>'></asp:Label>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
                                                     <asp:TemplateField HeaderText="Ult.Serv" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="30px">

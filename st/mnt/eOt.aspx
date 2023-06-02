@@ -176,7 +176,7 @@
                                                         </div>
                                                         <div class="col-sm-1">
                                                             <label class=" control-label">Turno</label>
-                                                            <asp:TextBox ID="tbFechaTurnoVTV" ClientIDMode="Static" data-button="Button1" AutoComplete="off" runat="server" CssClass="form-control input-sm datepicker"></asp:TextBox>
+                                                            <asp:TextBox ID="tbFechaTurnoVTV" Enabled="false" ClientIDMode="Static" data-button="Button1" AutoComplete="off" runat="server" CssClass="form-control input-sm datepicker"></asp:TextBox>
                                                         </div>
                                                         <div class="col-sm-2">
                                                             <label class="control-label">Traslado </label>
@@ -196,6 +196,10 @@
                                                                 <asp:ListItem Text="No Apto" Value="3"></asp:ListItem>
                                                                 <asp:ListItem Text="Condicional" Value="4"></asp:ListItem>
                                                             </asp:DropDownList>
+                                                        </div>
+                                                        <div class="col-sm-2">
+                                                            <label class=" control-label">QR</label>
+                                                            <asp:TextBox ID="tbQR" TextMode="MultiLine" ClientIDMode="Static" runat="server" CssClass="form-control input-sm"></asp:TextBox>
                                                         </div>
 
                                                     </div>
@@ -230,7 +234,7 @@
                                                         <div class="col-sm-2">
                                                             <label class=" control-label">Motivo del Rechazo</label>
                                                             <asp:DropDownList ID="ddMotivoRechazo" DataSourceID="LinqDataSource1" AppendDataBoundItems="true" DataTextField="Motivo" DataValueField="id" runat="server" CssClass="form-control col-6 input-sm entTab">
-                                                                                                                            </asp:DropDownList>
+                                                            </asp:DropDownList>
                                                             <asp:LinqDataSource ID="LinqDataSource1" runat="server" ContextTypeName="legLinq.LegalesDataContext" EntityTypeName="" OrderBy="Motivo" TableName="mVTVMotivosRechazos">
                                                             </asp:LinqDataSource>
                                                         </div>

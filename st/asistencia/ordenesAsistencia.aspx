@@ -124,6 +124,17 @@
                                             </div>
 
                                             <div class="col margin-1-rem">
+                                                <label class="col control-label">Pérdida Kms</label>
+                                                <div class="col">
+                                                    <asp:DropDownList ID="ddSiPierdeKms" AppendDataBoundItems="true" runat="server" CssClass="form-control input-sm entTab" DataTextField="Label" DataValueField="id">
+                                                        <asp:ListItem Text="Sin filtro" Value="-2" Selected="True"></asp:ListItem>
+                                                        <asp:ListItem Text="Con Pérdida" Value="1" Selected="False"></asp:ListItem>
+                                                        <asp:ListItem Text="Sin Pérdida" Value="0" Selected="False"></asp:ListItem>
+                                                    </asp:DropDownList>
+                                                </div>
+                                            </div>
+
+                                            <div class="col margin-1-rem">
                                                 <asp:Button ID="btn_buscar"
                                                     runat="server"
                                                     ControlStyle-CssClass="btn btn-primary"

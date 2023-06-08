@@ -296,45 +296,9 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Dynamic_Data.AltaOrdenesAsistencia._telefonoChofer">
-<summary>
-Control telefonoChofer.
-</summary>
-<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member>
 <member name="F:Dynamic_Data.AltaOrdenesAsistencia._ddTipo">
 <summary>
 Control ddTipo.
-</summary>
-<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member>
-<member name="F:Dynamic_Data.AltaOrdenesAsistencia._ddSistema">
-<summary>
-Control ddSistema.
-</summary>
-<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member>
-<member name="F:Dynamic_Data.AltaOrdenesAsistencia._ddSubsistema">
-<summary>
-Control ddSubsistema.
-</summary>
-<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member>
-<member name="F:Dynamic_Data.AltaOrdenesAsistencia._ddComponente">
-<summary>
-Control ddComponente.
 </summary>
 <remarks>
 Campo generado automáticamente.
@@ -368,9 +332,9 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Dynamic_Data.AltaOrdenesAsistencia._checkSiCreoOR">
+<member name="F:Dynamic_Data.AltaOrdenesAsistencia._labelMecanico">
 <summary>
-Control checkSiCreoOR.
+Control labelMecanico.
 </summary>
 <remarks>
 Campo generado automáticamente.
@@ -503,9 +467,9 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Dynamic_Data.OrdenesAsistenciaDetalle._remolque">
+<member name="F:Dynamic_Data.OrdenesAsistenciaDetalle._ddRemolque">
 <summary>
-Control remolque.
+Control ddRemolque.
 </summary>
 <remarks>
 Campo generado automáticamente.
@@ -530,27 +494,27 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Dynamic_Data.OrdenesAsistenciaDetalle._motivoSistema">
+<member name="F:Dynamic_Data.OrdenesAsistenciaDetalle._ddSistema">
 <summary>
-Control motivoSistema.
+Control ddSistema.
 </summary>
 <remarks>
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Dynamic_Data.OrdenesAsistenciaDetalle._motivoSubsistema">
+<member name="F:Dynamic_Data.OrdenesAsistenciaDetalle._ddSubsistema">
 <summary>
-Control motivoSubsistema.
+Control ddSubsistema.
 </summary>
 <remarks>
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Dynamic_Data.OrdenesAsistenciaDetalle._motivoComponente">
+<member name="F:Dynamic_Data.OrdenesAsistenciaDetalle._ddComponente">
 <summary>
-Control motivoComponente.
+Control ddComponente.
 </summary>
 <remarks>
 Campo generado automáticamente.
@@ -575,9 +539,9 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Dynamic_Data.OrdenesAsistenciaDetalle._ddEstado">
+<member name="F:Dynamic_Data.OrdenesAsistenciaDetalle._textoOR">
 <summary>
-Control ddEstado.
+Control textoOR.
 </summary>
 <remarks>
 Campo generado automáticamente.
@@ -668,6 +632,15 @@ Para modificarlo, mueva la declaración del campo del archivo del diseñador al 
 <member name="F:Dynamic_Data.OrdenesAsistencia._ddChofer">
 <summary>
 Control ddChofer.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Dynamic_Data.OrdenesAsistencia._ddSiPierdeKms">
+<summary>
+Control ddSiPierdeKms.
 </summary>
 <remarks>
 Campo generado automáticamente.

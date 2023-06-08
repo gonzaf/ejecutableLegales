@@ -62,31 +62,6 @@
 
                                         <div class="form-group flex flex-align-bottom">
 
-                                            <%--
-                                                fecha ~
-                                                interno ~ 
-                                                cabecera ~
-                                                chofer ~
-                                                tipo ~
-                                                estado ~
-                                                empresa ~
-                                            --%>
-
-                                            <%--                        
-                                                detalle x
-                                                telefonoChofer x
-                                                auxiliador x
-                                                remolque x
-                                                perdidaKms x
-                                                taller x
-                                                motivoSistema x
-                                                motivoSubsistema x
-                                                motivoComponente x
-                                                otroMotivo x
-                                                causa x
-                                                recomendacion x
-                                            --%>
-
                                             <div class="col">
                                                 <div class="margin-1-rem">
                                                     <label class="col control-label">Fecha Llamado</label>
@@ -135,7 +110,7 @@
 
                                                 <div class="margin-1-rem">
                                                     <label class="col control-label">Causa</label>
-                                                    <asp:TextBox ID="causa" runat="server" Enabled="false" ClientIDMode="Static" CssClass="entTab form-control">
+                                                    <asp:TextBox ID="causa" runat="server" Enabled="true" ClientIDMode="Static" CssClass="entTab form-control">
                                                     </asp:TextBox>
                                                 </div>
                                             </div>
@@ -147,10 +122,15 @@
                                                     </asp:TextBox>
                                                 </div>
 
-                                                <div class="margin-1-rem">
-                                                    <label class="col control-label">Con Remolque</label>
-                                                    <asp:TextBox ID="remolque" runat="server" Enabled="false" ClientIDMode="Static" CssClass="entTab form-control">
-                                                    </asp:TextBox>
+
+                                                <div class="col margin-1-rem">
+                                                    <label class="col control-label">Remolque</label>
+                                                    <div class="col">
+                                                        <asp:DropDownList ID="ddRemolque" AppendDataBoundItems="true" runat="server" CssClass="form-control input-sm entTab">
+                                                            <asp:ListItem Text="Si" Value="1" Selected="False"></asp:ListItem>
+                                                            <asp:ListItem Text="No" Value="0" Selected="True"></asp:ListItem>
+                                                        </asp:DropDownList>
+                                                    </div>
                                                 </div>
 
                                                 <div class="margin-1-rem">
@@ -161,33 +141,40 @@
 
                                                 <div class="margin-1-rem">
                                                     <label class="col control-label">Taller</label>
-                                                    <asp:TextBox ID="taller" runat="server" Enabled="false" ClientIDMode="Static" CssClass="entTab form-control">
+                                                    <asp:TextBox ID="taller" runat="server" Enabled="true" ClientIDMode="Static" CssClass="entTab form-control">
                                                     </asp:TextBox>
                                                 </div>
                                             </div>
 
                                             <div class="col">
-                                                <div class="margin-1-rem">
-                                                    <label class="col control-label">Motivo Sistema</label>
-                                                    <asp:TextBox ID="motivoSistema" runat="server" Enabled="false" ClientIDMode="Static" CssClass="entTab form-control">
-                                                    </asp:TextBox>
+                                                <div class="col margin-1-rem">
+                                                    <label class="col control-label">Sistema</label>
+                                                    <div class="col">
+                                                        <asp:DropDownList ID="ddSistema" AppendDataBoundItems="true" runat="server" CssClass="form-control input-sm entTab" DataTextField="Descripcion" DataValueField="Id" AutoPostBack="true">
+                                                            <asp:ListItem Text="Seleccione Sistema" Value="-2" Selected="True"></asp:ListItem>
+                                                        </asp:DropDownList>
+                                                    </div>
                                                 </div>
-
-                                                <div class="margin-1-rem">
-                                                    <label class="col control-label">Motivo Subsistema</label>
-                                                    <asp:TextBox ID="motivoSubsistema" runat="server" Enabled="false" ClientIDMode="Static" CssClass="entTab form-control">
-                                                    </asp:TextBox>
+                                                <div class="col margin-1-rem">
+                                                    <label class="col control-label">Subsistema</label>
+                                                    <div class="col">
+                                                        <asp:DropDownList ID="ddSubsistema" AppendDataBoundItems="true" runat="server" CssClass="form-control input-sm entTab" DataTextField="Descripcion" DataValueField="Id" AutoPostBack="true">
+                                                            <asp:ListItem Text="Seleccione Subsistema" Value="-2" Selected="True"></asp:ListItem>
+                                                        </asp:DropDownList>
+                                                    </div>
                                                 </div>
-
-                                                <div class="margin-1-rem">
-                                                    <label class="col control-label">Motivo Componente</label>
-                                                    <asp:TextBox ID="motivoComponente" runat="server" Enabled="false" ClientIDMode="Static" CssClass="entTab form-control">
-                                                    </asp:TextBox>
+                                                <div class="col margin-1-rem">
+                                                    <label class="col control-label">Componente</label>
+                                                    <div class="col">
+                                                        <asp:DropDownList ID="ddComponente" AppendDataBoundItems="true" runat="server" CssClass="form-control input-sm entTab" DataTextField="Descripcion" DataValueField="Id" AutoPostBack="true">
+                                                            <asp:ListItem Text="Seleccione Componente" Value="-2" Selected="True"></asp:ListItem>
+                                                        </asp:DropDownList>
+                                                    </div>
                                                 </div>
 
                                                 <div class="margin-1-rem">
                                                     <label class="col control-label">Otros Motivos</label>
-                                                    <asp:TextBox ID="otroMotivo" runat="server" Enabled="false" ClientIDMode="Static" CssClass="entTab form-control">
+                                                    <asp:TextBox ID="otroMotivo" runat="server" Enabled="true" ClientIDMode="Static" CssClass="entTab form-control">
                                                     </asp:TextBox>
                                                 </div>
                                             </div>
@@ -196,22 +183,20 @@
 
                                                 <div class="margin-1-rem">
                                                     <label class="col control-label">Recomendación</label>
-                                                    <asp:TextBox ID="recomendacion" runat="server" Enabled="false" ClientIDMode="Static" CssClass="entTab form-control">
+                                                    <asp:TextBox ID="recomendacion" runat="server" Enabled="true" ClientIDMode="Static" CssClass="entTab form-control">
                                                     </asp:TextBox>
                                                 </div>
                                             </div>
 
-                                            <div class="col margin-1-rem">
-                                                <label class="col control-label">Estado</label>
-                                                <div class="col">
-                                                    <asp:DropDownList ID="ddEstado" AppendDataBoundItems="true" runat="server" CssClass="form-control input-sm entTab" DataTextField="Label" DataValueField="Id">
-                                                        <asp:ListItem Text="Sin Estado" Value="-2" Selected="True"></asp:ListItem>
-                                                    </asp:DropDownList>
-                                                </div>
-                                            </div>
-
-
                                         </div>
+
+                                        <hr />
+
+                                        <div>
+                                            <p id="textoOR" Visible="false" runat="server" style="font-weight:bold">Orden de reparación asociada: <a href="/st/mnt/eOt.aspx?id=<%= IdOrdenReparacion %>"> <%= IdOrdenReparacion %>  </a></p>
+                                  
+                                        </div>
+
                                     </div>
                                 </div>
 

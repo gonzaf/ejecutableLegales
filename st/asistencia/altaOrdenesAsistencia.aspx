@@ -46,9 +46,6 @@
             font-weight: bold
         }
 
-        #ContentPlaceHolder1_checkSiCreoOR {
-            margin: 1rem;
-        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -106,9 +103,7 @@
                                                         CssClass="entTab form-control input-sm">
                                                     </asp:TextBox>
                                                 </div>
-                                            </div>
 
-                                            <div class="flex">
                                                 <div class="col margin-1-rem">
                                                     <label class="col control-label">Chofer</label>
                                                     <asp:TextBox ID="chofer"
@@ -117,23 +112,12 @@
                                                         ClientIDMode="Static"
                                                         data-next="mecanico"
                                                         Enabled="false"
-                                                        Style="width:auto"
-                                                        CssClass="entTab form-control input-sm">
-                                                    </asp:TextBox>
-                                                </div>
-
-                                                <div class="col margin-1-rem">
-                                                    <label class="col control-label">Telefono Chofer</label>
-                                                    <asp:TextBox ID="telefonoChofer"
-                                                        runat="server"
-                                                        AutoCompleteType="Disabled"
-                                                        ClientIDMode="Static"
-                                                        data-next="ddTipo"
-                                                        Enabled="false"
+                                                        Style="width: auto"
                                                         CssClass="entTab form-control input-sm">
                                                     </asp:TextBox>
                                                 </div>
                                             </div>
+
 
 
                                             <hr />
@@ -142,35 +126,12 @@
                                                 <div class="col margin-1-rem">
                                                     <label class="col control-label">Tipo</label>
                                                     <div class="col">
-                                                        <asp:DropDownList ID="ddTipo" AppendDataBoundItems="true" runat="server" CssClass="form-control input-sm entTab" DataTextField="Label" DataValueField="id">
+                                                        <asp:DropDownList ID="ddTipo" AppendDataBoundItems="true" runat="server" CssClass="form-control input-sm entTab" DataTextField="Label" DataValueField="id"  AutoPostBack="true">
                                                             <asp:ListItem Text="Seleccione Tipo" Value="-2" Selected="True"></asp:ListItem>
                                                         </asp:DropDownList>
                                                     </div>
                                                 </div>
-                                                <div class="col margin-1-rem">
-                                                    <label class="col control-label">Sistema</label>
-                                                    <div class="col">
-                                                        <asp:DropDownList ID="ddSistema" AppendDataBoundItems="true" runat="server" CssClass="form-control input-sm entTab" DataTextField="Descripcion" DataValueField="Id" AutoPostBack="true">
-                                                            <asp:ListItem Text="Seleccione Sistema" Value="-2" Selected="True"></asp:ListItem>
-                                                        </asp:DropDownList>
-                                                    </div>
-                                                </div>
-                                                <div class="col margin-1-rem">
-                                                    <label class="col control-label">Subsistema</label>
-                                                    <div class="col">
-                                                        <asp:DropDownList ID="ddSubsistema" AppendDataBoundItems="true" runat="server" CssClass="form-control input-sm entTab" DataTextField="Descripcion" DataValueField="Id" AutoPostBack="true">
-                                                            <asp:ListItem Text="Seleccione Subsistema" Value="-2" Selected="True"></asp:ListItem>
-                                                        </asp:DropDownList>
-                                                    </div>
-                                                </div>
-                                                <div class="col margin-1-rem">
-                                                    <label class="col control-label">Componente</label>
-                                                    <div class="col">
-                                                        <asp:DropDownList ID="ddComponente" AppendDataBoundItems="true" runat="server" CssClass="form-control input-sm entTab" DataTextField="Descripcion" DataValueField="Id" AutoPostBack="true">
-                                                            <asp:ListItem Text="Seleccione Componente" Value="-2" Selected="True"></asp:ListItem>
-                                                        </asp:DropDownList>
-                                                    </div>
-                                                </div>
+
                                                 <div class="col margin-1-rem">
                                                     <label class="col control-label">Auxiliador</label>
                                                     <asp:DropDownList ID="ddAuxiliador" AppendDataBoundItems="true" runat="server" CssClass="form-control input-sm entTab" DataTextField="Label" DataValueField="Id">
@@ -199,16 +160,21 @@
                                                     </asp:TextBox>
                                                 </div>
 
-                                                <div class="col margin-1-rem">
-                                                    <asp:CheckBox runat="server" ID="checkSiCreoOR" Checked="false" Text=" Genera Orden Reparación" />
 
-                                                    <div class="col margin-1-rem">
-                                                        <label class="col control-label">Mecánico</label>
-                                                        <asp:DropDownList ID="ddMecanicos" AppendDataBoundItems="true" runat="server" CssClass="form-control input-sm entTab" DataTextField="Label" DataValueField="Id">
-                                                            <asp:ListItem Text="Seleccione Mecánico" Value="-2" Selected="True"></asp:ListItem>
-                                                        </asp:DropDownList>
-                                                    </div>
+                                                <div class="col margin-1-rem">
+                                                   
+                                                        <p id="labelMecanico"
+                                                            visible="false"
+                                                            runat="server"
+                                                            style="color: black; font-size: 1.2rem;">
+                                                            Se va a generar una Orden de Reparación. Seleccione Mecánico:
+                                                        </p>
+                                                  
+                                                    <asp:DropDownList Visible="false" ID="ddMecanicos" AppendDataBoundItems="true" runat="server" CssClass="form-control input-sm entTab" DataTextField="Label" DataValueField="Id">
+                                                        <asp:ListItem Text="Seleccione Mecánico" Value="-2" Selected="True"></asp:ListItem>
+                                                    </asp:DropDownList>
                                                 </div>
+
 
                                             </div>
 

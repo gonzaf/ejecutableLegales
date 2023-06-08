@@ -12,6 +12,8 @@
         Response.Redirect("/lgin.aspx")
     End If
 
+
+
     Dim permisos As tPermisos() = MySession.Current.permisos
     Dim c As Control
 
@@ -369,6 +371,7 @@
                     <li><a href="/st/mantenimiento/ordenes/consulta.aspx">Consulta Ordenes</a></li>
                     <li><a href="/st/mnt/etdSvc.aspx">Estado de los Servicios</a></li>
                     <li><a href="/st/mantenimiento/correctivo/alta.aspx"><i class="fa  fa-search-plus fa-lg"></i><span>Nueva Tarea</span></a></li>
+                    <li><a href="/st/asistencia/ordenesAsistencia.aspx">Ordenes Asistencia</a></li>
                 </ul>
             </li>
 

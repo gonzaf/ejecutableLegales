@@ -133,10 +133,14 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="margin-1-rem">
-                                                    <label class="col control-label">Perdida Kms</label>
-                                                    <asp:TextBox ID="perdidaKms" runat="server" Enabled="false" ClientIDMode="Static" CssClass="entTab form-control">
-                                                    </asp:TextBox>
+                                                <div class="col margin-1-rem">
+                                                    <label class="col control-label">Pérdida Kms</label>
+                                                    <div class="col">
+                                                        <asp:DropDownList ID="ddPerdidaKms" AppendDataBoundItems="true" runat="server" CssClass="form-control input-sm entTab">
+                                                            <asp:ListItem Text="Si" Value="1" Selected="False"></asp:ListItem>
+                                                            <asp:ListItem Text="No" Value="0" Selected="True"></asp:ListItem>
+                                                        </asp:DropDownList>
+                                                    </div>
                                                 </div>
 
                                                 <div class="margin-1-rem">
@@ -188,13 +192,6 @@
                                                 </div>
                                             </div>
 
-                                        </div>
-
-                                        <hr />
-
-                                        <div>
-                                            <p id="textoOR" Visible="false" runat="server" style="font-weight:bold">Orden de reparación asociada: <a href="/st/mnt/eOt.aspx?id=<%= IdOrdenReparacion %>"> <%= IdOrdenReparacion %>  </a></p>
-                                  
                                         </div>
 
                                     </div>

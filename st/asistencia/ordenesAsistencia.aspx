@@ -33,6 +33,10 @@
         .margin-1-rem {
             margin: 1rem;
         }
+
+        .hidden {
+            display: none;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -96,14 +100,14 @@
                                                 </div>
                                             </div>--%>
 
-                                            <div class="col margin-1-rem">
+                                  <%--          <div class="col margin-1-rem">
                                                 <label class="col control-label">Estado</label>
                                                 <div class="col">
                                                     <asp:DropDownList ID="ddEstado" AppendDataBoundItems="true" runat="server" CssClass="form-control input-sm entTab" DataTextField="Label" DataValueField="id">
                                                         <asp:ListItem Text="Sin filtro" Value="-2" Selected="True"></asp:ListItem>
                                                     </asp:DropDownList>
                                                 </div>
-                                            </div>
+                                            </div>--%>
 
                                             <div class="col margin-1-rem">
                                                 <label class="col control-label">Tipo</label>
@@ -225,19 +229,29 @@
                                             <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
                                         </asp:BoundField>
 
-                                        <asp:BoundField DataField="IdOrdenReparacion" HeaderText="Nro OR Asociada"
+             <%--                           <asp:BoundField DataField="IdOrdenReparacion" HeaderText="Nro OR Asociada"
                                             SortExpression="IdOrdenReparacion"
                                             HeaderStyle-CssClass="text-center"
                                             ItemStyle-HorizontalAlign="Center">
                                             <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
-                                        </asp:BoundField>
+                                            <ItemStyle />
+                                        </asp:BoundField>--%>
 
-                                        <asp:BoundField DataField="mEstadoOrdenAsistencia.Codigo" HeaderText="Estado"
+                                        <asp:TemplateField>
+                                            <HeaderTemplate>Nro. OR Asociada</HeaderTemplate>
+                                            <ItemTemplate>
+                                                <asp:Button ID="btn_or" runat="server" ControlStyle-CssClass="btn btn-xs"
+                                                    Style="color: #242424;" Text='<%# Eval("IdOrdenReparacion") %>'
+                                                    CommandName="ordenReparacion" CommandArgument='<%# Eval("IdOrdenReparacion") %>' Visible='<%# IIf(Eval("IdOrdenReparacion") = 0, False, True) %>'/>
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
+
+                                 <%--       <asp:BoundField DataField="mEstadoOrdenAsistencia.Codigo" HeaderText="Estado"
                                             SortExpression="Estado"
                                             HeaderStyle-CssClass="text-center"
                                             ItemStyle-HorizontalAlign="Center">
                                             <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
-                                        </asp:BoundField>
+                                        </asp:BoundField>--%>
 
 
                                         <asp:TemplateField>

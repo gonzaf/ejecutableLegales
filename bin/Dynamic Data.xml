@@ -476,9 +476,9 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Dynamic_Data.OrdenesAsistenciaDetalle._perdidaKms">
+<member name="F:Dynamic_Data.OrdenesAsistenciaDetalle._ddPerdidaKms">
 <summary>
-Control perdidaKms.
+Control ddPerdidaKms.
 </summary>
 <remarks>
 Campo generado automáticamente.
@@ -533,15 +533,6 @@ Para modificarlo, mueva la declaración del campo del archivo del diseñador al 
 <member name="F:Dynamic_Data.OrdenesAsistenciaDetalle._recomendacion">
 <summary>
 Control recomendacion.
-</summary>
-<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member>
-<member name="F:Dynamic_Data.OrdenesAsistenciaDetalle._textoOR">
-<summary>
-Control textoOR.
 </summary>
 <remarks>
 Campo generado automáticamente.
@@ -605,15 +596,6 @@ Para modificarlo, mueva la declaración del campo del archivo del diseñador al 
 <member name="F:Dynamic_Data.OrdenesAsistencia._ddEmpresa">
 <summary>
 Control ddEmpresa.
-</summary>
-<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member>
-<member name="F:Dynamic_Data.OrdenesAsistencia._ddEstado">
-<summary>
-Control ddEstado.
 </summary>
 <remarks>
 Campo generado automáticamente.
@@ -686,6 +668,96 @@ Para modificarlo, mueva la declaración del campo del archivo del diseñador al 
 <member name="F:Dynamic_Data.OrdenesAsistencia._GridViewOrdenesDetalle">
 <summary>
 Control GridViewOrdenesDetalle.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Dynamic_Data.DetalleaOrdenesAbiertas._LinqDataSource1">
+<summary>
+Control LinqDataSource1.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Dynamic_Data.DetalleaOrdenesAbiertas._form2">
+<summary>
+Control form2.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Dynamic_Data.DetalleaOrdenesAbiertas._Orden">
+<summary>
+Control Orden.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Dynamic_Data.DetalleaOrdenesAbiertas._idCoche">
+<summary>
+Control idCoche.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Dynamic_Data.DetalleaOrdenesAbiertas._fecha">
+<summary>
+Control fecha.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Dynamic_Data.DetalleaOrdenesAbiertas._idLinea">
+<summary>
+Control idLinea.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Dynamic_Data.DetalleaOrdenesAbiertas._Apellido">
+<summary>
+Control Apellido.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Dynamic_Data.DetalleaOrdenesAbiertas._idPrioridad">
+<summary>
+Control idPrioridad.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Dynamic_Data.DetalleaOrdenesAbiertas._GridViewTareas">
+<summary>
+Control GridViewTareas.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Dynamic_Data.DetalleaOrdenesAbiertas._volver">
+<summary>
+Control volver.
 </summary>
 <remarks>
 Campo generado automáticamente.

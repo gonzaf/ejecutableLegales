@@ -199,7 +199,7 @@
                                                         </div>
                                                         <div class="col-sm-2">
                                                             <label class=" control-label">QR</label>
-                                                            <asp:TextBox ID="tbQR" AutoComplete="nope" TextMode="Password" ClientIDMode="Static" runat="server"  data-button="buttonQR" CssClass="form-control input-sm clickbutton"></asp:TextBox>
+                                                            <asp:TextBox ID="tbQR" AutoComplete="nope" ClientIDMode="Static" runat="server"  data-button="buttonQR" CssClass="form-control input-sm clickbutton"></asp:TextBox>
                                                             <asp:Button runat="server" style="visibility: hidden" ID="buttonQR" OnClick="buttonQR_Click"/>
                                                         </div>
 

@@ -78,7 +78,7 @@
                                             &nbsp;&nbsp;
                                             <asp:CheckBox ID="cbCorrectivo" runat="server" Checked="true" Text="Correctivo" />
                                             &nbsp;&nbsp;
-                                            <asp:CheckBox ID="cbAuxilio" runat="server" Checked="true" Text="Auxilio" />
+                                            <asp:CheckBox ID="cbAuxilio" Visible="false" runat="server" Checked="true" Text="Auxilio" />
                                             &nbsp;&nbsp;
                                             <asp:CheckBox ID="cbVtv" runat="server" Checked="true" Text="VTV" />
                                             &nbsp;&nbsp;

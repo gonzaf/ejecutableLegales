@@ -50,20 +50,25 @@
 
 
 <script language="javascript">
-    var NEW_LOC = "/st/asistencia/ordenesAsistencia.aspx";
-
+    
+    var NEW_LOC;
 
     function redireccionar() {
         setTimeout("location.href=NEW_LOC", 3000);
     }
     function imrimeyredi() {
         window.print();
-        redireccionar();
+        redireccionar()
+    }
+
+    function doThings() {
+        NEW_LOC = '<%= IIf(abiertaOCerrada = "abiertas", "/st/asistencia/ordenesAsistencia.aspx", "/st/asistencia/ordenesAsistenciaCerrada.aspx") %>';
+        setTimeout(imrimeyredi(), 1000)
     }
 </script>
 
 
-<body onload="imrimeyredi()" class="imprimir">
+<body onload="doThings()" class="imprimir">
     <div class="flexible-around">
         <div>
             <img src="imagenes/logo.jpg" width="279" height="74" />

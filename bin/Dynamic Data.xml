@@ -368,6 +368,141 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
+<member name="F:Dynamic_Data.OrdenesAsistenciaCerrada._form1">
+<summary>
+Control form1.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Dynamic_Data.OrdenesAsistenciaCerrada._interno">
+<summary>
+Control interno.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Dynamic_Data.OrdenesAsistenciaCerrada._ddCabeceras">
+<summary>
+Control ddCabeceras.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Dynamic_Data.OrdenesAsistenciaCerrada._ddEmpresa">
+<summary>
+Control ddEmpresa.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Dynamic_Data.OrdenesAsistenciaCerrada._ddTipo">
+<summary>
+Control ddTipo.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Dynamic_Data.OrdenesAsistenciaCerrada._ddChofer">
+<summary>
+Control ddChofer.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Dynamic_Data.OrdenesAsistenciaCerrada._ddSiPierdeKms">
+<summary>
+Control ddSiPierdeKms.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Dynamic_Data.OrdenesAsistenciaCerrada._fechaDesde">
+<summary>
+Control fechaDesde.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Dynamic_Data.OrdenesAsistenciaCerrada._fechaHasta">
+<summary>
+Control fechaHasta.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Dynamic_Data.OrdenesAsistenciaCerrada._ddSistema">
+<summary>
+Control ddSistema.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Dynamic_Data.OrdenesAsistenciaCerrada._ddSubsistema">
+<summary>
+Control ddSubsistema.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Dynamic_Data.OrdenesAsistenciaCerrada._ddComponente">
+<summary>
+Control ddComponente.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Dynamic_Data.OrdenesAsistenciaCerrada._btn_buscar">
+<summary>
+Control btn_buscar.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Dynamic_Data.OrdenesAsistenciaCerrada._GridViewOrdenes">
+<summary>
+Control GridViewOrdenes.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Dynamic_Data.OrdenesAsistenciaCerrada._volver">
+<summary>
+Control volver.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
 <member name="F:Dynamic_Data.OrdenesAsistenciaDetalle._LinqDataSource1">
 <summary>
 Control LinqDataSource1.

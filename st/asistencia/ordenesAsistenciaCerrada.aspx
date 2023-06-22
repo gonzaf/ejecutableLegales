@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/st/SiteST.master"
-    EnableEventValidation="false" CodeBehind="ordenesAsistencia.aspx.vb" Inherits="Dynamic_Data.OrdenesAsistencia" %>
+    EnableEventValidation="false" CodeBehind="ordenesAsistenciaCerrada.aspx.vb" Inherits="Dynamic_Data.OrdenesAsistenciaCerrada" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
@@ -22,28 +22,12 @@
             display: flex;
         }
 
-        .flex-column {
-            flex-direction: column;
-        }
-
         .flex-end {
             justify-content: end;
         }
 
         .flex-align-bottom {
             align-items: flex-end;
-        }
-
-        .flex-align-center {
-            justify-content: center;
-        }
-
-        .flex-space-between {
-            justify-content: space-between;
-        }
-
-        .flex-wrap {
-            flex-wrap: wrap;
         }
 
         .margin-1-rem {
@@ -53,27 +37,9 @@
         .hidden {
             display: none;
         }
-
-        .green-badge {
-            color: black;
-            background-color: lightyellow;
-            border-radius: 5px;
-            padding: 0 5px 0 15px;
-            font-weight: bold;
-        }
-
-        .red-badge {
-            color: black;
-            background-color: lightcoral;
-            border-radius: 5px;
-            padding: 0 5px 0 15px;
-            font-weight: bold;
-        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
-
     <section id="content">
         <section class="main padder">
             <form id="form1" runat="server">
@@ -88,9 +54,9 @@
                                     <div class="form-inline"><b>Filtrar</b></div>
                                 </header>
                                 <div class="panel-body" style="padding: 10px 30px 10px 30px">
-                                    <div class="flex flex-space-between">
+                                    <div class="form-horizontal">
 
-                                        <div class="flex flex-align-bottom flex-wrap">
+                                        <div class="form-group flex flex-align-bottom row">
 
                                             <div class="col margin-1-rem">
                                                 <label class="col control-label">Interno</label>
@@ -99,7 +65,7 @@
                                                         runat="server"
                                                         AutoCompleteType="Disabled"
                                                         ClientIDMode="Static"
-                                                        data-next="mecanico"
+                                                        data-next="ddCabeceras"
                                                         CssClass="entTab form-control input-sm">
                                                     </asp:TextBox>
                                                 </div>
@@ -152,6 +118,68 @@
                                                 </div>
                                             </div>
 
+                                        </div>
+
+                                        <div class="form-group flex flex-align-bottom row">
+                                            <div class="col margin-1-rem">
+                                                <label class="col control-label">Fecha Desde</label>
+                                                <div class="col">
+                                                    <asp:TextBox ID="fechaDesde"
+                                                        runat="server"
+                                                        AutoComplete="off"
+                                                        onkeypress="return false"
+                                                        ClientIDMode="Static"
+                                                        data-next="fecha_hasta"
+                                                        CssClass="entTab form-control datepicker"
+                                                        onfocus="this.select()"
+                                                        onblur="convert_date(this)">
+                                                    </asp:TextBox>
+                                                </div>
+                                            </div>
+
+                                            <div class="col margin-1-rem">
+                                                <label class="col control-label">Fecha Hasta</label>
+                                                <div class="col">
+                                                    <asp:TextBox ID="fechaHasta"
+                                                        runat="server"
+                                                        AutoComplete="off"
+                                                        onkeypress="return false"
+                                                        ClientIDMode="Static"
+                                                        data-next="coche"
+                                                        CssClass="entTab form-control datepicker"
+                                                        onfocus="this.select()"
+                                                        onblur="convert_date(this)">
+                                                    </asp:TextBox>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col margin-1-rem">
+                                                <label class="col control-label">Sistema</label>
+                                                <div class="col">
+                                                    <asp:DropDownList ID="ddSistema" AppendDataBoundItems="true" runat="server" CssClass="form-control input-sm entTab" DataTextField="Descripcion" DataValueField="Id" AutoPostBack="true">
+                                                        <asp:ListItem Text="Seleccione Sistema" Value="-2" Selected="True"></asp:ListItem>
+                                                    </asp:DropDownList>
+                                                </div>
+                                            </div>
+                                            <div class="col margin-1-rem">
+                                                <label class="col control-label">Subsistema</label>
+                                                <div class="col">
+                                                    <asp:DropDownList ID="ddSubsistema" AppendDataBoundItems="true" runat="server" CssClass="form-control input-sm entTab" DataTextField="Descripcion" DataValueField="Id" AutoPostBack="true">
+                                                        <asp:ListItem Text="Seleccione Subsistema" Value="-2" Selected="True"></asp:ListItem>
+                                                    </asp:DropDownList>
+                                                </div>
+                                            </div>
+                                            <div class="col margin-1-rem">
+                                                <label class="col control-label">Componente</label>
+                                                <div class="col">
+                                                    <asp:DropDownList ID="ddComponente" AppendDataBoundItems="true" runat="server" CssClass="form-control input-sm entTab" DataTextField="Descripcion" DataValueField="Id" AutoPostBack="true">
+                                                        <asp:ListItem Text="Seleccione Componente" Value="-2" Selected="True"></asp:ListItem>
+                                                    </asp:DropDownList>
+                                                </div>
+                                            </div>
+
+
                                             <div class="col margin-1-rem">
                                                 <asp:Button ID="btn_buscar"
                                                     runat="server"
@@ -160,13 +188,7 @@
                                                     Text="Buscar"
                                                     CommandName="buscar" />
                                             </div>
-
                                         </div>
-                                        <div class="flex flex-column flex-align-center">
-                                            <p class="green-badge">Ordenes Asistencia en Curso: <%= cantidadOrdenesAsistencia %></p>
-                                            <p class="red-badge">Quedos Pendientes: <%= cantidadQuedosPendientes %></p>
-                                        </div>
-
                                     </div>
                                 </div>
 
@@ -238,6 +260,14 @@
                                             <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
                                         </asp:BoundField>
 
+             <%--                           <asp:BoundField DataField="IdOrdenReparacion" HeaderText="Nro OR Asociada"
+                                            SortExpression="IdOrdenReparacion"
+                                            HeaderStyle-CssClass="text-center"
+                                            ItemStyle-HorizontalAlign="Center">
+                                            <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
+                                            <ItemStyle />
+                                        </asp:BoundField>--%>
+
                                         <asp:TemplateField>
                                             <HeaderTemplate>Nro. OR Asociada</HeaderTemplate>
                                             <ItemTemplate>
@@ -258,10 +288,11 @@
                                         <asp:TemplateField>
                                             <ItemTemplate>
                                                 <asp:Button ID="btn_detalle"
+                                                    Visible='<%# IIf(siTienePermisoParaCorregir Is Nothing, False, True) %>'
                                                     runat="server"
                                                     ControlStyle-CssClass="btn btn-xs"
-                                                    Style="color: #242424;"
-                                                    Text="Editar"
+                                                    Style="color: white; background-color: red;"
+                                                    Text="Corregir"
                                                     CommandName="detalle"
                                                     CommandArgument='<%# Eval("Id") %>' />
 
@@ -298,188 +329,12 @@
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="panel-body">
-                            <section class="panel">
-                                <header class="panel-heading"><b>Quedos Pendientes</b></header>
-
-
-                                <asp:GridView ID="GridViewQuedos" runat="server"
-                                    ShowFooter="true" AutoGenerateColumns="False"
-                                    DataKeyNames="Id"
-                                    CssClass="table table-striped m-b-none text-small"
-                                    BorderStyle="None" GridLines="None"
-                                    OnPreRender="GVPreRender">
-
-                                    <Columns>
-                                        <asp:BoundField DataField="FechaLlamada" HeaderText="Fecha"
-                                            SortExpression="FechaLlamada"
-                                            HeaderStyle-CssClass="text-center"
-                                            ItemStyle-HorizontalAlign="Center">
-                                            <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
-                                        </asp:BoundField>
-
-                                        <asp:BoundField DataField="id"
-                                            HeaderText="Nro Quedo"
-                                            SortExpression="id"
-                                            HeaderStyle-CssClass="text-center"
-                                            ItemStyle-HorizontalAlign="Center">
-                                            <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
-                                        </asp:BoundField>
-
-
-                                        <asp:BoundField DataField="Interno"
-                                            HeaderText="Interno"
-                                            SortExpression="Interno"
-                                            HeaderStyle-CssClass="text-center"
-                                            ItemStyle-HorizontalAlign="Center">
-                                            <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
-                                        </asp:BoundField>
-
-
-                                        <asp:BoundField DataField="LegajoChofer" HeaderText="Chofer"
-                                            SortExpression="fechaCierre"
-                                            HeaderStyle-CssClass="text-center"
-                                            ItemStyle-HorizontalAlign="Center">
-                                            <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
-                                        </asp:BoundField>
-
-
-                                        <asp:TemplateField>
-                                            <ItemTemplate>
-                                                <asp:Button ID="btn_generar"
-                                                    runat="server"
-                                                    ControlStyle-CssClass="btn btn-xs btn-warning"
-                                                    Style="color: #242424;"
-                                                    Text="Generar OA"
-                                                    CommandName="generaroa"
-                                                    CommandArgument='<%# Eval("id") %>' />
-                                            </ItemTemplate>
-                                        </asp:TemplateField>
-
-
-
-                                    </Columns>
-
-                                    <RowStyle CssClass="td"></RowStyle>
-                                </asp:GridView>
-
-                            </section>
-                        </div>
-                    </div>
-
                 </div>
 
 
             </form>
         </section>
     </section>
-
-    
-    <div hidden>
-             <asp:GridView ID="GridViewOrdenesDetalle" runat="server"
-                                    ShowFooter="true" AutoGenerateColumns="False"
-                                    DataKeyNames="Id"
-                                    CssClass="table table-striped m-b-none text-small"
-                                    BorderStyle="None" GridLines="None"
-                                    OnPreRender="GVPreRender">
-
-                                    <Columns>
-                                        <asp:BoundField DataField="fecha" HeaderText="Fecha"
-                                            SortExpression="fecha"
-                                            HeaderStyle-CssClass="text-center"
-                                            ItemStyle-HorizontalAlign="Center">
-                                            <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
-                                        </asp:BoundField>
-
-                                        <asp:BoundField DataField="fechaInicio" HeaderText="FechaInicio"
-                                            SortExpression="fechaInicio"
-                                            HeaderStyle-CssClass="text-center"
-                                            ItemStyle-HorizontalAlign="Center">
-                                            <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
-                                        </asp:BoundField>
-
-                                        <asp:BoundField DataField="Orden"
-                                            HeaderText="Orden"
-                                            SortExpression="Orden"
-                                            HeaderStyle-CssClass="text-center"
-                                            ItemStyle-HorizontalAlign="Center">
-                                            <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
-                                        </asp:BoundField>
-
-                                        <asp:BoundField DataField="nroCoche"
-                                            HeaderText="Interno"
-                                            SortExpression="nroCoche"
-                                            HeaderStyle-CssClass="text-center"
-                                            ItemStyle-HorizontalAlign="Center">
-                                            <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
-                                        </asp:BoundField>
-
-                                        <asp:BoundField DataField="idLinea"
-                                            HeaderText="Linea"
-                                            SortExpression="idLinea"
-                                            HeaderStyle-CssClass="text-center"
-                                            ItemStyle-HorizontalAlign="Center">
-                                            <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
-                                        </asp:BoundField>
-
-                                        <asp:BoundField DataField="Apellido"
-                                            HeaderText="Apellido Mecanico"
-                                            SortExpression="Apellido"
-                                            HeaderStyle-CssClass="text-center"
-                                            ItemStyle-HorizontalAlign="Center">
-                                            <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
-                                        </asp:BoundField>
-
-                                        <asp:BoundField DataField="Descripcion" HeaderText="Tarea"
-                                            SortExpression="Descripcion"
-                                            HeaderStyle-CssClass="text-center"
-                                            ItemStyle-HorizontalAlign="Center">
-                                            <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
-                                        </asp:BoundField>
-
-                                        <asp:BoundField DataField="observaciones" HeaderText="Detalle"
-                                            SortExpression="observaciones"
-                                            HeaderStyle-CssClass="text-center"
-                                            ItemStyle-HorizontalAlign="Center">
-                                            <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
-                                        </asp:BoundField>
-
-                                        <asp:BoundField DataField="fechaFin" HeaderText="Fecha Fin"
-                                            SortExpression="fechaFin"
-                                            HeaderStyle-CssClass="text-center"
-                                            ItemStyle-HorizontalAlign="Center">
-                                            <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
-                                        </asp:BoundField>
-
-                                        <asp:BoundField DataField="fechaCierre" HeaderText="Fecha Cierre"
-                                            SortExpression="fechaCierre"
-                                            HeaderStyle-CssClass="text-center"
-                                            ItemStyle-HorizontalAlign="Center">
-                                            <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
-                                        </asp:BoundField>
-
-                                        <asp:BoundField DataField="resultado" HeaderText="Resultado"
-                                            SortExpression="resultado"
-                                            HeaderStyle-CssClass="text-center"
-                                            ItemStyle-HorizontalAlign="Center">
-                                            <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
-                                        </asp:BoundField>
-
-                                        <asp:BoundField DataField="Origen" HeaderText="Origen"
-                                            SortExpression="Origen"
-                                            HeaderStyle-CssClass="text-center"
-                                            ItemStyle-HorizontalAlign="Center">
-                                            <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
-                                        </asp:BoundField>
-
-                                    </Columns>
-
-                                    <RowStyle CssClass="td"></RowStyle>
-                                </asp:GridView>
-    </div>
-
-
 
     <script>
 

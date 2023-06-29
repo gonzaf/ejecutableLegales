@@ -108,7 +108,7 @@
             <p class="cuerpo">Orden Reparación: <%= idOrdenReparacion %></p>
         </div>
         <div>
-            <p class="cuerpo">Estado:  <%= estado %></p>
+            <p class="cuerpo">Observaciones: <%=observaciones %></p>
         </div>
     </div>
 
@@ -124,15 +124,46 @@
 
     <div class="flexible-around">
         <div>
-            <p class="cuerpo">Observaciones: <%=observaciones %></p>
+            <p class="cuerpo">Otro Motivo: <%= otroMotivo %></p>
+        </div>
+        <div>
+            <p class="cuerpo">Causa:  <%= causa %></p>
         </div>
     </div>
+    <div class="flexible-around">
+        <div>
+            <p class="cuerpo">Recomendación:  <%= recomendacion %></p>
+        </div>
+        <div>
+            <p class="cuerpo">Remolcado:  <%= remolque %></p>
+        </div>
+    </div>
+
+    <div class="flexible-around">
+        <div>
+            <p class="cuerpo">Taller Externo: <%= taller %></p>
+        </div>
+        <div>
+            <p class="cuerpo">Sistema:  <%= sistema %></p>
+        </div>
+    </div>
+    <div class="flexible-around">
+        <div>
+            <p class="cuerpo">Subsistema:  <%= subsistema %></p>
+        </div>
+        <div>
+            <p class="cuerpo">Componente:  <%= componente %></p>
+        </div>
+    </div>
+        
 
     <hr class="<%= IIf(idOrdenReparacion = 0, "hidden", "") %>" />
     <div class="flexible-around <%= IIf(idOrdenReparacion = 0, "hidden", "") %>">
         <div>
             <p class="cuerpo bold">Orden de reparación asociada: <%=idOrdenReparacion %></p>
         </div>
+    </div>    
+    <div class="flexible-around <%= IIf(idOrdenReparacion = 0, "hidden", "") %>">
         <div>
             <p class="cuerpo">Mecánico asignado: <%=datosMecanico %></p>
         </div>

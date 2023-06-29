@@ -213,23 +213,6 @@
 
                                     <Columns>
                                         <asp:BoundField DataField="fecha" HeaderText="Fecha"
-                                            SortExpression="fecha"
-                                            HeaderStyle-CssClass="text-center"
-                                            ItemStyle-HorizontalAlign="Center">
-                                            <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
-                                        </asp:BoundField>
-
-                                        <asp:BoundField DataField="Id"
-                                            HeaderText="Nro OA"
-                                            SortExpression="Id"
-                                            HeaderStyle-CssClass="text-center"
-                                            ItemStyle-HorizontalAlign="Center">
-                                            <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
-                                        </asp:BoundField>
-
-                                        <asp:BoundField DataField="mTipoOrdenAsistencia.Codigo"
-                                            HeaderText="Tipo"
-                                            SortExpression="Tipo"
                                             HeaderStyle-CssClass="text-center"
                                             ItemStyle-HorizontalAlign="Center">
                                             <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
@@ -237,36 +220,69 @@
 
                                         <asp:BoundField DataField="Interno"
                                             HeaderText="Interno"
-                                            SortExpression="Interno"
+                                            HeaderStyle-CssClass="text-center"
+                                            ItemStyle-HorizontalAlign="Center">
+                                            <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
+                                        </asp:BoundField>
+
+                                        <asp:BoundField DataField="Linea"
+                                            HeaderText="Línea"
                                             HeaderStyle-CssClass="text-center"
                                             ItemStyle-HorizontalAlign="Center">
                                             <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
                                         </asp:BoundField>
 
 
-                                        <asp:BoundField DataField="tCabecera.Nombre"
-                                            HeaderText="Cabecera"
-                                            SortExpression="Cabecera"
+                                        <asp:BoundField DataField="ApellidoChofer" HeaderText="Chofer"
                                             HeaderStyle-CssClass="text-center"
                                             ItemStyle-HorizontalAlign="Center">
                                             <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
                                         </asp:BoundField>
 
-
-                                        <asp:BoundField DataField="LegajoChofer" HeaderText="Chofer"
-                                            SortExpression="fechaCierre"
+                                        <asp:BoundField DataField="Sistema" HeaderText="Sistema"
                                             HeaderStyle-CssClass="text-center"
                                             ItemStyle-HorizontalAlign="Center">
                                             <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
                                         </asp:BoundField>
 
-             <%--                           <asp:BoundField DataField="IdOrdenReparacion" HeaderText="Nro OR Asociada"
-                                            SortExpression="IdOrdenReparacion"
+                                        <asp:BoundField DataField="Subsistema" HeaderText="Subsistema"
                                             HeaderStyle-CssClass="text-center"
                                             ItemStyle-HorizontalAlign="Center">
                                             <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
-                                            <ItemStyle />
-                                        </asp:BoundField>--%>
+                                        </asp:BoundField>
+
+                                        <asp:BoundField DataField="Componente" HeaderText="Componente"
+                                            HeaderStyle-CssClass="text-center"
+                                            ItemStyle-HorizontalAlign="Center">
+                                            <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
+                                        </asp:BoundField>
+
+                                        <asp:BoundField DataField="Interno" HeaderText="Interno"
+                                            HeaderStyle-CssClass="text-center"
+                                            ItemStyle-HorizontalAlign="Center">
+                                            <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
+                                        </asp:BoundField>
+
+                                        <asp:BoundField DataField="NombreCabecera" HeaderText="Cabecera"
+                                            HeaderStyle-CssClass="text-center"
+                                            ItemStyle-HorizontalAlign="Center">
+                                            <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
+                                        </asp:BoundField>
+
+                                        <asp:TemplateField>
+                                            <HeaderTemplate>Remolque</HeaderTemplate>
+                                            <ItemTemplate>
+                                                <p><%# IIf(Eval("Remolque") = 0, "NO", "SI") %></p>
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
+
+                                        <asp:TemplateField>
+                                            <HeaderTemplate>Pérdida kms</HeaderTemplate>
+                                            <ItemTemplate>
+                                                <p><%# IIf(Eval("PerdidaKilometros") = 0, "NO", "SI") %></p>
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
+
 
                                         <asp:TemplateField>
                                             <HeaderTemplate>Nro. OR Asociada</HeaderTemplate>
@@ -277,12 +293,6 @@
                                             </ItemTemplate>
                                         </asp:TemplateField>
 
-                                 <%--       <asp:BoundField DataField="mEstadoOrdenAsistencia.Codigo" HeaderText="Estado"
-                                            SortExpression="Estado"
-                                            HeaderStyle-CssClass="text-center"
-                                            ItemStyle-HorizontalAlign="Center">
-                                            <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
-                                        </asp:BoundField>--%>
 
 
                                         <asp:TemplateField>

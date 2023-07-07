@@ -503,6 +503,24 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
+<member name="F:Dynamic_Data.OrdenesAsistenciaCerrada._btnExport">
+<summary>
+Control btnExport.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Dynamic_Data.OrdenesAsistenciaCerrada._GridToBePrinted">
+<summary>
+Control GridToBePrinted.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
 <member name="F:Dynamic_Data.OrdenesAsistenciaDetalle._LinqDataSource1">
 <summary>
 Control LinqDataSource1.
@@ -2288,6 +2306,15 @@ Para modificarlo, mueva la declaración del campo del archivo del diseñador al 
 <member name="F:Dynamic_Data.etdSvc._cancelar">
 <summary>
 Control cancelar.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Dynamic_Data.pr105._Repeater1">
+<summary>
+Control Repeater1.
 </summary>
 <remarks>
 Campo generado automáticamente.

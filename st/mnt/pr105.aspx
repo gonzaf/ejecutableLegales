@@ -1,4 +1,4 @@
-<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="prCierre.aspx.vb" Inherits="Dynamic_Data.prCierre" %>
+<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="pr105.aspx.vb" Inherits="Dynamic_Data.pr105" %>
 
 <!DOCTYPE html>
 
@@ -53,8 +53,7 @@
         <tr>
             <td colspan="2" align="center">
                 <p class="titulo">Orden de Trabajo Nº: <%=idOrden%> - Coche nro.  <%=idCoche%></p>
-                 <p class="titulo">Usuario Emision: <%=usuarioEmision%></p>
-
+                <p class="titulo">Usuario Emision: <%=usuarioEmision%></p>
             </td>
         </tr>
         <tr>
@@ -68,41 +67,74 @@
             <!--//titulo -->
 
             <tr>
+
                 <td height="20" colspan="2" align="right" class="bordetituloi">
                     <p align="left" class="cuerpo">Fecha:&nbsp;<%=fecha%></p>
                 </td>
                 <td width="160" height="20" align="right" class="bordefull">
                     <p align="center" class="cuerpo">Hora: <%=hora%></p>
                 </td>
-                <td  colspan="2" class="bordefull">
+                <td width="116" class="bordefull">
+                    <p align="left" class="cuerpo">
+                    </p>
+                </td>
+                <td width="181" class="bordefull">
+                    <p align="center" class="cuerpo">Mecanico: <%=mecanico%></p>
+                </td>
+            </tr>
+            <tr>
+                <td align="right" class="bordefull" colspan="3" height="20">
+                    <p align="left" class="cuerpo">
+                        <%--                       Encargado:&nbsp;      <%='$encargado%>--%>
+                    </p>
+                </td>
+
+                <td colspan="2" class="bordefull" height="20">
                     <p align="left" class="cuerpo">
                         Mecanico: <%=mecanico%>
                     </p>
                 </td>
             </tr>
             <tr>
-                <td align="right" class="bordefull" colspan="2" height="20">
-                    <p class="cuerpo" align="left">Fecha Cierre:<%=fechaCierre%></p>
-                </td>
-                <td>
-                    <p class="cuerpo" align="left"><%=fechaVtoVTV%></p>
+                <td align="left" class="bordefull" colspan="3" height="20">
+                    <p class="cuerpo">
+                       
+                        <%=prioridad%>
+                    </p>
                 </td>
                 <td colspan="2" class="bordefull" height="20">
-                    <p class="cuerpo">
-                        Hora Cierre: 
-                                 <%=horaCierre%>
+                    <p align="left" class="cuerpo">
+                        <%--  Informante:
+      <%=$mant->getinformante();%>--%>
                     </p>
                 </td>
             </tr>
 
             <tr>
-                <td align="right" class="bordefull" colspan="4" height="20">
-                    <p class="cuerpo" align="left"><%=resultadoVTV%></p>
+                <td align="left" class="bordefull" colspan="3" height="20">
+                    <p class="cuerpo">
+                        <%-- Usuario:
+       <%=getUsuarioIntranetDeOrden($mant->getidOrden())%>--%>
+                    </p>
+                </td>
+                <td colspan="2" class="bordefull" height="20">
+                    <p align="left" class="cuerpo">
+                    </p>
                 </td>
             </tr>
 
-
-
+            <tr>
+                <td align="right" class="bordefull" colspan="3" height="20">
+                    <p class="cuerpo" align="left">Fecha Cierre:<%--<%=$mant->getfechaCierre()%>--%></p>
+                </td>
+                <td colspan="2" class="bordefull" height="20">
+                    <p class="cuerpo">
+                        Hora Cierre: 
+     <%-- <%=tfxvMantHoraOrdenService : getById($idOrden)->gethoracierre()%>--%>
+                    </p>
+                </td>
+            </tr>
+           
             <tr>
                 <td colspan="2" height="5">
                     <spacer height="1"
@@ -113,7 +145,14 @@
 
 
 
-          <tr align="center">
+
+
+
+
+
+
+
+            <tr align="center">
                 <td height="89" colspan="8">
 
 
@@ -133,6 +172,9 @@
                                     <td width="102" height="23" align="middle" class="bordefull">
                                         <p align="center" class="chico">Hora de entrega</p>
                                     </td>
+                                    <td width="102" height="23" align="middle" class="bordefull">
+                                        <p align="center" class="chico">Legajo</p>
+                                    </td>
                                 </tr>
                         </HeaderTemplate>
                         <ItemTemplate>
@@ -147,10 +189,13 @@
                                     <p class="cuerpo"><%# Eval("obs") %></p>
                                 </td>
                                 <td align="center" width="102" class="bordefull">
-                                    <p class="cuerpo"><%# format(Eval("fechaCierre"), "dd/MM/yyyy") %></p>
+                                    <p class="cuerpo"></p>
                                 </td>
                                 <td align="center" width="102" class="bordefull">
-                                    <p class="cuerpo"><%# format(Eval("fechaCierre"), "HH:mm") %></p>
+                                    <p class="cuerpo"><%# Eval("idOrigen") %></p>
+                                </td>
+                                <td align="center" width="102" class="bordefull">
+                                    <p class="cuerpo"><%# Eval("idOrigen") %></p>
                                 </td>
                             </tr>
 
@@ -173,8 +218,8 @@
                             <td align="left" class="bordefull" width="50%">
                                 <p class="cuerpo">Mecanico&nbsp;</p>
                             </td>
-                            <td colspan="4" class="bordefull">
-                                <p class="cuerpo">Usuario&nbsp;</p>
+                            <td class="bordefull">
+                                <p class="cuerpo">Jefe Taller&nbsp;</p>
                             </td>
                 </td>
             </tr>
@@ -182,7 +227,7 @@
                 <td align="left" class="bordefull" width="50%" height="20">
                     <p class="cuerpo">Firma&nbsp;</p>
                 </td>
-                <td colspan="4" class="bordefull" height="60">
+                <td class="bordefull" height="60">
                     <p class="cuerpo">Firma&nbsp;</p>
                 </td>
                 </TD>
@@ -191,9 +236,14 @@
                 <td align="left" class="bordefull" width="116" height="20">
                     <p class="cuerpo">Aclaracion&nbsp;</p>
                 </td>
-                <td colspan="4" class="bordefull" height="60">
+                <td class="bordefull" height="60">
                     <p class="cuerpo">Aclaracion&nbsp;</p>
                 </td>
+            </tr>
+            <tr>
+                <td align="left" class="bordefull" height="20" colspan="2">
+                    <br />
+                    Liberado para toma de Servicio &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; SI&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;NO</td>
             </tr>
     </table>
 

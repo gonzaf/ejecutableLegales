@@ -319,9 +319,9 @@
                                             <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
                                         </asp:BoundField>
 
-                                        <asp:BoundField DataField="id"
-                                            HeaderText="Nro Quedo"
-                                            SortExpression="id"
+                                        <asp:BoundField DataField="Motivo"
+                                            HeaderText="Motivo"
+                                            SortExpression="Motivo"
                                             HeaderStyle-CssClass="text-center"
                                             ItemStyle-HorizontalAlign="Center">
                                             <HeaderStyle HorizontalAlign="Center"></HeaderStyle>

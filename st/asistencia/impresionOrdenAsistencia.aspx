@@ -71,7 +71,7 @@
 <body onload="doThings()" class="imprimir">
     <div class="flexible-around">
         <div>
-            <img src="imagenes/logo.jpg" width="279" height="74" />
+            <img src="/images/logoup.jpg" width="279" height="74" />
         </div>
         <div>Fecha:  <%=fecha %> Hora:  <%=hora %></div>
     </div>

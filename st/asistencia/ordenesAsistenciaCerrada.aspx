@@ -334,6 +334,9 @@
 
                             <asp:Button ID="volver" runat="server" Text="Volver"
                                 CssClass="btn btn-primary"
+                                Style="color: #242424; cursor: pointer;" />  
+                            <asp:Button ID="btnExport" runat="server" Text="Exportar"
+                                CssClass="btn btn-secondary"
                                 Style="color: #242424; cursor: pointer;" />
 
                         </div>
@@ -345,6 +348,120 @@
             </form>
         </section>
     </section>
+    <div style="display: none">
+        <asp:GridView ID="GridToBePrinted" runat="server"
+            ShowFooter="true"
+            AutoGenerateColumns="False"
+            DataKeyNames="Id"
+            CssClass="table table-striped m-b-none text-small"
+            OnPreRender="GVPreRender">
+
+            <Columns>
+                <asp:BoundField DataField="fecha" HeaderText="Fecha"
+                    HeaderStyle-CssClass="text-center"
+                    ItemStyle-HorizontalAlign="Center">
+                    <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
+                </asp:BoundField>
+
+                <asp:BoundField DataField="Interno"
+                    HeaderText="Interno"
+                    HeaderStyle-CssClass="text-center"
+                    ItemStyle-HorizontalAlign="Center">
+                    <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
+                </asp:BoundField>
+
+                <asp:BoundField DataField="Linea"
+                    HeaderText="Línea"
+                    HeaderStyle-CssClass="text-center"
+                    ItemStyle-HorizontalAlign="Center">
+                    <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
+                </asp:BoundField>
+
+
+                <asp:BoundField DataField="ApellidoChofer" HeaderText="Chofer"
+                    HeaderStyle-CssClass="text-center"
+                    ItemStyle-HorizontalAlign="Center">
+                    <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
+                </asp:BoundField>
+
+                <asp:BoundField DataField="Sistema" HeaderText="Sistema"
+                    HeaderStyle-CssClass="text-center"
+                    ItemStyle-HorizontalAlign="Center">
+                    <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
+                </asp:BoundField>
+
+                <asp:BoundField DataField="Subsistema" HeaderText="Subsistema"
+                    HeaderStyle-CssClass="text-center"
+                    ItemStyle-HorizontalAlign="Center">
+                    <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
+                </asp:BoundField>
+
+                <asp:BoundField DataField="Componente" HeaderText="Componente"
+                    HeaderStyle-CssClass="text-center"
+                    ItemStyle-HorizontalAlign="Center">
+                    <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
+                </asp:BoundField>
+
+                <asp:BoundField DataField="Interno" HeaderText="Interno"
+                    HeaderStyle-CssClass="text-center"
+                    ItemStyle-HorizontalAlign="Center">
+                    <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
+                </asp:BoundField>
+
+                <asp:BoundField DataField="NombreCabecera" HeaderText="Cabecera"
+                    HeaderStyle-CssClass="text-center"
+                    ItemStyle-HorizontalAlign="Center">
+                    <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
+                </asp:BoundField>
+
+                <asp:TemplateField>
+                    <HeaderTemplate>Remolque</HeaderTemplate>
+                    <ItemTemplate>
+                        <p><%# IIf(Eval("Remolque") = 0, "NO", "SI") %></p>
+                    </ItemTemplate>
+                </asp:TemplateField>
+
+                <asp:TemplateField>
+                    <HeaderTemplate>Perdida kms</HeaderTemplate>
+                    <ItemTemplate>
+                        <p><%# IIf(Eval("PerdidaKilometros") = 0, "NO", "SI") %></p>
+                    </ItemTemplate>
+                </asp:TemplateField>
+
+                <asp:BoundField DataField="IdOrdenReparacion" HeaderText="Nro. OR Asociada"
+                    HeaderStyle-CssClass="text-center"
+                    ItemStyle-HorizontalAlign="Center">
+                    <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
+                </asp:BoundField>
+
+                <asp:BoundField DataField="Causa" HeaderText="Causa"
+                    HeaderStyle-CssClass="text-center"
+                    ItemStyle-HorizontalAlign="Center">
+                    <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
+                </asp:BoundField>
+
+                <asp:BoundField DataField="OtroMotivo" HeaderText="Otro Motivo"
+                    HeaderStyle-CssClass="text-center"
+                    ItemStyle-HorizontalAlign="Center">
+                    <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
+                </asp:BoundField>
+
+                <asp:BoundField DataField="Taller" HeaderText="Taller"
+                    HeaderStyle-CssClass="text-center"
+                    ItemStyle-HorizontalAlign="Center">
+                    <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
+                </asp:BoundField>
+
+                <asp:BoundField DataField="Recomendacion" HeaderText="Recomendacion"
+                    HeaderStyle-CssClass="text-center"
+                    ItemStyle-HorizontalAlign="Center">
+                    <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
+                </asp:BoundField>
+            </Columns>
+            <RowStyle CssClass="td"></RowStyle>
+        </asp:GridView>
+    </div>
+
 
     <script>
 

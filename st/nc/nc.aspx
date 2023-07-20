@@ -171,7 +171,7 @@
                                         Casos Especiales&nbsp;&nbsp; 
                                         
                                     </header>
-                                    <div class="panel">
+                                    <div class="panel" style="height: 400px">
 
                                         <div class="form-inline">
                                             <div class="form-group">

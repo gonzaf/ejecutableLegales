@@ -45,13 +45,26 @@
         .bold {
             font-weight: bold;
         }
+        .border-solid {
+            border: 0.1rem solid;
+        }
+
+        .padding-5 {
+            padding: 5px;
+        }
+
+        .wrapper {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 5px;
+        }
     </style>
 </head>
 
 
 <script language="javascript">
     
-    var NEW_LOC;
+var NEW_LOC;
 
     function redireccionar() {
         setTimeout("location.href=NEW_LOC", 3000);
@@ -71,9 +84,12 @@
 <body onload="doThings()" class="imprimir">
     <div class="flexible-around">
         <div>
-            <img src="/images/logoup.jpg" width="279" height="74" />
+            <img src="/images/logoup.png" width="279" height="74" />
         </div>
-        <div>Fecha:  <%=fecha %> Hora:  <%=hora %></div>
+        <div>
+            Fecha:  <%=fecha %> Hora:  <%=hora %> <br />
+            Usuario Emisión: <%= usuarioCreacion %>
+        </div>
     </div>
 
     <hr />
@@ -172,44 +188,28 @@
    
 
 
+    <br />
+    <br />
 
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
     <hr />
-    <div class="flexible-around">
-        <div class="flex-column-bottom">
-            <div>
-                <p class="cuerpo">Firma&nbsp;</p>
-            </div>
-            <div>
-                <p class="cuerpo">Aclaracion&nbsp;</p>
-            </div>
+    <div class="wrapper">
+        <div>
+            <p class="padding-5">Mecánico</p>
         </div>
-        <div class="flex-column-bottom">
-            <div>
-                <p class="cuerpo">Firma&nbsp;</p>
-            </div>
-            <div>
-                <p class="cuerpo">Aclaracion&nbsp;</p>
-            </div>
+        <div>
+            <p class="padding-5">Usuario Cierre: <%= usuarioCierre %></p>
+        </div>
+        <div class="border-solid">
+            <p class="padding-5">Firma</p>
+        </div>
+        <div class="border-solid">
+            <p class="padding-5">Firma</p>
+        </div>
+        <div class="border-solid">
+            <p class="padding-5">Aclaracion</p>
+        </div>
+        <div class="border-solid">
+            <p class="padding-5">Aclaracion</p>
         </div>
     </div>
 

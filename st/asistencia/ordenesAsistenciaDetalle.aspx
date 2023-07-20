@@ -61,7 +61,6 @@
                                     <div class="form-horizontal">
 
                                         <div class="form-group flex flex-align-bottom">
-
                                             <div class="col">
                                                 <div class="margin-1-rem">
                                                     <label class="col control-label">Fecha Llamado</label>
@@ -121,7 +120,6 @@
                                                     <asp:TextBox ID="auxiliador" runat="server" Enabled="false" ClientIDMode="Static" CssClass="entTab form-control">
                                                     </asp:TextBox>
                                                 </div>
-
 
                                                 <div class="col margin-1-rem">
                                                     <label class="col control-label">Remolque</label>
@@ -184,7 +182,6 @@
                                             </div>
 
                                             <div class="col">
-
                                                 <div class="margin-1-rem">
                                                     <label class="col control-label">Recomendación</label>
                                                     <asp:TextBox ID="recomendacion" runat="server" Enabled="true" ClientIDMode="Static" CssClass="entTab form-control">
@@ -192,6 +189,20 @@
                                                 </div>
                                             </div>
 
+                                        </div>
+
+                                        <div class="form-group flex flex-align-bottom">
+                                            <div class="col margin-1-rem">
+                                                <asp:DropDownList Visible="false" ID="ddMecanicos" AppendDataBoundItems="true" runat="server" CssClass="form-control input-sm entTab" DataTextField="Label" DataValueField="Id">
+                                                    <asp:ListItem Text="Seleccione Mecánico" Value="-2" Selected="True"></asp:ListItem>
+                                                </asp:DropDownList>
+                                            </div>
+                                            <div class="margin-1-rem">
+                                                <asp:Button ID="crearOR" runat="server" Text="Crear Orden Reparación"
+                                                    Visible="false"
+                                                    CssClass="btn btn-default"
+                                                    Style="color: #242424; cursor: pointer;" />
+                                            </div>
                                         </div>
 
                                     </div>

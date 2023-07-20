@@ -332,24 +332,6 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Dynamic_Data.AltaOrdenesAsistencia._labelMecanico">
-<summary>
-Control labelMecanico.
-</summary>
-<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member>
-<member name="F:Dynamic_Data.AltaOrdenesAsistencia._ddMecanicos">
-<summary>
-Control ddMecanicos.
-</summary>
-<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member>
 <member name="F:Dynamic_Data.AltaOrdenesAsistencia._btn_guardar">
 <summary>
 Control btn_guardar.
@@ -686,6 +668,24 @@ Para modificarlo, mueva la declaración del campo del archivo del diseñador al 
 <member name="F:Dynamic_Data.OrdenesAsistenciaDetalle._recomendacion">
 <summary>
 Control recomendacion.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Dynamic_Data.OrdenesAsistenciaDetalle._ddMecanicos">
+<summary>
+Control ddMecanicos.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Dynamic_Data.OrdenesAsistenciaDetalle._crearOR">
+<summary>
+Control crearOR.
 </summary>
 <remarks>
 Campo generado automáticamente.

@@ -144,7 +144,6 @@
                                             </div>
 
                                             <div class="flex">
-
                                                 <div class="col margin-1-rem">
                                                     <label class="col control-label">Detalle</label>
                                                     <asp:TextBox ID="detalle"
@@ -159,23 +158,6 @@
                                                         CssClass="entTab form-control input-sm">
                                                     </asp:TextBox>
                                                 </div>
-
-
-                                                <div class="col margin-1-rem">
-                                                   
-                                                        <p id="labelMecanico"
-                                                            visible="false"
-                                                            runat="server"
-                                                            style="color: black; font-size: 1.2rem;">
-                                                            Se va a generar una Orden de Reparación. Seleccione Mecánico:
-                                                        </p>
-                                                  
-                                                    <asp:DropDownList Visible="false" ID="ddMecanicos" AppendDataBoundItems="true" runat="server" CssClass="form-control input-sm entTab" DataTextField="Label" DataValueField="Id">
-                                                        <asp:ListItem Text="Seleccione Mecánico" Value="-2" Selected="True"></asp:ListItem>
-                                                    </asp:DropDownList>
-                                                </div>
-
-
                                             </div>
 
 

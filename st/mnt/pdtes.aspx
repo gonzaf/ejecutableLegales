@@ -67,7 +67,8 @@
                                             </asp:DropDownList>
                                             <br />
                                             <br />
-
+                                             <p >Ordenes Asistencia en Curso: <%= cantidadOrdenesAsistencia %></p>
+                                            <p >Quedos Pendientes: <%= cantidadQuedosPendientes %></p>
                                             <br />
                                             <br />
                                             <asp:CheckBox ID="cbChecklist" runat="server" Checked="true" Text="Checklist" />

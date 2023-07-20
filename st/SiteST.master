@@ -572,10 +572,39 @@
             }
         };
 
+        var optionsArticulos = {
+            //url: "/ws/ws.asmx/HelloWorldXML",
+            url: function (phrase) {
+                return "/services/ws.asmx/getArticulos?desc=" + phrase;
+            },
+
+            dataType: "xml",
+            xmlElementName: "jsonAutocomplete",
+
+            getValue: function (element) {
+                return $(element).find("text").text();
+            },
+
+            list: {
+                maxNumberOfElements: 100,
+                match: {
+                    enabled: false
+                },
+                onChooseEvent: function () {
+                    var value = $("#autoCompleteArticulos").getSelectedItemData();
+                    value = $(value).find("id").text();
+                    //alert(value);
+                    $("#tbCodigo").val(value).trigger("change");
+                    $("#Button1").click();
+                }
+            }
+        };
+
+
         $("#autoCompleteProductos").easyAutocomplete(options);
         $("#autoCompletePatente").easyAutocomplete(optionsPatente);
         $("#autoCompleteTarea").easyAutocomplete(optionsTarea);
-
+        $("#autoCompleteArticulos").easyAutocomplete(optionsArticulos);
 
 
         function ShowLoading(e) {

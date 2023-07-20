@@ -165,7 +165,7 @@
 
 
                                 </section>
-                                <section class="panel">
+                                <section style="height: 400px" class="panel">
                                     <header class="panel-heading">
                                         <span class="label bg-danger pull-right">Repuestos</span>
                                         Casos Especiales&nbsp;&nbsp; 
@@ -183,18 +183,20 @@
                                                 </asp:DropDownList>
                                             </div>
                                             <div class="form-group">
-                                                <label for="ddTipo">Codigo</label>
-                                                <asp:TextBox ID="tbCodigo" AutoComplete="off" CssClass="form-control input-sm" ClientIDMode="Static" Width="100" placeholder="# Articulo" runat="server"></asp:TextBox>
+                                                <div class="col-sm-4">
+                                                    
+                                                    <asp:TextBox ID="tbCodigo" ClientIDMode="Static" data-button="Button1" runat="server" CssClass="form-control input-sm clickButton" Width="70px"></asp:TextBox>
+                                                    <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" Font-Bold="true" CssClass="DDValidator" Display="Dynamic" />
+                                                    <asp:CustomValidator ID="CustomValidator1" runat="server" Visible="false" ErrorMessage="CustomValidator" Display="Dynamic"> </asp:CustomValidator>
+                                                </div>
+                                                <div class="col-sm-8">
+                                                    
+                                                    <asp:TextBox ID="autoCompleteArticulos" ClientIDMode="Static" runat="server" CssClass="form-control input-sm"></asp:TextBox>
+                                                    <asp:Button ID="Button1" ClientIDMode="Static" runat="server" Style="display: none" Text="" Display="Dynamic" />
+                                                </div>
+
                                             </div>
-                                            <div class="form-group">
-                                                <%-- <asp:TextBox ID="autoCompleteProductos" ClientIDMode="Static" runat="server" Width="300" CssClass="form-control input-sm"></asp:TextBox>
-                                                <asp:Button ID="Button1" ClientIDMode="Static" runat="server" Style="display: none" Text="" Display="Dynamic" />--%>
-                                                <asp:DropDownList ID="ddRepuestos" ClientIDMode="Static" AppendDataBoundItems="true" DataSourceID="ldsRep" DataTextField="articulo" DataValueField="idArticulo" runat="server" CssClass="form-control col-6 input-sm entTab">
-                                                    <asp:ListItem Text="Seleccione un Articulo" Value="-2" Selected="True"></asp:ListItem>
-                                                </asp:DropDownList>
-                                                <asp:LinqDataSource ID="ldsRep" runat="server" ContextTypeName="legLinq.LegalesDataContext" EntityTypeName="" OrderBy="articulo" TableName="vStArticulos" Where="baja = 0">
-                                                </asp:LinqDataSource>
-                                            </div>
+                                            
 
                                             <asp:Label ID="Label3" runat="server" Text="Label">Cantidad</asp:Label>
                                             <asp:TextBox ID="tbCant" CssClass="form-control input-sm " Width="80" placeholder="Cantidad" runat="server"></asp:TextBox>

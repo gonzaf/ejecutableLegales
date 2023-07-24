@@ -11295,6 +11295,15 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
+<member name="F:Dynamic_Data.st._cbAgrupar">
+<summary>
+Control cbAgrupar.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
 <member name="F:Dynamic_Data.st._buttonBuscar">
 <summary>
 Control buttonBuscar.
@@ -11313,9 +11322,9 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Dynamic_Data.st._gvPartes">
+<member name="F:Dynamic_Data.st._gvStockTotal">
 <summary>
-Control gvPartes.
+Control gvStockTotal.
 </summary>
 <remarks>
 Campo generado automáticamente.
@@ -11325,6 +11334,24 @@ Para modificarlo, mueva la declaración del campo del archivo del diseñador al 
 <member name="F:Dynamic_Data.st._gvStockXdeposito">
 <summary>
 Control gvStockXdeposito.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Dynamic_Data.st._gvStockPorArticuloTotal">
+<summary>
+Control gvStockPorArticuloTotal.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Dynamic_Data.st._gvStockPorArticuloPorDeposito">
+<summary>
+Control gvStockPorArticuloPorDeposito.
 </summary>
 <remarks>
 Campo generado automáticamente.

@@ -1,6 +1,74 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" ValidateRequest="false" EnableEventValidation="false" MasterPageFile="~/st/SiteST.master" CodeBehind="pdtes.aspx.vb" Inherits="Dynamic_Data.pdtes" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style type="text/css">
+        .auto-style1 {
+        }
+
+        .auto-style2 {
+            text-align: center;
+        }
+
+        .auto-style3 {
+            width: 76%;
+        }
+
+        .auto-style4 {
+            width: 78px;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .flex-column {
+            flex-direction: column;
+        }
+
+        .flex-end {
+            justify-content: end;
+        }
+
+        .flex-align-bottom {
+            align-items: flex-end;
+        }
+
+        .flex-align-center {
+            justify-content: center;
+        }
+
+        .flex-space-between {
+            justify-content: space-between;
+        }
+
+        .flex-wrap {
+            flex-wrap: wrap;
+        }
+
+        .margin-1-rem {
+            margin: 1rem;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .green-badge {
+            color: black;
+            background-color: lightyellow;
+            border-radius: 5px;
+            padding: 0 5px 0 15px;
+            font-weight: bold;
+        }
+
+        .red-badge {
+            color: black;
+            background-color: lightcoral;
+            border-radius: 5px;
+            padding: 0 5px 0 15px;
+            font-weight: bold;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -59,7 +127,7 @@
                                                 <asp:ListItem Text="Origen" Selected="True" Value="orden"></asp:ListItem>
                                                 <asp:ListItem Text="Kms.Parc" Value="kmsParciales"></asp:ListItem>
                                                 <asp:ListItem Text="Dias Parc" Value="diasParciales"></asp:ListItem>
-                                                 <asp:ListItem Text="Tarea" Value="tarea"></asp:ListItem>
+                                                <asp:ListItem Text="Tarea" Value="tarea"></asp:ListItem>
                                             </asp:DropDownList>
                                             <asp:DropDownList ID="ddAsc" runat="server" CssClass="form-control input-sm entTab">
                                                 <asp:ListItem Text="Asc." Value="asc"></asp:ListItem>
@@ -67,8 +135,10 @@
                                             </asp:DropDownList>
                                             <br />
                                             <br />
-                                             <p >Ordenes Asistencia en Curso: <%= cantidadOrdenesAsistencia %></p>
-                                            <p >Quedos Pendientes: <%= cantidadQuedosPendientes %></p>
+                                            <div class="flex flex-column flex-align-center">
+                                                <p class="green-badge"><a href="../asistencia/ordenesAsistencia.aspx" style="color: black"> Ordenes Asistencia en Curso: <%= cantidadOrdenesAsistencia %></a></p>
+                                                <p class="red-badge"><a href="../asistencia/ordenesAsistencia.aspx" style="color: black">Quedos Pendientes: <%= cantidadQuedosPendientes %></a></p>
+                                            </div>
                                             <br />
                                             <br />
                                             <asp:CheckBox ID="cbChecklist" runat="server" Checked="true" Text="Checklist" />
@@ -107,7 +177,7 @@
                                                     <asp:TemplateField HeaderText="Origen" ItemStyle-HorizontalAlign="left" HeaderStyle-HorizontalAlign="Center">
                                                         <ItemTemplate>
                                                             <%--<asp:LinkButton runat="server" Visible='<%#IIf(Eval("motivo") = "", "false", "true")%>' Value='<%# Eval("idEmpresa")%>'></asp:LinkButton>--%>
-                                                            <asp:Label ID="Label22112" BackColor='<%# IIf(Eval("condicionante") = 1, Drawing.Color.Red, Drawing.Color.White) %>' foreColor='<%# IIf(Eval("condicionante") = 1, Drawing.Color.White, Drawing.Color.Black) %>' runat="server" Text='<%# Eval("origen")%>'></asp:Label>
+                                                            <asp:Label ID="Label22112" BackColor='<%# IIf(Eval("condicionante") = 1, Drawing.Color.Red, Drawing.Color.White) %>' ForeColor='<%# IIf(Eval("condicionante") = 1, Drawing.Color.White, Drawing.Color.Black) %>' runat="server" Text='<%# Eval("origen")%>'></asp:Label>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
                                                     <asp:TemplateField HeaderText="Fecha" ItemStyle-HorizontalAlign="Center" SortExpression="fecha" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="30px">
@@ -132,9 +202,9 @@
                                                     </asp:TemplateField>
                                                     <asp:TemplateField HeaderText="Tarea" ItemStyle-HorizontalAlign="left" HeaderStyle-HorizontalAlign="Center">
                                                         <ItemTemplate>
-                                                            <asp:Label ID="Labelsssa2" runat="server" 
-                                                                BackColor='<%# IIf(Eval("origen") = "VTV" And Eval("kmsParciales") = -333, Drawing.Color.Red, IIf(Eval("origen") = "VTV" And Eval("kmsParciales") = -444, Drawing.Color.Green, Drawing.Color.White)) %>' 
-                                                                foreColor='<%# IIf(Eval("origen") = "VTV" And Eval("kmsParciales") = -333, Drawing.Color.white, IIf(Eval("origen") = "VTV" And Eval("kmsParciales") = -444, Drawing.Color.white, Drawing.Color.black)) %>'
+                                                            <asp:Label ID="Labelsssa2" runat="server"
+                                                                BackColor='<%# IIf(Eval("origen") = "VTV" And Eval("kmsParciales") = -333, Drawing.Color.Red, IIf(Eval("origen") = "VTV" And Eval("kmsParciales") = -444, Drawing.Color.Green, Drawing.Color.White)) %>'
+                                                                ForeColor='<%# IIf(Eval("origen") = "VTV" And Eval("kmsParciales") = -333, Drawing.Color.white, IIf(Eval("origen") = "VTV" And Eval("kmsParciales") = -444, Drawing.Color.white, Drawing.Color.black)) %>'
                                                                 Text='<%#String.Concat(Eval("tarea"), " (", Eval("idTarea"), ")") %>'></asp:Label>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>

@@ -1,6 +1,74 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/st/SiteST.master" CodeBehind="ot.aspx.vb" Inherits="Dynamic_Data.ot" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style type="text/css">
+        .auto-style1 {
+        }
+
+        .auto-style2 {
+            text-align: center;
+        }
+
+        .auto-style3 {
+            width: 76%;
+        }
+
+        .auto-style4 {
+            width: 78px;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .flex-column {
+            flex-direction: column;
+        }
+
+        .flex-end {
+            justify-content: end;
+        }
+
+        .flex-align-bottom {
+            align-items: flex-end;
+        }
+
+        .flex-align-center {
+            justify-content: center;
+        }
+
+        .flex-space-between {
+            justify-content: space-between;
+        }
+
+        .flex-wrap {
+            flex-wrap: wrap;
+        }
+
+        .margin-1-rem {
+            margin: 1rem;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .green-badge {
+            color: black;
+            background-color: lightyellow;
+            border-radius: 5px;
+            padding: 0 5px 0 15px;
+            font-weight: bold;
+        }
+
+        .red-badge {
+            color: black;
+            background-color: lightcoral;
+            border-radius: 5px;
+            padding: 0 5px 0 15px;
+            font-weight: bold;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -17,6 +85,7 @@
                                 <section class="panel">
                                     <header class="panel-heading">
                                         <span class="label bg-danger pull-right">Ordenes en Curso</span>
+
                                         <div class="form-inline">
                                             <asp:DropDownList ID="ddMecanicos" AppendDataBoundItems="true" DataTextField="text" DataValueField="id" runat="server" CssClass="form-control col-6 input-sm entTab">
                                                 <asp:ListItem Text="Todas los Mecanicos" Value="-2" Selected="True"></asp:ListItem>
@@ -46,10 +115,20 @@
                                     </header>
                                     <section style="//height: 200px" class="panel-body scrollbar scroll-y m-b">
                                         <div class="panel">
+
+                                            <div class="flex flex-column flex-align-center">
+                                                <p class="green-badge"><a href="../asistencia/ordenesAsistencia.aspx" style="color: black">Ordenes Asistencia en Curso: <%= cantidadOrdenesAsistencia %></a></p>
+                                                <p class="red-badge"><a href="../asistencia/ordenesAsistencia.aspx" style="color: black">Quedos Pendientes: <%= cantidadQuedosPendientes %></a></p>
+
+                                            </div>
+
                                             <asp:Label runat="server" Text="VTV" Font-Size="X-Large" Font-Bold="true" />
                                             <asp:Label Text="" ID="lError" runat="server" ForeColor="Red"></asp:Label>
                                             <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" Font-Bold="true" CssClass="DDValidator" Display="Dynamic" />
                                             <asp:CustomValidator ID="CustomValidator1" runat="server" Visible="true" ErrorMessage="CustomValidator" Display="Dynamic"> </asp:CustomValidator>
+
+
+
                                             <asp:GridView ID="gvPartes2" HeaderStyle-HorizontalAlign="Center" runat="server" DataKeyNames="id" AutoGenerateColumns="False" CssClass="table table-striped m-b-none text-small" BorderStyle="None" GridLines="None" OnPreRender="GVPreRender">
                                                 <Columns>
 
@@ -71,7 +150,7 @@
                                                     <asp:BoundField DataField="nroCoche" HeaderText="Interno"></asp:BoundField>
                                                     <asp:BoundField DataField="descripcion" HeaderText="Tarea"></asp:BoundField>
 
-                                                   <%-- <asp:TemplateField HeaderText="Estado" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="30px">
+                                                    <%-- <asp:TemplateField HeaderText="Estado" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="30px">
                                                         <ItemTemplate>
                                                             <asp:Label ID="Label112" runat="server" Text='<%#IIf(Eval("estado") = 1, "Pendiente", IIf(Eval("estado") = 2, "Apto") %>'></asp:Label>
                                                            

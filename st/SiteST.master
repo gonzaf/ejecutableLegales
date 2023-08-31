@@ -493,7 +493,7 @@
         var options = {
             //url: "/ws/ws.asmx/HelloWorldXML",
             url: function (phrase) {
-                return "/services/ws.asmx/getRepuestos?desc=" + phrase;
+                return "/services/ws.asmx/getRepuestosSinBejerman?desc=" + phrase;
             },
 
             dataType: "xml",

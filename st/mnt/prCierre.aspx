@@ -53,7 +53,7 @@
         <tr>
             <td colspan="2" align="center">
                 <p class="titulo">Orden de Trabajo Nº: <%=idOrden%> - Coche nro.  <%=idCoche%></p>
-                 <p class="titulo">Usuario Emision: <%=usuarioEmision%></p>
+                <p class="titulo">Usuario Emision: <%=usuarioEmision%></p>
 
             </td>
         </tr>
@@ -74,7 +74,7 @@
                 <td width="160" height="20" align="right" class="bordefull">
                     <p align="center" class="cuerpo">Hora: <%=hora%></p>
                 </td>
-                <td  colspan="2" class="bordefull">
+                <td colspan="2" class="bordefull">
                     <p align="left" class="cuerpo">
                         Mecanico: <%=mecanico%>
                     </p>
@@ -113,7 +113,7 @@
 
 
 
-          <tr align="center">
+            <tr align="center">
                 <td height="89" colspan="8">
 
 
@@ -193,6 +193,12 @@
                 </td>
                 <td colspan="4" class="bordefull" height="60">
                     <p class="cuerpo">Aclaracion&nbsp;</p>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" class="bordefull" height="20" colspan="2">
+                    <br />
+                    <%= liberado %>
                 </td>
             </tr>
     </table>

@@ -85,12 +85,12 @@
                     <p class="cuerpo" align="left">Fecha Cierre:<%=fechaCierre%></p>
                 </td>
                 <td>
-                    <p class="cuerpo" align="left"><%=fechaVtoVTV%></p>
+                    <p class="cuerpo" align="left">  Hora Cierre: 
+                                 <%=horaCierre%></p>
                 </td>
                 <td colspan="2" class="bordefull" height="20">
                     <p class="cuerpo">
-                        Hora Cierre: 
-                                 <%=horaCierre%>
+                      <%=fechaVtoVTV%>
                     </p>
                 </td>
             </tr>

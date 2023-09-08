@@ -192,10 +192,10 @@
                                     <p class="cuerpo"></p>
                                 </td>
                                 <td align="center" width="102" class="bordefull">
-                                    <p class="cuerpo"><%# Eval("idOrigen") %></p>
+                                   <%-- <p class="cuerpo"><%# Eval("idOrigen") %></p>--%>
                                 </td>
                                 <td align="center" width="102" class="bordefull">
-                                    <p class="cuerpo"><%# Eval("idOrigen") %></p>
+                                   <%-- <p class="cuerpo"><%# Eval("idOrigen") %></p>--%>
                                 </td>
                             </tr>
 
@@ -243,7 +243,7 @@
             <tr>
                 <td align="left" class="bordefull" height="20" colspan="2">
                     <br />
-                    Liberado para toma de Servicio &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; SI&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+                    Liberado para toma de Servicio &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; SI&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;No
                 </td>
             </tr>
     </table>

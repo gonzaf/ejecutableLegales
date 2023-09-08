@@ -98,7 +98,7 @@
             <tr>
                 <td align="left" class="bordefull" colspan="3" height="20">
                     <p class="cuerpo">
-                       
+
                         <%=prioridad%>
                     </p>
                 </td>
@@ -134,7 +134,7 @@
                     </p>
                 </td>
             </tr>
-           
+
             <tr>
                 <td colspan="2" height="5">
                     <spacer height="1"
@@ -243,7 +243,8 @@
             <tr>
                 <td align="left" class="bordefull" height="20" colspan="2">
                     <br />
-                    Liberado para toma de Servicio &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; SI&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;NO</td>
+                    Liberado para toma de Servicio &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; SI&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+                </td>
             </tr>
     </table>
 

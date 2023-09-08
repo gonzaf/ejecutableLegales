@@ -39,6 +39,9 @@
                                             <asp:TextBox ID="tbCoche" CssClass="form-control input-sm" Width="150" Enabled="false" Text="" placeholder="Informante" runat="server"></asp:TextBox>
                                             <asp:TextBox ID="tbOrden" CssClass="form-control input-sm" Width="150" Enabled="false" Text="" placeholder="Informante" runat="server"></asp:TextBox>
                                             <asp:TextBox ID="tbFecha" CssClass="form-control input-sm" Width="150" Enabled="false" Text="" placeholder="Informante" runat="server"></asp:TextBox>
+                                            <asp:TextBox ID="tbFechaInicio" AutoComplete="off" runat="server" ClientIDMode="Static" CssClass="input-sm form-control datepicker" Width="80px"></asp:TextBox>
+                                            <asp:Button ID="bIniciarTodo" runat="server" Text="Iniciar Todo" OnClientClick="return finalizar();" Visible="true" CssClass="btn btn-primary btn-xs" />
+                                            <asp:Button ID="bCerrarTodo" runat="server" Text="Cerrar Todo" OnClientClick="return finalizar();" Visible="false" CssClass="btn btn-primary btn-xs" />
                                         </div>
 
                                         <%--<div class="form-inline" style="visibility: hidden">
@@ -153,15 +156,16 @@
 
 
                                         <div class="form-group text-center">
-                                            <div class="col-lg-12">
+                                            <div class="col-lg-12 text-center">
                                                 <button type="button" class="btn btn-primary btn-xs" onclick="mostrarModal()">
-                                                    Agregar Tarea
-                                                </button>
+                                                    Agregar Tarea</button>
 
                                                 <br />
                                                 <br />
                                                 <br />
+
                                             </div>
+                                         
                                         </div>
 
 
@@ -199,8 +203,8 @@
                                                         </div>
                                                         <div class="col-sm-2">
                                                             <label class=" control-label">QR</label>
-                                                            <asp:TextBox ID="tbQR" AutoComplete="off" ClientIDMode="Static" runat="server"  data-button="buttonQR" CssClass="form-control input-sm clickbutton"></asp:TextBox>
-                                                            <asp:Button runat="server" style="visibility: hidden" ID="buttonQR" OnClick="buttonQR_Click"/>
+                                                            <asp:TextBox ID="tbQR" AutoComplete="off" ClientIDMode="Static" runat="server" data-button="buttonQR" CssClass="form-control input-sm clickbutton"></asp:TextBox>
+                                                            <asp:Button runat="server" Style="visibility: hidden" ID="buttonQR" OnClick="buttonQR_Click" />
                                                         </div>
 
 

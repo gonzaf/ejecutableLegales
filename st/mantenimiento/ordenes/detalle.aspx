@@ -209,7 +209,9 @@
 
                     <div class="flex flex-end">
                         <div>
-
+                            <asp:Button ID="reimprimir" runat="server" Text="Reimprimir"
+                                CssClass="btn btn-primary"
+                                Style="color: #242424; cursor: pointer;" />
                             <asp:Button ID="volver" runat="server" Text="Volver"
                                 CssClass="btn btn-primary"
                                 Style="color: #242424; cursor: pointer;" />

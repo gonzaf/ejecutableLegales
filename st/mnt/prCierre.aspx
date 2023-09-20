@@ -171,10 +171,10 @@
 
                         <tr>
                             <td align="left" class="bordefull" width="50%">
-                                <p class="cuerpo">Mecanico&nbsp;</p>
+                                <p class="cuerpo">Mecanico&nbsp; <%=mecanico%></p>
                             </td>
                             <td colspan="4" class="bordefull">
-                                <p class="cuerpo">Usuario&nbsp;</p>
+                                <p class="cuerpo">Usuario Cierre&nbsp;<%=usuarioCierre%></p>
                             </td>
                 </td>
             </tr>

@@ -220,7 +220,8 @@
                                                     <asp:TemplateField HeaderText="Parc" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="30px">
                                                         <ItemTemplate>
                                                             <%--<asp:Label ID="Labelss2" runat="server" Text='<%#IIf(Eval("controlDias") = 1, "Dias", "Kms")%>'></asp:Label>--%>
-                                                            <asp:Label ID="Label3" runat="server" Text='<%# Eval("kmsParciales")%>' Visible='<%#IIf(Eval("controlDias") = "0", "true", "false")%>' BackColor='<%# IIf(Eval("kmsparciales") > Eval("kmsDecision"), Drawing.Color.Red, Drawing.Color.White) %>' ForeColor='<%# IIf(Eval("kmsparciales") > Eval("kmsDecision"), Drawing.Color.White, Drawing.Color.Black) %>'></asp:Label>
+                                                            <asp:Label ID="Label3" runat="server" Text='<%# Eval("kmsParciales")%>' Visible='<%#IIf(Eval("controlDias") = "0", "true", "false")%>' ></asp:Label>
+                                                            <%-- para la linea 105 va este <asp:Label ID="Label4" runat="server" Text='<%# Eval("kmsParciales")%>' Visible='<%#IIf(Eval("controlDias") = "0", "true", "false")%>' BackColor='<%# IIf(Eval("kmsparciales") > Eval("kmsDecision"), Drawing.Color.Red, Drawing.Color.White) %>' ForeColor='<%# IIf(Eval("kmsparciales") > Eval("kmsDecision"), Drawing.Color.White, Drawing.Color.Black) %>'></asp:Label>--%>
                                                             <asp:Label ID="Label1" runat="server" Text='<%# Eval("diasParciales")%>' Visible='<%#IIf(Eval("controlDias") = "1", "true", "false")%>'></asp:Label>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>

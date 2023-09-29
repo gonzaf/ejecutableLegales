@@ -124,6 +124,21 @@
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
 
+
+                                                    <asp:TemplateField HeaderText="Fec.Venc" ItemStyle-HorizontalAlign="center" HeaderStyle-CssClass="text-center">
+                                                        <ItemTemplate>
+                                                            <%--<asp:HiddenField ID="hf" Value='<%# String.Concat(Eval("idCoche"), "-", Eval("idTipoAlerta"), "-", Eval("idDeposito"), "-" & Eval("idPartida"), "-" & Eval("id"))%>' runat="server" />--%>
+                                                            <%--<asp:CheckBox ID='cbGuardar1' ClientIDMode="Static" CssClass="myClass2" runat="server" />--%>
+                                                            <%--<asp:RadioButton ID="cbGuardarAlerta" runat="server" CssClass="myClass2" Text="Posponer" GroupName="SelectGroup" />
+                                                            <asp:RadioButton ID="cbGuardarDesc" runat="server" Text="Descartar" GroupName="SelectGroup" />
+                                                            <asp:RadioButton ID="RadioButton1" runat="server" Text="Realizado" GroupName="SelectGroup" />--%>
+                                                            <%--<asp:RadioButton ID="cbPosponer" runat="server"  Text="Posponer" GroupName="SelectGroup" />--%>
+                                                            <asp:TextBox ID="tbFechaVenc" runat="server" Visible='<%#IIf(Eval("mTareas.usaFechaVenc") = "True", "true", "false")%>' ClientIDMode="Static" CssClass="input-sm form-control datepicker" Width="80px"></asp:TextBox>
+
+                                                        </ItemTemplate>
+                                                    </asp:TemplateField>
+
+
                                                     <asp:TemplateField HeaderText="Hora" ItemStyle-HorizontalAlign="center" HeaderStyle-CssClass="text-center">
                                                         <ItemTemplate>
                                                             <%--<asp:HiddenField ID="hf" Value='<%# String.Concat(Eval("idCoche"), "-", Eval("idTipoAlerta"), "-", Eval("idDeposito"), "-" & Eval("idPartida"), "-" & Eval("id"))%>' runat="server" />--%>
@@ -165,7 +180,7 @@
                                                 <br />
 
                                             </div>
-                                         
+
                                         </div>
 
 

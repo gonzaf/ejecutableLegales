@@ -105,6 +105,11 @@
                                             </div>
 
                                             <div class="col">
+                                                 <div class="margin-1-rem">
+                                                    <label class="col control-label">Nro.PLanilla</label>
+                                                    <asp:TextBox ID="tbNroPlanilla" runat="server" Enabled="false" ClientIDMode="Static" CssClass="entTab form-control">
+                                                    </asp:TextBox>
+                                                </div>
                                                 <div class="margin-1-rem">
                                                     <label class="col control-label">Prioridad</label>
                                                     <asp:TextBox ID="idPrioridad" runat="server" Enabled="false" ClientIDMode="Static" CssClass="entTab form-control">

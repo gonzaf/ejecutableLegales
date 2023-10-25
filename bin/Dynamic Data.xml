@@ -11304,6 +11304,15 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
+<member name="F:Dynamic_Data.st._muestraModal">
+<summary>
+Control muestraModal.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
 <member name="F:Dynamic_Data.st._tbCodigo">
 <summary>
 Control tbCodigo.
@@ -11397,6 +11406,15 @@ Para modificarlo, mueva la declaración del campo del archivo del diseñador al 
 <member name="F:Dynamic_Data.st._gvStockPorArticuloPorDeposito">
 <summary>
 Control gvStockPorArticuloPorDeposito.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Dynamic_Data.st._gvDetalle">
+<summary>
+Control gvDetalle.
 </summary>
 <remarks>
 Campo generado automáticamente.

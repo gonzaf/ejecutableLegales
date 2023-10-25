@@ -397,7 +397,6 @@
             $('#myModal').modal('show');
         }
 
-
         function mostrarModal() {
 
             $('#muestraModal').val(true);

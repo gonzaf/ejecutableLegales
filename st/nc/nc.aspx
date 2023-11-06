@@ -50,6 +50,7 @@
                                                 <asp:ListItem Text="Cero" Value="2"></asp:ListItem>
                                                 <asp:ListItem Text="Menor a 0" Value="3"></asp:ListItem>
                                             </asp:DropDownList>
+                                              <asp:Button ID="buttonBuscar" OnClientClick="return verificarCoche()" OnClick="buttonBuscar_Click" ClientIDMode="Static" runat="server" Text="Buscar" Display="Dynamic" />
 
                                             <%--<asp:Button ID="Button1" runat="server" Text="Marcar Todos" OnClick="Button1_Click" Visible="true" CssClass="btn btn-primary btn-xs" />--%>
                                             <%--<asp:CheckBox ID="CheckBox1" OnCheckedChanged="CheckBox1_CheckedChanged" runat="server" />--%>
@@ -66,7 +67,7 @@
                                         <span class="pull-right">
                                             <asp:Button ID="bMarcarTodos" OnClick="bMarcarTodos_Click" runat="server" Text="Marcar Todos" Visible="true" CssClass="btn btn-primary btn-xs" />
                                         </span>
-                                        <asp:GridView ID="gvPartes" runat="server" DataKeyNames="idArticulo" AutoGenerateColumns="False" OnRowDataBound="gvPartes_RowDataBound" DataSourceID="dsPartes" CssClass="table table-striped m-b-none text-small" BorderStyle="None" GridLines="None" OnSelectedIndexChanged="gvPartes_SelectedIndexChanged" OnPreRender="GVPreRender">
+                                        <asp:GridView ID="gvPartes" runat="server" DataKeyNames="idArticulo" AutoGenerateColumns="False" OnRowDataBound="gvPartes_RowDataBound" CssClass="table table-striped m-b-none text-small" BorderStyle="None" GridLines="None" OnSelectedIndexChanged="gvPartes_SelectedIndexChanged" OnPreRender="GVPreRender">
                                             <Columns>
                                                 <asp:BoundField DataField="idArticulo" HeaderText="Cod.Articulo" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" SortExpression="Linea"></asp:BoundField>
                                                 <asp:TemplateField HeaderText="Articulo" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center">
@@ -144,10 +145,10 @@
                                     <%--</section>--%>
                                     <%--</div>--%>
 
-                                    <asp:LinqDataSource ID="dsPartes" runat="server" ContextTypeName="legLinq.LegalesDataContext" EntityTypeName="" OrderBy="" TableName="vStNecesidadCompraCalculo" Where='1=0'>
+                                    <%--<asp:LinqDataSource ID="dsPartes" runat="server" ContextTypeName="legLinq.LegalesDataContext" EntityTypeName="" OrderBy="" TableName="vStNecesidadCompraCalculo" Where='1=0'>--%>
                                     <%-- este esta bien <asp:LinqDataSource ID="dsPartes" runat="server" ContextTypeName="legLinq.LegalesDataContext" EntityTypeName="" OrderBy="" TableName="vStNecesidadCompraCalculo" Where='(@dds == idSubRubro or @dds == "-2" ) and (@ddr == idRubro or @ddr == "-2" ) and (@tbRepuesto == idArticulo or @tbRepuesto == -1) and @ddDepositos == idDeposito and ((@ddCaracteristica == -2 and (stock > 0)) or (@ddCaracteristica == 1 and stock+pdte < reposicion) or (@ddCaracteristica == 2 and stock == 0) or (@ddCaracteristica == 3 and stock < 0))'>--%>
                                         <%--<asp:LinqDataSource ID="LinqDataSource3" runat="server" ContextTypeName="legLinq.LegalesDataContext" EntityTypeName="" OrderBy="" TableName="vStNecesidadCompraCalculo" Where='cantPendiente > 0 and (@okFecha == -1 or (fechaCierre >= @fechaDesde and fechaCierre <= @fechaHasta)) and idDeposito == @ddDepositos  and (codRepuesto == @tbRepuesto or @tbRepuesto == -1) and ((@ddCaracteristica == -2 and (analizable == "Si" or reparable == "Si")) or (@ddCaracteristica == 1 and analizable == "Si") or (@ddCaracteristica == 2 and reparable == "Si"))'>--%>
-                                        <WhereParameters>
+                                     <%--   <WhereParameters>
                                             <asp:Parameter DefaultValue="20-06-2016" Name="fechaDesde" Type="DateTime" />
                                             <asp:Parameter DefaultValue="20-06-2016" Name="fechaHasta" Type="DateTime" />
                                             <asp:Parameter DefaultValue="1" Name="okFecha" Type="Int32" />
@@ -157,12 +158,12 @@
                                             <asp:ControlParameter ControlID="ddCaracteristica" DefaultValue="-2" Name="ddCaracteristica" Type="Int32" PropertyName="SelectedValue" />
                                             <asp:ControlParameter ControlID="tbRepuesto" DefaultValue="-1" Name="tbRepuesto" Type="Int32" PropertyName="Text" />
                                         </WhereParameters>
-                                    </asp:LinqDataSource>
-                                    <asp:QueryExtender TargetControlID="dsPartes" runat="server">
+                                    </asp:LinqDataSource>--%>
+                                   <%-- <asp:QueryExtender TargetControlID="dsPartes" runat="server">
                                         <asp:SearchExpression ComparisonType="OrdinalIgnoreCase" DataFields="articulo" SearchType="Contains">
                                             <asp:ControlParameter ControlID="tbDescripcion" PropertyName="Text" Type="String" />
                                         </asp:SearchExpression>
-                                    </asp:QueryExtender>
+                                    </asp:QueryExtender>--%>
 
 
                                 </section>

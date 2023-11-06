@@ -10260,6 +10260,15 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
+<member name="F:Dynamic_Data.nc._buttonBuscar">
+<summary>
+Control buttonBuscar.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
 <member name="F:Dynamic_Data.nc._bMarcarTodos">
 <summary>
 Control bMarcarTodos.
@@ -10272,15 +10281,6 @@ Para modificarlo, mueva la declaración del campo del archivo del diseñador al 
 <member name="F:Dynamic_Data.nc._gvPartes">
 <summary>
 Control gvPartes.
-</summary>
-<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member>
-<member name="F:Dynamic_Data.nc._dsPartes">
-<summary>
-Control dsPartes.
 </summary>
 <remarks>
 Campo generado automáticamente.

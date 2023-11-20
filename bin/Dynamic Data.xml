@@ -11601,9 +11601,18 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Dynamic_Data.st._gvDetalle">
+<member name="F:Dynamic_Data.st._gvDetalleTotal">
 <summary>
-Control gvDetalle.
+Control gvDetalleTotal.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Dynamic_Data.st._gvDetalleXdeposito">
+<summary>
+Control gvDetalleXdeposito.
 </summary>
 <remarks>
 Campo generado automáticamente.

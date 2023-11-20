@@ -299,6 +299,7 @@
                         <ul class="dropdown-menu">
                             <li><a href="/st/nc/nc.aspx">Necesidad Compra</a></li>
                             <li><a href="/st/nc/cPdt.aspx">Pendientes</a></li>
+                            <li><a href="/st/nc/consulta.aspx">Consulta Necesidad Compra</a></li>
                         </ul>
                     </li>
                 </ul>

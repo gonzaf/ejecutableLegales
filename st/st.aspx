@@ -112,7 +112,7 @@
                                                     <asp:BoundField DataField="precioUltCompra" HeaderText="P.Ult.Compra" ItemStyle-HorizontalAlign="left" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="30px" ReadOnly="True" SortExpression="desc_rubro" />
                                                     <asp:TemplateField HeaderText="" ItemStyle-HorizontalAlign="Center" HeaderStyle-Width="30px" HeaderStyle-HorizontalAlign="Center">
                                                         <ItemTemplate>
-                                                            <asp:LinkButton ID="lbIngresar" ToolTip="Ingresar" OnCommand="lbIngresar_Command" CommandArgument='<%# String.Concat(Eval("idArticulo"), "/", "", "/", "") %>' runat="server">Desagrupar</asp:LinkButton>
+                                                            <asp:LinkButton ID="lbIngresar" ToolTip="Ingresar" OnCommand="lbIngresar_Command" CommandArgument='<%# Eval("idArticulo") %>' runat="server">Desagrupar</asp:LinkButton>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
 
@@ -140,7 +140,7 @@
                                                     <asp:BoundField DataField="precioUltCompra" HeaderText="P.Ult.Compra" ItemStyle-HorizontalAlign="left" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="30px" ReadOnly="True" SortExpression="desc_rubro" />
                                                     <asp:TemplateField HeaderText="" ItemStyle-HorizontalAlign="Center" HeaderStyle-Width="30px" HeaderStyle-HorizontalAlign="Center">
                                                         <ItemTemplate>
-                                                            <asp:LinkButton ID="lb2Ingresar" ToolTip="Ingresar" OnCommand="lbIngresar_Command" CommandArgument='<%# String.Concat(Eval("idArticulo"), "/", Eval("idDeposito")) %>' runat="server">Desagrupar</asp:LinkButton>
+                                                            <asp:LinkButton ID="lb2Ingresar" ToolTip="Ingresar" OnCommand="lb2Ingresar_Command" CommandArgument='<%# String.Concat(Eval("idArticulo"), "/", Eval("idDeposito")) %>' runat="server">Desagrupar</asp:LinkButton>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
 
@@ -184,36 +184,62 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                <h4 class="modal-title" id="myModalLabel">Agregar Tarea</h4>
+                                <h4 class="modal-title" id="myModalLabel">Detalle</h4>
                             </div>
                             <div class="modal-body">
 
 
-                                <asp:GridView ID="gvDetalle" HeaderStyle-HorizontalAlign="Center" runat="server" DataKeyNames="idOrden" AutoGenerateColumns="False" CssClass="table table-striped m-b-none text-small" BorderStyle="None" GridLines="None" OnPreRender="GVPreRender">
+                                <asp:GridView ID="gvDetalleTotal" runat="server" DataKeyNames="codRepuesto" AutoGenerateColumns="False" CssClass="table table-striped m-b-none text-small" BorderStyle="None" GridLines="None" OnSelectedIndexChanged="gvPartes_SelectedIndexChanged" OnPreRender="GVPreRender">
                                     <Columns>
 
-                                        <asp:BoundField DataField="nroOrden" HeaderText="#Orden"></asp:BoundField>
-                                        <asp:TemplateField HeaderText="Fecha" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="30px">
+                                        <asp:TemplateField HeaderText="Repuesto" ItemStyle-HorizontalAlign="Center" HeaderStyle-Width="30px" HeaderStyle-HorizontalAlign="Center">
                                             <ItemTemplate>
-                                                <asp:Label ID="Label2" runat="server" Text='<%# Format(Eval("fecha"), "dd/MM/yy")%>'></asp:Label>
-                                                <%-- <asp:HiddenField ID="hfCant" ClientIDMode="Static" runat="server" Value='<%# Eval("cant")%>' />
-                                                            <asp:HiddenField ID="hfidDetalle" ClientIDMode="Static" runat="server" Value='<%# Eval("idMov")%>' />--%>
-                                            </ItemTemplate>
-                                        </asp:TemplateField>
-                                        <%--#IIf(Eval("idAccion") = 6 And Eval("preventivo"), "Reajuste Preventivo", Eval("tarea"))--%>
-                                        <asp:TemplateField HeaderText="Tarea" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center">
-                                            <ItemTemplate>
-                                                <asp:Label ID="Label222" runat="server" Text='<%#IIf(Eval("idAccion") = 6 And Eval("preventivo"), IIf(Not Eval("observaciones") Is Nothing AndAlso Eval("observaciones").ToString.Contains("Alerta") = True, "Reajuste Un", "Reajuste Preventivo"), Eval("tarea")) %>'></asp:Label>
+                                                <asp:Label ID="dfdfdf" runat="server" Text='<%# Eval("codRepuesto")%>'></asp:Label>
                                             </ItemTemplate>
                                         </asp:TemplateField>
 
-                                        <asp:BoundField DataField="Interno" HeaderText="Interno"></asp:BoundField>
+                                        <asp:TemplateField HeaderText="Descripcion" ItemStyle-HorizontalAlign="left" HeaderStyle-HorizontalAlign="Center" SortExpression="Desc_Repuesto">
+                                            <ItemTemplate>
+                                                <asp:Label ID="Label23231" runat="server" Text='<%# Eval("DescRepuesto")%>'></asp:Label>
+                                            </ItemTemplate>
+                                            <HeaderStyle Width="30px"></HeaderStyle>
+                                        </asp:TemplateField>
+                                        <asp:BoundField DataField="stock" HeaderStyle-Width="30px" HeaderText="Cant." ItemStyle-HorizontalAlign="center" HeaderStyle-HorizontalAlign="Center" ReadOnly="True" SortExpression="cod_rubro" />
+                                        <asp:BoundField DataField="descrubro" HeaderText="Rubro" ItemStyle-HorizontalAlign="left" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="30px" ReadOnly="True" SortExpression="desc_rubro" />
+                                        <asp:BoundField DataField="precioUltCompra" HeaderText="P.Ult.Compra" ItemStyle-HorizontalAlign="left" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="30px" ReadOnly="True" SortExpression="desc_rubro" />
 
 
+                                        <%--<asp:BoundField DataField="observaciones" HeaderText="Obs." ItemStyle-HorizontalAlign="left" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="30px" ReadOnly="True" SortExpression="desc_subrubro"/>--%>
                                     </Columns>
                                 </asp:GridView>
 
+                                <asp:GridView ID="gvDetalleXdeposito" runat="server" DataKeyNames="codRepuesto" AutoGenerateColumns="False" CssClass="table table-striped m-b-none text-small" BorderStyle="None" GridLines="None" OnSelectedIndexChanged="gvPartes_SelectedIndexChanged" OnPreRender="GVPreRender">
+                                    <Columns>
+                                        <asp:TemplateField HeaderText="Repuesto" ItemStyle-HorizontalAlign="Center" HeaderStyle-Width="30px" HeaderStyle-HorizontalAlign="Center">
+                                            <ItemTemplate>
+                                                <asp:HyperLink NavigateUrl='<%# String.Concat("/st/cMvs.aspx?rep=", Eval("codRepuesto"), "&dep=", Eval("idDeposito")) %>' ID="foto" runat="server"><%# Eval("codRepuesto")%></asp:HyperLink>
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
+                                        <asp:TemplateField HeaderText="Descripcion" ItemStyle-HorizontalAlign="left" HeaderStyle-HorizontalAlign="Center" SortExpression="Desc_Repuesto">
+                                            <ItemTemplate>
+                                                <asp:Label ID="Label23231" runat="server" Text='<%# Eval("DescRepuesto")%>'></asp:Label>
+                                            </ItemTemplate>
+                                            <HeaderStyle Width="30px"></HeaderStyle>
+                                        </asp:TemplateField>
+                                        <asp:BoundField DataField="stock" HeaderStyle-Width="30px" HeaderText="Cant." ItemStyle-HorizontalAlign="center" HeaderStyle-HorizontalAlign="Center" ReadOnly="True" SortExpression="cod_rubro" />
+                                        <asp:BoundField DataField="descrubro" HeaderText="Rubro" ItemStyle-HorizontalAlign="left" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="30px" ReadOnly="True" SortExpression="desc_rubro" />
+                                        <asp:BoundField DataField="deposito" HeaderText="Deposito" ItemStyle-HorizontalAlign="left" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="30px" ReadOnly="True" SortExpression="desc_rubro" />
+                                        <asp:BoundField DataField="precioUltCompra" HeaderText="P.Ult.Compra" ItemStyle-HorizontalAlign="left" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="30px" ReadOnly="True" SortExpression="desc_rubro" />
 
+                                        <%-- <asp:TemplateField HeaderText="Foto" ItemStyle-HorizontalAlign="Center" HeaderStyle-Width="30px" HeaderStyle-HorizontalAlign="Center">
+                                                        <ItemTemplate>
+                                                            <asp:HyperLink NavigateUrl='<%# String.Concat("/docs/fotosRepuestos/", Eval("foto")) %>' Target="_blank" ID="foto" runat="server"><%# IIf(Eval("foto") <> "", "Ver Foto", "")%></asp:HyperLink>
+                                                        </ItemTemplate>
+                                                    </asp:TemplateField>--%>
+
+                                        <%--<asp:BoundField DataField="observaciones" HeaderText="Obs." ItemStyle-HorizontalAlign="left" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="30px" ReadOnly="True" SortExpression="desc_subrubro"/>--%>
+                                    </Columns>
+                                </asp:GridView>
 
                             </div>
                             <div class="modal-footer">

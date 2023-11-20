@@ -8,7 +8,7 @@
 
     <section id="content">
         <section class="main padder">
-            <form id="form1" runat="server">
+            <form id="form1" runat="server" onsubmit="ShowLoading()">
                 <div class="row no-gutter">
 
                     <div class="col-sm-12">

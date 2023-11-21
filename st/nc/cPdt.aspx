@@ -226,9 +226,9 @@
 
                                 <section class="panel">
                                     <header class="panel-heading">
-                                        <span class="label bg-danger pull-right">Entregas</span>
+                                        <span class="label bg-danger pull-right">Ordenes de Compra</span>
                                         <div class="form-inline">
-                                            Entregas Pendientes
+                                            Ordenes de Compra Pendientes
                                         </div>
                                     </header>
 

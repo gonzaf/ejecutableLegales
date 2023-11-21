@@ -8,7 +8,7 @@
 
     <section id="content">
         <section class="main padder">
-            <form id="form1" runat="server">
+            <form id="form1" runat="server" onsubmit="ShowLoading()">
                 <div class="row no-gutter">
 
                     <div class="col-sm-12">
@@ -24,16 +24,16 @@
 
                                             <%--                                            <asp:CheckBox ID="cbMostrarTodo" AutoPostBack="true" runat="server" Checked="true" Text="_Ver Todos los dias" />--%>
                                             <asp:Label ID="Label2" runat="server" Text="Label">---</asp:Label>
-                                            <asp:DropDownList ID="ddDepositos" AppendDataBoundItems="true" runat="server" AutoPostBack="true" CssClass="form-control input-sm entTab" DataTextField="Deposito" DataValueField="idDeposito">
+                                            <asp:DropDownList ID="ddDepositos" AppendDataBoundItems="true" runat="server" CssClass="form-control input-sm entTab" DataTextField="Deposito" DataValueField="idDeposito">
                                             </asp:DropDownList>
-                                            <asp:DropDownList ID="ddRubro" AppendDataBoundItems="true" DataSourceID="LinqDataSource1" OnSelectedIndexChanged="ddRubro_SelectedIndexChanged" DataTextField="rubro" DataValueField="idRubro" runat="server" AutoPostBack="true" CssClass="form-control col-6 input-sm entTab">
+                                            <asp:DropDownList ID="ddRubro" AppendDataBoundItems="true" DataSourceID="LinqDataSource1" OnSelectedIndexChanged="ddRubro_SelectedIndexChanged" DataTextField="rubro" DataValueField="idRubro" runat="server" CssClass="form-control col-6 input-sm entTab">
                                                 <asp:ListItem Text="Todos los Rubros" Value="-2" Selected="True"></asp:ListItem>
                                             </asp:DropDownList>
                                             <asp:LinqDataSource ID="LinqDataSource1" runat="server" ContextTypeName="legLinq.LegalesDataContext" EntityTypeName="" OrderBy="rubro" TableName="vStRubrosN">
                                                 
                                             </asp:LinqDataSource>
 
-                                            <asp:DropDownList ID="ddsubrubro" AppendDataBoundItems="true" DataSourceID="LinqDataSource2" DataTextField="subrubro" DataValueField="idsubRubro" runat="server" AutoPostBack="true" CssClass="form-control col-6 input-sm entTab">
+                                            <asp:DropDownList ID="ddsubrubro" AppendDataBoundItems="true" DataSourceID="LinqDataSource2" DataTextField="subrubro" DataValueField="idsubRubro" runat="server" CssClass="form-control col-6 input-sm entTab">
                                                 <asp:ListItem Text="Todos los SubRubros" Value="-2" Selected="True"></asp:ListItem>
                                             </asp:DropDownList>
                                             <asp:LinqDataSource ID="LinqDataSource2" runat="server" ContextTypeName="legLinq.LegalesDataContext" EntityTypeName="" OrderBy="subrubro" TableName="vStSubRubrosN" Where='(@ddr == idRubro or @ddr == -2)'>
@@ -44,7 +44,7 @@
                                             </asp:LinqDataSource>
 
 
-                                            <asp:DropDownList ID="ddCaracteristica" AppendDataBoundItems="true" runat="server" AutoPostBack="true" CssClass="form-control input-sm entTab">
+                                            <asp:DropDownList ID="ddCaracteristica" AppendDataBoundItems="true" runat="server" CssClass="form-control input-sm entTab">
                                                 <asp:ListItem Text="Todos" Value="-2"></asp:ListItem>
                                                 <asp:ListItem Text="Debajo del Punto" Value="1" Selected="True"></asp:ListItem>
                                                 <asp:ListItem Text="Cero" Value="2"></asp:ListItem>

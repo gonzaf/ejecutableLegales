@@ -140,7 +140,7 @@
                                                     <asp:BoundField DataField="precioUltCompra" HeaderText="P.Ult.Compra" ItemStyle-HorizontalAlign="left" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="30px" ReadOnly="True" SortExpression="desc_rubro" />
                                                     <asp:TemplateField HeaderText="" ItemStyle-HorizontalAlign="Center" HeaderStyle-Width="30px" HeaderStyle-HorizontalAlign="Center">
                                                         <ItemTemplate>
-                                                            <asp:LinkButton ID="lb2Ingresar" ToolTip="Ingresar" OnCommand="lb2Ingresar_Command" CommandArgument='<%# String.Concat(Eval("idArticulo"), "/", Eval("idDeposito")) %>' runat="server">Desagrupar</asp:LinkButton>
+                                                            <asp:LinkButton ID="lb2Ingresar" ToolTip="Ingresar" OnCommand="lb2Ingresar_Command" CommandArgument='<%# Eval("idArticulo") %>' runat="server">Desagrupar</asp:LinkButton>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
 

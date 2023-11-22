@@ -235,11 +235,11 @@
                                     <div class="panel">
                                         <asp:GridView ID="GridView3" runat="server" DataKeyNames="idArticulo" AutoGenerateColumns="False" DataSourceID="LinqDataSource4" CssClass="table table-striped m-b-none text-small" BorderStyle="None" GridLines="None" OnPreRender="GVPreRender">
                                             <Columns>
-                                                <asp:TemplateField HeaderText="Fecha" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center">
+                                                <%--<asp:TemplateField HeaderText="Fecha" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center">
                                                     <ItemTemplate>
                                                         <asp:Label ID="Label122" runat="server" Text='<%# Format(Eval("fecha"), "dd/MM/yy")%>'></asp:Label>
                                                     </ItemTemplate>
-                                                </asp:TemplateField>
+                                                </asp:TemplateField>--%>
                                                 <asp:BoundField DataField="idArticulo" HeaderText="Cod.Articulo" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" SortExpression="Linea"></asp:BoundField>
                                                 <asp:TemplateField HeaderText="Articulo" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center">
                                                     <ItemTemplate>
@@ -254,11 +254,11 @@
                                                         <asp:Label ID="Label2" runat="server" Text='<%# Eval("deposito")%>'></asp:Label>
                                                     </ItemTemplate>
                                                 </asp:TemplateField>
-                                                <asp:BoundField DataField="usuario" HeaderText="Usuario" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" SortExpression="Linea"></asp:BoundField>
-                                                <asp:BoundField DataField="cant" HeaderText="Cant" HeaderStyle-HorizontalAlign="Center" SortExpression="Linea"></asp:BoundField>
-                                                <asp:BoundField DataField="puc" HeaderText="PUC" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" SortExpression="Linea"></asp:BoundField>
-                                                <asp:BoundField DataField="atraso" HeaderText="Atraso" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" SortExpression="Linea"></asp:BoundField>
-                                                <asp:BoundField DataField="idDet" HeaderText="IdDet" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" SortExpression="Linea"></asp:BoundField>
+                                                <%--<asp:BoundField DataField="usuario" HeaderText="Usuario" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" SortExpression="Linea"></asp:BoundField>--%>
+                                                <asp:BoundField DataField="cantPendiente" HeaderText="Cant" HeaderStyle-HorizontalAlign="Center" SortExpression="Linea"></asp:BoundField>
+                                                <%--<asp:BoundField DataField="puc" HeaderText="PUC" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" SortExpression="Linea"></asp:BoundField>--%>
+                                                <%--<asp:BoundField DataField="atraso" HeaderText="Atraso" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" SortExpression="Linea"></asp:BoundField>--%>
+                                                <asp:BoundField DataField="idOrdCompras" HeaderText="# Ord.Compra" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" SortExpression="Linea"></asp:BoundField>
 
 
                                                 <%--  <asp:TemplateField HeaderText="Accion" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center">

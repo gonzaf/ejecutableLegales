@@ -76,7 +76,7 @@
                 </td>
                 <td colspan="2" class="bordefull">
                     <p align="left" class="cuerpo">
-                        Mecanico: <%=mecanico%>
+                        Usuario Inicia: <%=mecanico%>
                     </p>
                 </td>
             </tr>

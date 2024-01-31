@@ -118,6 +118,34 @@
 
                                             </div>
 
+                                             <div class="col">
+                                                 <div class="margin-1-rem">
+                                                    <label class="col control-label">Us.Inicia</label>
+                                                    <asp:TextBox ID="tbUsInicia" runat="server" Enabled="false" ClientIDMode="Static" CssClass="entTab form-control">
+                                                    </asp:TextBox>
+                                                </div>
+                                                <div class="margin-1-rem">
+                                                    <label class="col control-label">Us.Genera</label>
+                                                    <asp:TextBox ID="tbUsGenera" runat="server" Enabled="false" ClientIDMode="Static" CssClass="entTab form-control">
+                                                    </asp:TextBox>
+                                                </div>
+
+                                            </div>
+
+                                             <div class="col">
+                                                 <div class="margin-1-rem">
+                                                    <label class="col control-label">Us.Cierre</label>
+                                                    <asp:TextBox ID="tbUsCierre" runat="server" Enabled="false" ClientIDMode="Static" CssClass="entTab form-control">
+                                                    </asp:TextBox>
+                                                </div>
+                                                <div class="margin-1-rem">
+                                                    <label class="col control-label"></label>
+                                                    <asp:TextBox ID="TextBox4" runat="server" Enabled="false" ClientIDMode="Static" CssClass="entTab form-control">
+                                                    </asp:TextBox>
+                                                </div>
+
+                                            </div>
+
 
 
 

@@ -101,6 +101,19 @@
                                                 </div>
                                             </div>
 
+                                             <div class="col margin-1-rem">
+                                                <label class="col control-label">Nro.Planilla</label>
+                                                <div class="col">
+                                                    <asp:TextBox ID="tbNroPlanilla"
+                                                        runat="server"
+                                                        AutoCompleteType="Disabled"
+                                                        ClientIDMode="Static"
+                                                        data-next="mecanico"
+                                                        CssClass="entTab form-control input-sm">
+                                                    </asp:TextBox>
+                                                </div>
+                                            </div>
+
 
                                             <%--NUEVOS FILTROS--%>
                                         </div>

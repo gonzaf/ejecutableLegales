@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" ValidateRequest="false" EnableEventValidation="false" MasterPageFile="~/st/SiteST.master" CodeBehind="nc.aspx.vb" Inherits="Dynamic_Data.nc" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="true" ValidateRequest="false" EnableEventValidation="false" MasterPageFile="~/st/SiteST.master" CodeBehind="nc.aspx.vb" Inherits="Dynamic_Data.nc" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>

@@ -79,7 +79,7 @@
                     </p>
                 </td>
                 <td width="181" class="bordefull">
-                    <p align="center" class="cuerpo">Mecanico: <%=mecanico%></p>
+                    <p align="center" class="cuerpo">Usuario Inicia: <%=mecanico%></p>
                 </td>
             </tr>
             <tr>

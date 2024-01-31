@@ -51,7 +51,7 @@
                 <table border="0" width="100%">
                     <tr>
                         <td widht="40%">
-                            <p class="titulo">Necesidad de Compra Nº: <%=idNecesidad %> </p>
+                            <p class="titulo">Necesidad de Compra Nº: <%=nro %> </p>
 
                         </td>
                         <td widht="30%" align="right">

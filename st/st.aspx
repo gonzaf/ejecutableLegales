@@ -25,7 +25,7 @@
                                             <asp:DropDownList ID="ddRubro" AppendDataBoundItems="true" runat="server" AutoPostBack="true" CssClass="form-control input-sm entTab" DataTextField="descRubro" DataValueField="codRubro">
                                                 <asp:ListItem Text="Todos" Selected="True" Value="-1"></asp:ListItem>
                                             </asp:DropDownList>
-                                            <asp:DropDownList ID="ddDepositos" AppendDataBoundItems="true" runat="server" AutoPostBack="true" CssClass="form-control input-sm entTab" DataTextField="Deposito" DataValueField="idDeposito">
+                                            <asp:DropDownList ID="ddDepositos" AppendDataBoundItems="true" runat="server" CssClass="form-control input-sm entTab" DataTextField="Deposito" DataValueField="idDeposito">
                                                 <asp:ListItem Text="Todos" Value="-1"></asp:ListItem>
                                             </asp:DropDownList>
                                             <asp:CheckBox runat="server" ID="cbAgrupar" Text="Agrupar Por Articulo" />

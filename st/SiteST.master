@@ -157,8 +157,8 @@
     </asp:ContentPlaceHolder>
 
 </head>
-<body onload="window.history.forward();">
-    <%--<body>--%>
+<%--<body onload="window.history.forward();">--%>
+    <body>
 
 
     <header id="header" class="navbar">

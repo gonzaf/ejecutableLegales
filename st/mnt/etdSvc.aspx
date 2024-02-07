@@ -146,6 +146,7 @@
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
                                                     <asp:BoundField DataField="frecuencia" HeaderText="Frec" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center"></asp:BoundField>
+                                                    <asp:BoundField DataField="prox" HeaderText="Prox" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center"></asp:BoundField>
 
                                                     <asp:TemplateField HeaderText="" Visible="false" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center">
                                                         <ItemTemplate>

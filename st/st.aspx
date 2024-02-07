@@ -57,6 +57,7 @@
                                                     <asp:BoundField DataField="stock" HeaderStyle-Width="30px" HeaderText="Cant." ItemStyle-HorizontalAlign="center" HeaderStyle-HorizontalAlign="Center" ReadOnly="True" SortExpression="cod_rubro" />
                                                     <asp:BoundField DataField="descrubro" HeaderText="Rubro" ItemStyle-HorizontalAlign="left" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="30px" ReadOnly="True" SortExpression="desc_rubro" />
                                                     <asp:BoundField DataField="precioUltCompra" HeaderText="P.Ult.Compra" ItemStyle-HorizontalAlign="left" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="30px" ReadOnly="True" SortExpression="desc_rubro" />
+                                                    <asp:BoundField DataField="idArticulo" HeaderText="#Articulo" ItemStyle-HorizontalAlign="left" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="30px" ReadOnly="True" SortExpression="desc_rubro" />
 
 
                                                     <%--<asp:BoundField DataField="observaciones" HeaderText="Obs." ItemStyle-HorizontalAlign="left" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="30px" ReadOnly="True" SortExpression="desc_subrubro"/>--%>
@@ -80,6 +81,7 @@
                                                     <asp:BoundField DataField="descrubro" HeaderText="Rubro" ItemStyle-HorizontalAlign="left" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="30px" ReadOnly="True" SortExpression="desc_rubro" />
                                                     <asp:BoundField DataField="deposito" HeaderText="Deposito" ItemStyle-HorizontalAlign="left" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="30px" ReadOnly="True" SortExpression="desc_rubro" />
                                                     <asp:BoundField DataField="precioUltCompra" HeaderText="P.Ult.Compra" ItemStyle-HorizontalAlign="left" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="30px" ReadOnly="True" SortExpression="desc_rubro" />
+                                                    <asp:BoundField DataField="idArticulo" HeaderText="#Articulo" ItemStyle-HorizontalAlign="left" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="30px" ReadOnly="True" SortExpression="desc_rubro" />
 
                                                     <%-- <asp:TemplateField HeaderText="Foto" ItemStyle-HorizontalAlign="Center" HeaderStyle-Width="30px" HeaderStyle-HorizontalAlign="Center">
                                                         <ItemTemplate>

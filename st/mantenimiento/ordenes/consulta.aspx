@@ -236,6 +236,20 @@
                                             <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
                                         </asp:BoundField>
 
+                                         <asp:BoundField DataField="usuarioCreacion" HeaderText="Us.Creacion"
+                                            SortExpression="kmsCierre"
+                                            HeaderStyle-CssClass="text-center"
+                                            ItemStyle-HorizontalAlign="Center">
+                                            <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
+                                        </asp:BoundField>
+
+                                         <asp:BoundField DataField="usuarioCierre" HeaderText="Us.Cierre"
+                                            SortExpression="kmsCierre"
+                                            HeaderStyle-CssClass="text-center"
+                                            ItemStyle-HorizontalAlign="Center">
+                                            <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
+                                        </asp:BoundField>
+
 
                                         <asp:BoundField DataField="fechaCierre" HeaderText="Fecha Cierre"
                                             SortExpression="fechaCierre"

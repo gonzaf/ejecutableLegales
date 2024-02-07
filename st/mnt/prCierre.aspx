@@ -53,7 +53,7 @@
         <tr>
             <td colspan="2" align="center">
                 <p class="titulo">Orden de Trabajo Nº: <%=idOrden%> - Coche nro.  <%=idCoche%></p>
-                <%--<p  class="titulo">Usuario Emision: <%=usuarioEmision%></p>--%>
+                <p  class="titulo">Usuario Emision: <%=usuarioEmision%></p>
 
             </td>
         </tr>
@@ -76,7 +76,7 @@
                 </td>
                 <td colspan="2" class="bordefull">
                     <p align="left" class="cuerpo">
-                        Usuario Inicia: <%=mecanico%>
+                       <%-- Usuario Inicia: <%=mecanico%>--%>
                     </p>
                 </td>
             </tr>

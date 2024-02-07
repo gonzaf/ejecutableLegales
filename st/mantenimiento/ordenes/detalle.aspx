@@ -120,31 +120,19 @@
 
                                              <div class="col">
                                                  <div class="margin-1-rem">
-                                                    <label class="col control-label">Us.Inicia</label>
-                                                    <asp:TextBox ID="tbUsInicia" runat="server" Enabled="false" ClientIDMode="Static" CssClass="entTab form-control">
-                                                    </asp:TextBox>
-                                                </div>
-                                                <div class="margin-1-rem">
                                                     <label class="col control-label">Us.Genera</label>
                                                     <asp:TextBox ID="tbUsGenera" runat="server" Enabled="false" ClientIDMode="Static" CssClass="entTab form-control">
                                                     </asp:TextBox>
                                                 </div>
-
-                                            </div>
-
-                                             <div class="col">
-                                                 <div class="margin-1-rem">
+                                                <div class="margin-1-rem">
                                                     <label class="col control-label">Us.Cierre</label>
                                                     <asp:TextBox ID="tbUsCierre" runat="server" Enabled="false" ClientIDMode="Static" CssClass="entTab form-control">
                                                     </asp:TextBox>
                                                 </div>
-                                                <div class="margin-1-rem">
-                                                    <label class="col control-label"></label>
-                                                    <asp:TextBox ID="TextBox4" runat="server" Enabled="false" ClientIDMode="Static" CssClass="entTab form-control">
-                                                    </asp:TextBox>
-                                                </div>
 
                                             </div>
+
+                                             
 
 
 
@@ -213,6 +201,24 @@
 
                                                                         <asp:BoundField DataField="Origen"
                                                                               HeaderText="Origen"
+                                                                              SortExpression="Origen"
+                                                                              HeaderStyle-CssClass="text-center"
+                                                                              ItemStyle-HorizontalAlign="Center">
+                                                                              <HeaderStyle HorizontalAlign="Center">
+                                                                              </HeaderStyle>
+                                                                        </asp:BoundField>
+
+                                                                       <asp:BoundField DataField="usuarioCreacion"
+                                                                              HeaderText="Us.Inicia"
+                                                                              SortExpression="Origen"
+                                                                              HeaderStyle-CssClass="text-center"
+                                                                              ItemStyle-HorizontalAlign="Center">
+                                                                              <HeaderStyle HorizontalAlign="Center">
+                                                                              </HeaderStyle>
+                                                                        </asp:BoundField>
+
+                                                                       <asp:BoundField DataField="usuarioCierre"
+                                                                              HeaderText="Us.Cierre"
                                                                               SortExpression="Origen"
                                                                               HeaderStyle-CssClass="text-center"
                                                                               ItemStyle-HorizontalAlign="Center">

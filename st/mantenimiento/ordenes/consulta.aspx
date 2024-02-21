@@ -398,6 +398,30 @@
                                             <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
                                         </asp:BoundField>
 
+                                        <asp:BoundField DataField="tiempoEstimado" HeaderText="Tiempo Estimado"
+                                            SortExpression="tiempoEstimado"
+                                            HeaderStyle-CssClass="text-center"
+                                            ItemStyle-HorizontalAlign="Center">
+                                            <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
+                                        </asp:BoundField>
+
+                                        <asp:BoundField DataField="tiempoReal" HeaderText="Tiempo Real"
+                                            SortExpression="tiempoReal"
+                                            HeaderStyle-CssClass="text-center"
+                                            ItemStyle-HorizontalAlign="Center">
+                                            <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
+                                        </asp:BoundField>
+
+                                         <asp:TemplateField HeaderText="Diferencia" 
+                                                ItemStyle-HorizontalAlign="Center" 
+                                                HeaderStyle-HorizontalAlign="Center">
+                                            <ItemTemplate>
+                                                <asp:Label ID="Label222" runat="server" 
+                                                    Text='<%# Eval("tiempoReal") - Eval("tiempoEstimado") %>'>
+                                                </asp:Label>
+                                           </ItemTemplate>
+                                        </asp:TemplateField>
+
                                     </Columns>
 
                                     <RowStyle CssClass="td"></RowStyle>

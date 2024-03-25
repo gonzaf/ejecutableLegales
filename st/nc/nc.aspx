@@ -30,7 +30,6 @@
                                                 <asp:ListItem Text="Todos los Rubros" Value="-2" Selected="True"></asp:ListItem>
                                             </asp:DropDownList>
                                             <asp:LinqDataSource ID="LinqDataSource1" runat="server" ContextTypeName="legLinq.LegalesDataContext" EntityTypeName="" OrderBy="rubro" TableName="vStRubrosN">
-                                                
                                             </asp:LinqDataSource>
 
                                             <asp:DropDownList ID="ddsubrubro" AppendDataBoundItems="true" DataSourceID="LinqDataSource2" DataTextField="subrubro" DataValueField="idsubRubro" runat="server" CssClass="form-control col-6 input-sm entTab">
@@ -50,7 +49,7 @@
                                                 <asp:ListItem Text="Cero" Value="2"></asp:ListItem>
                                                 <asp:ListItem Text="Menor a 0" Value="3"></asp:ListItem>
                                             </asp:DropDownList>
-                                              <asp:Button ID="buttonBuscar" OnClientClick="return verificarCoche()" OnClick="buttonBuscar_Click" ClientIDMode="Static" runat="server" Text="Buscar" Display="Dynamic" />
+                                            <asp:Button ID="buttonBuscar" OnClientClick="return verificarCoche()" OnClick="buttonBuscar_Click" ClientIDMode="Static" runat="server" Text="Buscar" Display="Dynamic" />
 
                                             <%--<asp:Button ID="Button1" runat="server" Text="Marcar Todos" OnClick="Button1_Click" Visible="true" CssClass="btn btn-primary btn-xs" />--%>
                                             <%--<asp:CheckBox ID="CheckBox1" OnCheckedChanged="CheckBox1_CheckedChanged" runat="server" />--%>
@@ -67,12 +66,13 @@
                                         <span class="pull-right">
                                             <asp:Button ID="bMarcarTodos" OnClick="bMarcarTodos_Click" runat="server" Text="Marcar Todos" Visible="true" CssClass="btn btn-primary btn-xs" />
                                         </span>
-                                        <asp:GridView ID="gvPartes" runat="server" DataKeyNames="idArticulo" AutoGenerateColumns="False" OnRowDataBound="gvPartes_RowDataBound" CssClass="table table-striped m-b-none text-small" BorderStyle="None" GridLines="None" OnSelectedIndexChanged="gvPartes_SelectedIndexChanged" OnPreRender="GVPreRender">
+                                        <asp:GridView ID="gvPartes" runat="server" DataKeyNames="idArticulo" hea AutoGenerateColumns="False" OnRowDataBound="gvPartes_RowDataBound" CssClass="table table-striped m-b-none text-small" BorderStyle="None" GridLines="None" OnSelectedIndexChanged="gvPartes_SelectedIndexChanged" OnPreRender="GVPreRender">
                                             <Columns>
                                                 <asp:BoundField DataField="idArticulo" HeaderText="Cod.Articulo" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" SortExpression="Linea"></asp:BoundField>
-                                                <asp:TemplateField HeaderText="Articulo" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center">
+                                                <asp:TemplateField HeaderText="Articulo" ItemStyle-HorizontalAlign="left" HeaderStyle-HorizontalAlign="Center">
                                                     <ItemTemplate>
-                                                        <asp:LinkButton ID="hlMasInfoo" CommandArgument='<%#Eval("idArticulo") %>' runat="server"><%# Eval("Articulo") %></asp:LinkButton>
+                                                        <%--<asp:LinkButton ID="hlMasInfoo" CommandArgument='<%#Eval("idArticulo") %>' runat="server"><%# Eval("Articulo") %></asp:LinkButton>--%>
+                                                        <asp:Label ID="Label2qq" runat="server" Text='<%# Eval("Articulo")%>'></asp:Label>
                                                     </ItemTemplate>
                                                 </asp:TemplateField>
 
@@ -147,8 +147,8 @@
 
                                     <%--<asp:LinqDataSource ID="dsPartes" runat="server" ContextTypeName="legLinq.LegalesDataContext" EntityTypeName="" OrderBy="" TableName="vStNecesidadCompraCalculo" Where='1=0'>--%>
                                     <%-- este esta bien <asp:LinqDataSource ID="dsPartes" runat="server" ContextTypeName="legLinq.LegalesDataContext" EntityTypeName="" OrderBy="" TableName="vStNecesidadCompraCalculo" Where='(@dds == idSubRubro or @dds == "-2" ) and (@ddr == idRubro or @ddr == "-2" ) and (@tbRepuesto == idArticulo or @tbRepuesto == -1) and @ddDepositos == idDeposito and ((@ddCaracteristica == -2 and (stock > 0)) or (@ddCaracteristica == 1 and stock+pdte < reposicion) or (@ddCaracteristica == 2 and stock == 0) or (@ddCaracteristica == 3 and stock < 0))'>--%>
-                                        <%--<asp:LinqDataSource ID="LinqDataSource3" runat="server" ContextTypeName="legLinq.LegalesDataContext" EntityTypeName="" OrderBy="" TableName="vStNecesidadCompraCalculo" Where='cantPendiente > 0 and (@okFecha == -1 or (fechaCierre >= @fechaDesde and fechaCierre <= @fechaHasta)) and idDeposito == @ddDepositos  and (codRepuesto == @tbRepuesto or @tbRepuesto == -1) and ((@ddCaracteristica == -2 and (analizable == "Si" or reparable == "Si")) or (@ddCaracteristica == 1 and analizable == "Si") or (@ddCaracteristica == 2 and reparable == "Si"))'>--%>
-                                     <%--   <WhereParameters>
+                                    <%--<asp:LinqDataSource ID="LinqDataSource3" runat="server" ContextTypeName="legLinq.LegalesDataContext" EntityTypeName="" OrderBy="" TableName="vStNecesidadCompraCalculo" Where='cantPendiente > 0 and (@okFecha == -1 or (fechaCierre >= @fechaDesde and fechaCierre <= @fechaHasta)) and idDeposito == @ddDepositos  and (codRepuesto == @tbRepuesto or @tbRepuesto == -1) and ((@ddCaracteristica == -2 and (analizable == "Si" or reparable == "Si")) or (@ddCaracteristica == 1 and analizable == "Si") or (@ddCaracteristica == 2 and reparable == "Si"))'>--%>
+                                    <%--   <WhereParameters>
                                             <asp:Parameter DefaultValue="20-06-2016" Name="fechaDesde" Type="DateTime" />
                                             <asp:Parameter DefaultValue="20-06-2016" Name="fechaHasta" Type="DateTime" />
                                             <asp:Parameter DefaultValue="1" Name="okFecha" Type="Int32" />
@@ -159,13 +159,11 @@
                                             <asp:ControlParameter ControlID="tbRepuesto" DefaultValue="-1" Name="tbRepuesto" Type="Int32" PropertyName="Text" />
                                         </WhereParameters>
                                     </asp:LinqDataSource>--%>
-                                   <%-- <asp:QueryExtender TargetControlID="dsPartes" runat="server">
+                                    <%-- <asp:QueryExtender TargetControlID="dsPartes" runat="server">
                                         <asp:SearchExpression ComparisonType="OrdinalIgnoreCase" DataFields="articulo" SearchType="Contains">
                                             <asp:ControlParameter ControlID="tbDescripcion" PropertyName="Text" Type="String" />
                                         </asp:SearchExpression>
                                     </asp:QueryExtender>--%>
-
-
                                 </section>
                                 <section style="height: 400px" class="panel">
                                     <header class="panel-heading">
@@ -178,30 +176,34 @@
                                         <div class="form-inline">
                                             <div class="form-group">
                                                 <label for="ddTipo">Tipo</label>
-                                                <asp:DropDownList ID="ddTipo" runat="server" CssClass="form-control col-6 input-sm entTab">
+                                                <asp:DropDownList ID="ddTipo" runat="server" CssClass="form-control input-sm entTab">
                                                     <asp:ListItem Text="Repuestos Sin Stock" Value="2" Selected="True"></asp:ListItem>
                                                     <asp:ListItem Text="Compra Extraordinaria por Oportunidad" Value="3"></asp:ListItem>
                                                     <asp:ListItem Text="Compra Extraordinaria por Necesidad" Value="4"></asp:ListItem>
                                                 </asp:DropDownList>
                                             </div>
+
                                             <div class="form-group">
-                                                <div class="col-sm-4">
-                                                    
-                                                    <asp:TextBox ID="tbCodigo" ClientIDMode="Static" data-button="Button1" runat="server" CssClass="form-control input-sm clickButton" Width="70px"></asp:TextBox>
-                                                    <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" Font-Bold="true" CssClass="DDValidator" Display="Dynamic" />
-                                                    <asp:CustomValidator ID="CustomValidator1" runat="server" Visible="false" ErrorMessage="CustomValidator" Display="Dynamic"> </asp:CustomValidator>
-                                                </div>
-                                                <div class="col-sm-8">
-                                                    
-                                                    <asp:TextBox ID="autoCompleteArticulos" ClientIDMode="Static" runat="server" CssClass="form-control input-sm"></asp:TextBox>
-                                                    <asp:Button ID="Button1" ClientIDMode="Static" runat="server" Style="display: none" Text="" Display="Dynamic" />
-                                                </div>
-
+                                                <label for="ddTipo"># Art.</label>
+                                                <asp:TextBox ID="tbCodigo" ClientIDMode="Static" data-button="Button1" runat="server" CssClass="form-control input-sm clickButton" Width="70px"></asp:TextBox>
+                                                <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" Font-Bold="true" CssClass="DDValidator" Display="Dynamic" />
+                                                <asp:CustomValidator ID="CustomValidator1" runat="server" Visible="false" ErrorMessage="CustomValidator" Display="Dynamic"> </asp:CustomValidator>
                                             </div>
-                                            
 
-                                            <asp:Label ID="Label3" runat="server" Text="Label">Cantidad</asp:Label>
-                                            <asp:TextBox ID="tbCant" CssClass="form-control input-sm " Width="80" placeholder="Cantidad" runat="server"></asp:TextBox>
+
+                                            <div class="form-group">
+                                                
+                                                <asp:TextBox ID="autoCompleteArticulos" ClientIDMode="Static" style="width: 360px;" runat="server" CssClass="form-control input-sm"></asp:TextBox>
+                                                <asp:Button ID="Button1" ClientIDMode="Static" runat="server" Style="display: none" Text="" Display="Dynamic" />
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="ddTipo">Cant.</label>
+                                                <asp:TextBox ID="tbCant" CssClass="form-control input-sm " Width="80" placeholder="Cantidad" runat="server"></asp:TextBox>
+                                            </div>
+
+
+                                            
                                             <asp:Button ID="bAgregar" runat="server" Text="Agregar" OnClick="bAgregar_Click" Visible="true" CssClass="btn btn-primary btn-xs" />
 
                                         </div>

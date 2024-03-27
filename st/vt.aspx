@@ -57,14 +57,14 @@
                                                 <div class="col-sm-3">
                                                     <label for="empresa">Linea</label><asp:TextBox ID="tbLinea" runat="server" CssClass="form-control input-sm" Enabled="false"></asp:TextBox>
                                                 </div>
-                                               
+
                                             </div>
                                             <div class="form-group">
                                                 <div class="col-sm-4">
                                                     <label for="fecha">Fecha OE</label>
                                                     <asp:TextBox ID="tbFecha" ClientIDMode="Static" runat="server" Enabled="false" CssClass="input-sm form-control" type="text"></asp:TextBox>
                                                 </div>
-                                                 <div class="col-sm-4">
+                                                <div class="col-sm-4">
                                                     <label for="fecha">Fecha cierre OE</label>
                                                     <asp:TextBox ID="tbFechaCierre" autocomplete="off" Enabled="false" ClientIDMode="Static" runat="server" CssClass="input-sm form-control datepicker" data-next="tbHoraCierre" type="text"></asp:TextBox>
                                                 </div>
@@ -72,11 +72,11 @@
                                                     <label for="fecha">Hora cierre OE</label>
                                                     <asp:TextBox ID="tbHoraCierre" ClientIDMode="Static" Enabled="false" runat="server" CssClass="input-sm form-control" type="text"></asp:TextBox>
                                                 </div>
-                                                
+
                                             </div>
 
                                             <div class="form-group">
-                                              <div class="col-sm-6">
+                                                <div class="col-sm-6">
                                                     <label for="ddDeposito">Deposito</label><asp:DropDownList ID="ddDeposito" CssClass="form-control input-sm entTab" data-next="ddMecanico" ClientIDMode="Static" runat="server" DataTextField="Deposito" DataValueField="idDeposito" AutoPostBack="false"></asp:DropDownList>
                                                 </div>
                                                 <div class="col-sm-6">
@@ -84,15 +84,15 @@
                                                 </div>
                                             </div>
 
-                                             <div class="form-group">
-                                              <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <div class="col-lg-12">
                                                     <asp:TextBox ID="observaciones" runat="server" class="form-control" placeholder="Detalle" Rows="4" TextMode="MultiLine"></asp:TextBox>
-                                                    
+
                                                     <%--<textarea id="notas"  class="form-control" data-trigger="keyup" data-rangelength="[20,200]"></textarea>--%>
                                                 </div>
                                             </div>
 
-                                            
+
 
                                             <div class="form-group">
                                                 <div class="col-sm-2">
@@ -130,20 +130,28 @@
                                                     <label for="pLista">Cod.Proveedor</label>
                                                     <asp:TextBox ID="codProveedor" runat="server" Enabled="false" CssClass="form-control"></asp:TextBox>
                                                 </div>
-                                                
+                                                <div class="col-sm-4">
+                                                    <div class="checkbox">
+                                                        
+                                                        <asp:CheckBox ID="cbCargaContinua" Checked="true" runat="server" Text="Carga Continua" />
+                                                    </div>
+                                                </div>
                                             </div>
-                                            
+
+
+                                            </div>
+
 
                                             <div class="form-group">
                                                 <div class="col-sm-2">
                                                     <label for="cant">Cantidad</label>
                                                     <asp:TextBox ID="cant" runat="server" ClientIDMode="Static" data-next="ddUbicacion" CssClass="form-control input-sm clickButton entTab" Text="1"></asp:TextBox>
                                                 </div>
-                                                
+
                                                 <div class="col-sm-6">
                                                     <label for="precio">Ubicacion</label>
                                                     <asp:DropDownList ID="ddUbicacion" CssClass="form-control input-sm entTab" data-next="partida" ClientIDMode="Static" runat="server" DataTextField="Ubicacion" DataValueField="idUbicacion" AutoPostBack="false"></asp:DropDownList>
-                                                    
+
                                                 </div>
                                                 <div class="col-sm-4">
                                                     <label for="detalle">Partida</label>
@@ -160,20 +168,21 @@
                                             <div class="col-lg-12 ">
                                                 <asp:Button ID="terminar" runat="server" Text="Cerrar Orden" OnClientClick="return finalizar();" Visible="false" CssClass="btn btn-primary btn-xs" />
                                                 <asp:Button ID="guardar" runat="server" Text="Continuar luego" Width="120px" CssClass="btn btn-white btn-xs" />
-                                                <asp:Button ID="eliminar" runat="server" Enabled="True" Text="Eliminar"  Visible="false" OnClientClick="return eliminar();" CssClass="btn btn-white btn-xs" />
+                                                <asp:Button ID="eliminar" runat="server" Enabled="True" Text="Eliminar" Visible="false" OnClientClick="return eliminar();" CssClass="btn btn-white btn-xs" />
                                                 <asp:Button ID="desvincular" runat="server" Enabled="true" Text="Desvincular" Visible="false" CssClass="btn btn-white btn-xs" />
                                                 <asp:Button ID="reimprimir" runat="server" Enabled="true" Text="Reimprimir" Visible="false" CssClass="btn btn-white btn-xs" />
                                                 <asp:Button ID="cancelar" runat="server" Enabled="true" Text="Cancelar" Visible="true" CssClass="btn btn-white btn-xs" />
                                             </div>
                                         </div>
+                                    </section>
                                     </div>
 
                                 </section>
                             </div>
-                        </section>
+                      
 
 
-                    </div>
+                    
 
                     <div class="col-sm-7">
                         <section class="panel">
@@ -215,9 +224,9 @@
                                         </asp:GridView>
 
 
-                                     
 
-                                       <%-- <asp:LinqDataSource ID="gridDataSource" runat="server" ContextTypeName="gLinq.StockDataContext" EntityTypeName="" TableName="DetalleFactura" EnableDelete="True" EnableUpdate="True" Where="idFactura == @idFactura">
+
+                                        <%-- <asp:LinqDataSource ID="gridDataSource" runat="server" ContextTypeName="gLinq.StockDataContext" EntityTypeName="" TableName="DetalleFactura" EnableDelete="True" EnableUpdate="True" Where="idFactura == @idFactura">
                                             <WhereParameters>
                                                 <asp:Parameter DefaultValue="1" Name="idFactura" Type="Int32" />
                                             </WhereParameters>
@@ -242,44 +251,44 @@
                                         Items Iniciados
                                     </header>
                                     <div>
-                                          <asp:GridView ID="gvPartes" runat="server" DataKeyNames="id" AutoGenerateColumns="False" CssClass="table table-striped m-b-none text-small" BorderStyle="None" GridLines="None"  OnPreRender="GVPreRender">
-                                                <Columns>
-                                                    <asp:TemplateField HeaderText="Fecha Inicio" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="120px">
-                                                        <ItemTemplate>
-                                                            <asp:Label ID="Label2" runat="server" Text='<%# Format(Eval("fechaInicio"), "dd/MM/yy HH:mm")%>'></asp:Label>
-                                                            <asp:HiddenField ID="hfId" ClientIDMode="Static" runat="server" Value='<%# Eval("id")%>' />
-                                                            <asp:HiddenField ID="hfResultado" ClientIDMode="Static" runat="server" Value='<%# Eval("resultado")%>' />
-                                                            <asp:HiddenField ID="hfOrigen" ClientIDMode="Static" runat="server" Value='<%# Eval("origen")%>' />
-                                                            <%--  <asp:HiddenField ID="idEstado" ClientIDMode="Static" runat="server" Value='<%# Eval("idEstado")%>' />
+                                        <asp:GridView ID="gvPartes" runat="server" DataKeyNames="id" AutoGenerateColumns="False" CssClass="table table-striped m-b-none text-small" BorderStyle="None" GridLines="None" OnPreRender="GVPreRender">
+                                            <Columns>
+                                                <asp:TemplateField HeaderText="Fecha Inicio" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="120px">
+                                                    <ItemTemplate>
+                                                        <asp:Label ID="Label2" runat="server" Text='<%# Format(Eval("fechaInicio"), "dd/MM/yy HH:mm")%>'></asp:Label>
+                                                        <asp:HiddenField ID="hfId" ClientIDMode="Static" runat="server" Value='<%# Eval("id")%>' />
+                                                        <asp:HiddenField ID="hfResultado" ClientIDMode="Static" runat="server" Value='<%# Eval("resultado")%>' />
+                                                        <asp:HiddenField ID="hfOrigen" ClientIDMode="Static" runat="server" Value='<%# Eval("origen")%>' />
+                                                        <%--  <asp:HiddenField ID="idEstado" ClientIDMode="Static" runat="server" Value='<%# Eval("idEstado")%>' />
                                                             <asp:HiddenField ID="idCubierta" ClientIDMode="Static" runat="server" Value='<%# Eval("idPartidaSacada")%>' />
                                                             <asp:HiddenField ID="nroOrden" ClientIDMode="Static" runat="server" Value='<%# Eval("nroOrden")%>' />--%>
-                                                        </ItemTemplate>
-                                                    </asp:TemplateField>
-                                                    <asp:BoundField DataField="mTareas.descripcion" HeaderText="Tarea" ItemStyle-HorizontalAlign="Left" HeaderStyle-HorizontalAlign="Center" SortExpression="Linea"></asp:BoundField>
-                                                    <%--<asp:BoundField DataField="deposito" HeaderText="Deposito" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" SortExpression="Linea"></asp:BoundField>
+                                                    </ItemTemplate>
+                                                </asp:TemplateField>
+                                                <asp:BoundField DataField="mTareas.descripcion" HeaderText="Tarea" ItemStyle-HorizontalAlign="Left" HeaderStyle-HorizontalAlign="Center" SortExpression="Linea"></asp:BoundField>
+                                                <%--<asp:BoundField DataField="deposito" HeaderText="Deposito" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" SortExpression="Linea"></asp:BoundField>
                                                     <asp:BoundField DataField="tipo" HeaderText="Cubierta" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" SortExpression="Linea"></asp:BoundField>
                                                     <asp:BoundField DataField="estado" HeaderText="Estado" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" SortExpression="Linea"></asp:BoundField>
                                                     <asp:BoundField DataField="nroPartida" HeaderText="Partida" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" SortExpression="Linea"></asp:BoundField>
                                                     <asp:BoundField DataField="Accion" HeaderText="Accion" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" SortExpression="Linea"></asp:BoundField>--%>
-                                                    <%--<asp:TemplateField HeaderText="" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center">
+                                                <%--<asp:TemplateField HeaderText="" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center">
                                                         <ItemTemplate>
                                                             <asp:CheckBox runat="server" ID="cb" Text="Enviar" />
                                                         </ItemTemplate>
                                                     </asp:TemplateField>--%>
 
-                                                 
-                                               
 
 
-                                                    <asp:TemplateField HeaderText="Detalle" HeaderStyle-Width="300" ItemStyle-HorizontalAlign="left" HeaderStyle-HorizontalAlign="Center">
-                                                        <ItemTemplate>
-                                                            <asp:TextBox ID="detalle" runat="server" Enabled="false" Text='<%# Eval("obs")%>' CssClass="form-control input-sm entTab"></asp:TextBox>
-                                                        </ItemTemplate>
-                                                    </asp:TemplateField>
 
 
-                                                </Columns>
-                                            </asp:GridView>
+                                                <asp:TemplateField HeaderText="Detalle" HeaderStyle-Width="300" ItemStyle-HorizontalAlign="left" HeaderStyle-HorizontalAlign="Center">
+                                                    <ItemTemplate>
+                                                        <asp:TextBox ID="detalle" runat="server" Enabled="false" Text='<%# Eval("obs")%>' CssClass="form-control input-sm entTab"></asp:TextBox>
+                                                    </ItemTemplate>
+                                                </asp:TemplateField>
+
+
+                                            </Columns>
+                                        </asp:GridView>
 
 
 
@@ -302,7 +311,7 @@
         <%If mostrarDialogo Then%>
         $('#myModal').modal('show');
         <%End If%>
-        
+
 
          <%If controlFocus <> "" Then%>
         setearFoco('<%=controlFocus%>')

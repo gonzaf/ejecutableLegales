@@ -20,8 +20,8 @@
                                         <div class="form-inline">
                                             Stock Actual
                                             <asp:HiddenField runat="server" ID="muestraModal" EnableViewState="true" Value="false" ClientIDMode="Static" />
-                                            <asp:TextBox ID="tbCodigo" autocomplete="off" CssClass="form-control input-sm clickbutton" data-button="buttonBuscar" Width="70" placeholder="# Rep." runat="server"></asp:TextBox>
-                                            <asp:TextBox ID="tbDescripcion" autocomplete="off" CssClass="form-control input-sm clickbutton" Width="100" data-button="buttonBuscar" placeholder="Desc.Repuesto" runat="server"></asp:TextBox>
+                                            <asp:TextBox ID="tbCodigo" autocomplete="off" CssClass="form-control input-sm clickbutton" data-button="buttonBuscar" Width="70" placeholder="Cod." runat="server"></asp:TextBox>
+                                            <asp:TextBox ID="tbDescripcion" autocomplete="off" CssClass="form-control input-sm clickbutton" Width="100" data-button="buttonBuscar" placeholder="Desc." runat="server"></asp:TextBox>
                                             <asp:DropDownList ID="ddRubro" AppendDataBoundItems="true" runat="server" AutoPostBack="true" CssClass="form-control input-sm entTab" DataTextField="descRubro" DataValueField="codRubro">
                                                 <asp:ListItem Text="Todos" Selected="True" Value="-1"></asp:ListItem>
                                             </asp:DropDownList>

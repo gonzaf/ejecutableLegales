@@ -97,7 +97,7 @@
                                             <div class="form-group">
                                                 <div class="col-sm-2">
                                                     <label for="tbCodigo">Codigo</label>
-                                                    <asp:TextBox ID="tbCodigo" ClientIDMode="Static" data-button="<%=b %>" runat="server" CssClass="form-control input-sm clickButton" Width="70px"></asp:TextBox>
+                                                    <asp:TextBox ID="tbCodigo" ClientIDMode="Static" data-button="Button1" runat="server" CssClass="form-control input-sm clickButton" Width="70px"></asp:TextBox>
                                                     <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" Font-Bold="true" CssClass="DDValidator" Display="Dynamic" />
                                                     <asp:CustomValidator ID="CustomValidator1" runat="server" Visible="false" ErrorMessage="CustomValidator" Display="Dynamic"> </asp:CustomValidator>
                                                 </div>

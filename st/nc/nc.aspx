@@ -66,36 +66,37 @@
                                         <span class="pull-right">
                                             <asp:Button ID="bMarcarTodos" OnClick="bMarcarTodos_Click" runat="server" Text="Marcar Todos" Visible="true" CssClass="btn btn-primary btn-xs" />
                                         </span>
-                                        <asp:GridView ID="gvPartes" runat="server" DataKeyNames="idArticulo" hea AutoGenerateColumns="False" OnRowDataBound="gvPartes_RowDataBound" CssClass="table table-striped m-b-none text-small" BorderStyle="None" GridLines="None" OnSelectedIndexChanged="gvPartes_SelectedIndexChanged" OnPreRender="GVPreRender">
-                                            <Columns>
-                                                <asp:BoundField DataField="idArticulo" HeaderText="Cod.Articulo" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" SortExpression="Linea"></asp:BoundField>
-                                                <asp:TemplateField HeaderText="Articulo" ItemStyle-HorizontalAlign="left" HeaderStyle-HorizontalAlign="Center">
-                                                    <ItemTemplate>
-                                                        <%--<asp:LinkButton ID="hlMasInfoo" CommandArgument='<%#Eval("idArticulo") %>' runat="server"><%# Eval("Articulo") %></asp:LinkButton>--%>
-                                                        <asp:Label ID="Label2qq" runat="server" Text='<%# Eval("Articulo")%>'></asp:Label>
-                                                    </ItemTemplate>
-                                                </asp:TemplateField>
+                                        <div class="tableFixHead">
+                                            <asp:GridView ID="gvPartes" runat="server" DataKeyNames="idArticulo" AutoGenerateColumns="False" OnRowDataBound="gvPartes_RowDataBound" CssClass="table table-striped m-b-none text-small" BorderStyle="None" GridLines="None" OnSelectedIndexChanged="gvPartes_SelectedIndexChanged" OnPreRender="GVPreRender">
+                                                <Columns>
+                                                    <asp:BoundField DataField="idArticulo" HeaderText="Cod.Articulo" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" SortExpression="Linea"></asp:BoundField>
+                                                    <asp:TemplateField HeaderText="Articulo" ItemStyle-HorizontalAlign="left" HeaderStyle-HorizontalAlign="Center">
+                                                        <ItemTemplate>
+                                                            <%--<asp:LinkButton ID="hlMasInfoo" CommandArgument='<%#Eval("idArticulo") %>' runat="server"><%# Eval("Articulo") %></asp:LinkButton>--%>
+                                                            <asp:Label ID="Label2qq" runat="server" Text='<%# Eval("Articulo")%>'></asp:Label>
+                                                        </ItemTemplate>
+                                                    </asp:TemplateField>
 
-                                                <asp:TemplateField HeaderText="Deposito" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center">
-                                                    <ItemTemplate>
-                                                        <asp:Label ID="Label2" runat="server" Text='<%# Eval("deposito")%>'></asp:Label>
-                                                        <asp:HiddenField ID="hfNecesidad" ClientIDMode="Static" runat="server" Value='<%# Eval("necesidadCompra")%>' />
-                                                        <asp:HiddenField ID="hfIdArticulo" ClientIDMode="Static" runat="server" Value='<%# Eval("idArticulo")%>' />
-                                                        <asp:HiddenField ID="hfIdDeposito" ClientIDMode="Static" runat="server" Value='<%# Eval("idDeposito")%>' />
-                                                    </ItemTemplate>
-                                                </asp:TemplateField>
-                                                <asp:BoundField DataField="maximo" HeaderText="Maximo" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" SortExpression="Linea"></asp:BoundField>
-                                                <asp:BoundField DataField="stock" HeaderText="Stock" HeaderStyle-HorizontalAlign="Center" SortExpression="Linea"></asp:BoundField>
-                                                <asp:BoundField DataField="reposicion" HeaderText="Repos" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" SortExpression="Linea"></asp:BoundField>
-                                                <asp:TemplateField HeaderText="Pdte" ItemStyle-HorizontalAlign="Center" HeaderStyle-Width="30px" HeaderStyle-HorizontalAlign="Center">
-                                                    <ItemTemplate>
-                                                        <asp:HyperLink NavigateUrl='<%# String.Concat("cPdt.aspx?id=", Eval("idArticulo"), "&idDep=", Eval("idDeposito")) %>' Target="_blank" ID="foto" runat="server"><%# Eval("Pdte")%></asp:HyperLink>
-                                                    </ItemTemplate>
-                                                </asp:TemplateField>
-                                                <asp:BoundField DataField="necesidadCompra" HeaderText="Nec.Compra" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" SortExpression="Linea"></asp:BoundField>
+                                                    <asp:TemplateField HeaderText="Deposito" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center">
+                                                        <ItemTemplate>
+                                                            <asp:Label ID="Label2" runat="server" Text='<%# Eval("deposito")%>'></asp:Label>
+                                                            <asp:HiddenField ID="hfNecesidad" ClientIDMode="Static" runat="server" Value='<%# Eval("necesidadCompra")%>' />
+                                                            <asp:HiddenField ID="hfIdArticulo" ClientIDMode="Static" runat="server" Value='<%# Eval("idArticulo")%>' />
+                                                            <asp:HiddenField ID="hfIdDeposito" ClientIDMode="Static" runat="server" Value='<%# Eval("idDeposito")%>' />
+                                                        </ItemTemplate>
+                                                    </asp:TemplateField>
+                                                    <asp:BoundField DataField="maximo" HeaderText="Maximo" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" SortExpression="Linea"></asp:BoundField>
+                                                    <asp:BoundField DataField="stock" HeaderText="Stock" HeaderStyle-HorizontalAlign="Center" SortExpression="Linea"></asp:BoundField>
+                                                    <asp:BoundField DataField="reposicion" HeaderText="Repos" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" SortExpression="Linea"></asp:BoundField>
+                                                    <asp:TemplateField HeaderText="Pdte" ItemStyle-HorizontalAlign="Center" HeaderStyle-Width="30px" HeaderStyle-HorizontalAlign="Center">
+                                                        <ItemTemplate>
+                                                            <asp:HyperLink NavigateUrl='<%# String.Concat("cPdt.aspx?id=", Eval("idArticulo"), "&idDep=", Eval("idDeposito")) %>' Target="_blank" ID="foto" runat="server"><%# Eval("Pdte")%></asp:HyperLink>
+                                                        </ItemTemplate>
+                                                    </asp:TemplateField>
+                                                    <asp:BoundField DataField="necesidadCompra" HeaderText="Nec.Compra" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" SortExpression="Linea"></asp:BoundField>
 
 
-                                                <%--  <asp:TemplateField HeaderText="Accion" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center">
+                                                    <%--  <asp:TemplateField HeaderText="Accion" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center">
                                                         <ItemTemplate>
                                                             <asp:DropDownList ID="ddAccion" runat="server" AutoPostBack="false" data-target='ddMotivo<%# Eval("idDetalle") %>' CssClass="form-control filterSelect input-sm entTab">
                                                                 <asp:ListItem Text="Desechable" Value="1" Selected="True"></asp:ListItem>
@@ -105,33 +106,33 @@
                                                             </asp:DropDownList>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>--%>
-                                                <%--  <asp:TemplateField HeaderText="Motivo" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center">
+                                                    <%--  <asp:TemplateField HeaderText="Motivo" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center">
                                                         <ItemTemplate>
                                                             <asp:DropDownList ID="ddMotivo" DataSourceID="LinqDataSource4" DataTextField="motivo" DataValueField="idMotivo" runat="server" AutoPostBack="false" CssClass="form-control input-sm entTab">
                                                             </asp:DropDownList>
 
                                                         </ItemTemplate>
                                                     </asp:TemplateField>--%>
-                                                <asp:TemplateField HeaderText="Pedido" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center">
+                                                    <asp:TemplateField HeaderText="Pedido" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center">
 
-                                                    <%--<HeaderTemplate>
+                                                        <%--<HeaderTemplate>
 
                                                         <asp:CheckBox ID="checkAll" AutoPostBack="true" OnCheckedChanged="checkAll_CheckedChanged" Text="Todo" runat="server" />
 
                                                     </HeaderTemplate>--%>
-                                                    <ItemTemplate>
-                                                        <asp:TextBox ID="cant" Width="10px" runat="server"></asp:TextBox>
-                                                        <asp:CheckBox runat="server" ID="cb" />
-                                                    </ItemTemplate>
-                                                </asp:TemplateField>
-                                                <%--<asp:TemplateField HeaderText="Detalle" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center">
+                                                        <ItemTemplate>
+                                                            <asp:TextBox ID="cant" Width="10px" runat="server"></asp:TextBox>
+                                                            <asp:CheckBox runat="server" ID="cb" />
+                                                        </ItemTemplate>
+                                                    </asp:TemplateField>
+                                                    <%--<asp:TemplateField HeaderText="Detalle" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center">
                                                         <ItemTemplate>
                                                             <asp:TextBox ID="detalle" runat="server"></asp:TextBox>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>--%>
-                                            </Columns>
-                                        </asp:GridView>
-
+                                                </Columns>
+                                            </asp:GridView>
+                                        </div>
 
 
 
@@ -192,8 +193,8 @@
 
 
                                             <div class="form-group">
-                                                
-                                                <asp:TextBox ID="autoCompleteArticulos" ClientIDMode="Static" style="width: 360px;" runat="server" CssClass="form-control input-sm"></asp:TextBox>
+
+                                                <asp:TextBox ID="autoCompleteArticulos" ClientIDMode="Static" Style="width: 360px;" runat="server" CssClass="form-control input-sm"></asp:TextBox>
                                                 <asp:Button ID="Button1" ClientIDMode="Static" runat="server" Style="display: none" Text="" Display="Dynamic" />
                                             </div>
 
@@ -203,7 +204,7 @@
                                             </div>
 
 
-                                            
+
                                             <asp:Button ID="bAgregar" runat="server" Text="Agregar" OnClick="bAgregar_Click" Visible="true" CssClass="btn btn-primary btn-xs" />
 
                                         </div>

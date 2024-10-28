@@ -70,6 +70,7 @@
                                                             <asp:HiddenField ID="hfIdConfirmacion" ClientIDMode="Static" runat="server" Value='<%# Eval("idConfirmacion")%>' />
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
+                                                    <asp:BoundField DataField="id" HeaderText="# Envio" HeaderStyle-CssClass="text-center"  HeaderStyle-Width="20px" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" SortExpression="Linea"></asp:BoundField>
                                                     <asp:BoundField DataField="codRepuesto" HeaderText="Codigo Repuesto" HeaderStyle-CssClass="text-center"  HeaderStyle-Width="20px" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" SortExpression="Linea"></asp:BoundField>
                                                     <asp:BoundField DataField="Desc_Repuesto" HeaderText="Repuesto" HeaderStyle-HorizontalAlign="Center" SortExpression="Linea"></asp:BoundField>
                                                     <asp:BoundField DataField="cantEnviadaProveedor" HeaderText="Cant Env" ItemStyle-HorizontalAlign="Center" HeaderStyle-Width="20px" HeaderStyle-CssClass="text-center" SortExpression="Linea"></asp:BoundField>
@@ -97,13 +98,13 @@
                                                   
                                                      <asp:TemplateField HeaderText="Reimpresion" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="30px">
                                                         <ItemTemplate>
-                                                            <asp:HyperLink ID="HyperLink2" NavigateUrl='<%#String.Concat("/st/prEnvRep.aspx?id=", Eval("idImpresion"))%>' runat="server">R.Envio</asp:HyperLink>
+                                                            <asp:HyperLink ID="HyperLink2" NavigateUrl='<%#String.Concat("/st/prEnvRep.aspx?id=", Eval("idImpresion"), "&back=Cs")%>' runat="server">R.Envio</asp:HyperLink>
                                                         </ItemTemplate>
                                                      </asp:TemplateField>
 
                                                       <asp:TemplateField HeaderText="Reimpresion" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="30px">
                                                         <ItemTemplate>
-                                                            <asp:HyperLink ID="HyperLink1" NavigateUrl='<%#String.Concat("/st/prRec.aspx?id=", Eval("idRemitoRecepcion"))%>' runat="server">R.Recep.</asp:HyperLink>
+                                                            <asp:HyperLink ID="HyperLink1" NavigateUrl='<%#String.Concat("/st/prRec.aspx?id=", Eval("idRemitoRecepcion"), "&idRepRecibido=", Eval("idRepRecibido"), "&back=Cs")%>' runat="server">R.Recep.</asp:HyperLink>
                                                         </ItemTemplate>
                                                      </asp:TemplateField>
 

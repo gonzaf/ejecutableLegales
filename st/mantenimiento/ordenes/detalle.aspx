@@ -237,6 +237,15 @@
                                                 <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
                                             </asp:BoundField>
 
+                                            <asp:TemplateField HeaderText="" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center">
+                                                <ItemTemplate>
+                                                    <%--<asp:CheckBox runat="server" ID="guardar" Text="Generar" Visible='<%#IIf(Eval("origen") = "Revision", "false", "true")%>' />--%>
+                                                    <asp:LinkButton ID="lbAnular" OnCommand="lbAnular_Command" CommandArgument='<%#String.Concat(Eval("orden"), "/", Eval("idTarea"), "/", Eval("idCoche")) %>' Visible='<%#IIf(False, "false", "true")%>' runat="server">Anular</asp:LinkButton>
+                                                    <%--<asp:LinkButton ID="hlMasInfoo" OnCommand="hlMasInfo_Command" CommandArgument='<%#String.Concat(Eval("idTarea"), "/", Eval("idCabecera")) %>' Visible='<%#IIf(Eval("origen") = "Revision", "true", "false")%>' runat="server">Procesar</asp:LinkButton>--%>
+                                                </ItemTemplate>
+                                            </asp:TemplateField>
+
+
 
                                         </Columns>
 

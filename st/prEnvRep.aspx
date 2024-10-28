@@ -15,10 +15,11 @@
 
 <script language="javascript">
     var NEW_LOC = '<%=newLoc%>';
-
+    
 
     function redireccionar() {
-        setTimeout("location.href=NEW_LOC", 3000);
+        if (<%=volver%>)  setTimeout("history.go(-2)", 3000);
+        else setTimeout("location.href=NEW_LOC", 3000);
     }
     function imrimeyredi() {
         window.print();

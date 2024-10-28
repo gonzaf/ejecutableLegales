@@ -64,10 +64,15 @@
                                                     <asp:BoundField DataField="Desc_Repuesto" HeaderText="Repuesto" HeaderStyle-HorizontalAlign="Center" SortExpression="Linea"></asp:BoundField>
                                                     <asp:BoundField DataField="cantEnviadaProveedor" HeaderText="Cant.Env." ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" SortExpression="Linea"></asp:BoundField>
 
+                                                    <asp:TemplateField HeaderText="Pendiente" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="30px">
+                                                        <ItemTemplate>
+                                                            <asp:Label ID="Labelss2" runat="server" Text='<%#Eval("cantEnviadaProveedor") - Eval("cantDesechada") - Eval("cantReingresada") %>'></asp:Label>
+                                                        </ItemTemplate>
+                                                    </asp:TemplateField>
                                                     
                                                      <asp:TemplateField HeaderText="Tipo" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="30px">
                                                         <ItemTemplate>
-                                                            <asp:Label ID="Labelss2" runat="server" Text='<%#IIf(Eval("esReclamo"), "Reclamo", "Reparacion")%>'></asp:Label>
+                                                            <asp:Label ID="Lab2" runat="server" Text='<%#IIf(Eval("esReclamo"), "Reclamo", "Reparacion")%>'></asp:Label>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
 

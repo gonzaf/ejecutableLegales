@@ -210,7 +210,8 @@
                                         </div>
 
 
-                                        <asp:GridView ID="GridView3" runat="server" DataKeyNames="idArticulo" AutoGenerateColumns="False" DataSourceID="dsCasosEspeciales" CssClass="table table-striped m-b-none text-small" BorderStyle="None" GridLines="None" OnSelectedIndexChanged="gvPartes_SelectedIndexChanged" OnPreRender="GVPreRender">
+                                        <%--<asp:GridView ID="GridView3" runat="server" DataKeyNames="idArticulo" AutoGenerateColumns="False" DataSourceID="dsCasosEspeciales" CssClass="table table-striped m-b-none text-small" BorderStyle="None" GridLines="None" OnSelectedIndexChanged="gvPartes_SelectedIndexChanged" OnPreRender="GVPreRender">--%>
+                                        <asp:GridView ID="GridView3" runat="server" DataKeyNames="idArticulo" AutoGenerateColumns="False" CssClass="table table-striped m-b-none text-small" BorderStyle="None" GridLines="None" OnSelectedIndexChanged="gvPartes_SelectedIndexChanged" OnPreRender="GVPreRender">
                                             <Columns>
 
                                                 <asp:BoundField DataField="idArticulo" HeaderText="Cod.Articulo" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" SortExpression="Linea"></asp:BoundField>

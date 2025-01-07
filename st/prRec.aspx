@@ -18,8 +18,8 @@
 
 
     function redireccionar() {
-        //setTimeout("location.href=NEW_LOC", 3000);
-        setTimeout("history.back()", 3000);
+        setTimeout("location.href=NEW_LOC", 3000);
+        //setTimeout("history.back()", 3000);
         
     }
     function imrimeyredi() {

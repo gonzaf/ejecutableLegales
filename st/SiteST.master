@@ -687,6 +687,15 @@
             }
         });
 
+        $(".soloNumeros").keypress(function (event) {
+
+            var key = event.charCode;
+
+            if (!(key >= 48 && key <= 57)) {
+                event.preventDefault();
+            }
+        });
+
         //$('#mainmenu').on('click', 'a', function)
 
         //$("input").live('focus', function () {

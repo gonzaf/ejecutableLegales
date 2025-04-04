@@ -315,6 +315,7 @@
                     <li><a href="/st/cMvs.aspx">Movimientos</a></li>
                     <li><a href="/st/st.aspx">Stock Actual</a></li>
                     <li><a href="/st/aj.aspx">Ajuste</a></li>
+                    <li><a href="/st/ajInicial.aspx">Ajuste Inicial</a></li>
                     <li class="dropdown-submenu">
                         <a href="#"><i class="fa fa-th fa-lg"></i><span>Necesidad Compra</span></a>
                         <ul class="dropdown-menu">

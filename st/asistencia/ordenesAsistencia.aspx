@@ -163,8 +163,21 @@
 
                                         </div>
                                         <div class="flex flex-column flex-align-center">
-                                            <p class="green-badge">Ordenes Asistencia en Curso: <%= cantidadOrdenesAsistencia %></p>
+
+                                            
+
+<asp:UpdatePanel ID="UpdatePanel1" runat="server">
+    <ContentTemplate>
+            <%--<p class="green-badge"><asp:Label ID="ordenesPendientes" runat="server" Text="0" CssClass="badge badge-info" /></p>
+            <p class="red-badge"><asp:Label ID="qudosPendientes" runat="server" Text="0" CssClass="badge badge-info" /></p>--%>
+          <p class="green-badge">Ordenes Asistencia en Curso: <%= cantidadOrdenesAsistencia %></p>
                                             <p class="red-badge">Quedos Pendientes: <%= cantidadQuedosPendientes %></p>
+
+        <asp:Timer ID="Timer1" runat="server" Interval="300000" OnTick="Timer1_Tick" />
+    </ContentTemplate>
+</asp:UpdatePanel>
+
+                                          
                                         </div>
 
                                     </div>
@@ -339,6 +352,14 @@
 
                                         <asp:BoundField DataField="LegajoChofer" HeaderText="Chofer"
                                             SortExpression="fechaCierre"
+                                            HeaderStyle-CssClass="text-center"
+                                            ItemStyle-HorizontalAlign="Center">
+                                            <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
+                                        </asp:BoundField>
+
+
+                                         <asp:BoundField DataField="TelefonoChofer" HeaderText="Tel."
+                                            SortExpression="TelefonoChofer"
                                             HeaderStyle-CssClass="text-center"
                                             ItemStyle-HorizontalAlign="Center">
                                             <HeaderStyle HorizontalAlign="Center"></HeaderStyle>

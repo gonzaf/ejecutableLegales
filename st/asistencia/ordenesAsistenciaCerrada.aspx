@@ -232,12 +232,18 @@
                                             <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
                                         </asp:BoundField>
 
+                                        <asp:TemplateField>
+                                            <HeaderTemplate>Chofer</HeaderTemplate>
+                                            <ItemTemplate>
+                                                <p><%# Eval("LegajoChofer") %> - <%# Eval("ApellidoChofer") %></p>
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
 
-                                        <asp:BoundField DataField="ApellidoChofer" HeaderText="Chofer"
+                                       <%-- <asp:BoundField DataField="ApellidoChofer" HeaderText="Chofer"
                                             HeaderStyle-CssClass="text-center"
                                             ItemStyle-HorizontalAlign="Center">
                                             <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
-                                        </asp:BoundField>
+                                        </asp:BoundField>--%>
 
                                         <asp:BoundField DataField="Sistema" HeaderText="Sistema"
                                             HeaderStyle-CssClass="text-center"

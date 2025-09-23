@@ -159,10 +159,7 @@
 
     </script>
 
-
-
-
-
+   
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -480,7 +477,7 @@
     </footer>
 
 
-
+   
 
     <script type="text/javascript">
 

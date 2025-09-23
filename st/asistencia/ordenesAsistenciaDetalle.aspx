@@ -235,6 +235,14 @@
                                 Style="color: #242424; cursor: pointer;" />
 
                         </div>
+
+                        <div class="margin-1-rem">
+
+                            <asp:Button ID="bEliminar" Visible="true" runat="server" Text="Eliminar"
+                                CssClass="btn btn-danger"
+                                Style="color: #242424; cursor: pointer;" />
+
+                        </div>
                     </div>
                 </div>
 

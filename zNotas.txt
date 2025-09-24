@@ -12,6 +12,9 @@ Dim idAccion As String = e.CommandArgument.ToString.Split("/")(1)
 
 
 
+24/9/2
+
+crear accion nro 69 puedeBorrarAsistenciasYQuedos de tipo ma
 
 
 

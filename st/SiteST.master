@@ -159,6 +159,18 @@
 
     </script>
 
+
+<%--    <script type="text/javascript">
+        window.addEventListener("pageshow", function (event) {
+            if (event.persisted || (performance.getEntriesByType("navigation")[0]?.type === "back_forward")) {
+                console.log("⚠️ Volvió con atrás/adelante → recargando");
+                location.reload();
+            }
+        });
+    
+    </script>--%>
+
+
    
 
     <asp:ContentPlaceHolder ID="head" runat="server">

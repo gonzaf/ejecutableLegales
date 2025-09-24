@@ -384,6 +384,7 @@
                                                     ControlStyle-CssClass="btn btn-xs btn-danger"
                                                     Style="color: #242424;"
                                                     Text="Eliminar"
+                                                    visible="false"
                                                     CommandName="eliminarQedo"
                                                     CommandArgument='<%# Eval("id") %>' />
                                             </ItemTemplate>

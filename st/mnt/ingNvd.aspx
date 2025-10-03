@@ -125,8 +125,8 @@
                             <div class="panel-body">
                                 <section class="panel">
                                     <header class="panel-heading">
-                                        <span class="label bg-danger pull-right">Cubiertas</span>
-                                        Mediciones de Profundidad
+                                        <span class="label bg-danger pull-right">Novedades</span>
+                                        Novedades
                                     </header>
                                     <div>
                                         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="ds" CssClass="table table-striped m-b-none text-small" BorderStyle="None" GridLines="None" OnPreRender="GVPreRender" ShowFooter="True">

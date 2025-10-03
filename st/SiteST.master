@@ -402,6 +402,7 @@
                     <li><a href="/st/mnt/ot.aspx">OT en Curso</a></li>
                     <li><a href="/st/mantenimiento/ordenes/consulta.aspx">Consulta Ordenes</a></li>
                     <li><a href="/st/mnt/etdSvc.aspx">Estado de los Servicios</a></li>
+                    <li><a href="/st/mnt/ingNvd.aspx"><i class="fa  fa-search-plus fa-lg"></i><span>Novedades</span></a></li>
                     <li><a href="/st/mantenimiento/correctivo/alta.aspx"><i class="fa  fa-search-plus fa-lg"></i><span>Nueva Tarea</span></a></li>
                     <li><a href="/st/asistencia/ordenesAsistencia.aspx">Ordenes Asistencia</a></li>
                     <li><a href="/st/asistencia/ordenesAsistenciaCerrada.aspx">Ordenes Asistencia Cerradas</a></li>

@@ -17,4 +17,6 @@ Dim idAccion As String = e.CommandArgument.ToString.Split("/")(1)
 crear accion nro 69 puedeBorrarAsistenciasYQuedos de tipo ma
 
 
+2/10
+crear mTarea -10 = Novedades
 

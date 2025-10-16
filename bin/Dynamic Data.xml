@@ -890,6 +890,24 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
+<member name="F:Dynamic_Data.ingNvd._ddRubro">
+<summary>
+Control ddRubro.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Dynamic_Data.ingNvd._rubrosLDS">
+<summary>
+Control rubrosLDS.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
 <member name="F:Dynamic_Data.ingNvd._tbLegajo">
 <summary>
 Control tbLegajo.
@@ -899,18 +917,9 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Dynamic_Data.ingNvd._tbRubro">
+<member name="F:Dynamic_Data.ingNvd._tbNombre">
 <summary>
-Control tbRubro.
-</summary>
-<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member>
-<member name="F:Dynamic_Data.ingNvd._tbObs">
-<summary>
-Control tbObs.
+Control tbNombre.
 </summary>
 <remarks>
 Campo generado automáticamente.
@@ -920,6 +929,15 @@ Para modificarlo, mueva la declaración del campo del archivo del diseñador al 
 <member name="F:Dynamic_Data.ingNvd._tbNovedad">
 <summary>
 Control tbNovedad.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Dynamic_Data.ingNvd._tbObs">
+<summary>
+Control tbObs.
 </summary>
 <remarks>
 Campo generado automáticamente.
@@ -1964,6 +1982,15 @@ Para modificarlo, mueva la declaración del campo del archivo del diseñador al 
 <member name="F:Dynamic_Data.eOt._bCerrarTodo">
 <summary>
 Control bCerrarTodo.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Dynamic_Data.eOt._gvNovedades">
+<summary>
+Control gvNovedades.
 </summary>
 <remarks>
 Campo generado automáticamente.

@@ -44,27 +44,81 @@
                                             <asp:Button ID="bCerrarTodo" runat="server" Text="Cerrar Todo" OnClientClick="return finalizar();" Visible="false" CssClass="btn btn-primary btn-xs" />
                                         </div>
 
-                                        <%--<div class="form-inline" style="visibility: hidden">
-                                            Reclamos&nbsp;&nbsp; 
-                                            <asp:TextBox ID="desdeFecha" runat="server" ClientIDMode="Static" CssClass="input-sm form-control datepicker" Width="80px"></asp:TextBox>
-                                            <asp:Button ID="buttondesdeFecha" OnClick="buttonfecha_Click" display="dynamic" ClientIDMode="Static" runat="server" Text="Button" type="hidden" Style="display: none" />
-                                            <asp:TextBox ID="hastaFecha" runat="server" ClientIDMode="Static" CssClass="input-sm form-control datepicker" Width="80px"></asp:TextBox>
-                                            <asp:Button ID="buttonhastaFecha" OnClick="buttonfecha_Click" display="dynamic" ClientIDMode="Static" runat="server" Text="Button" type="hidden" Style="display: none" />
-                                            &nbsp;&nbsp;
-                                            <asp:CheckBox ID="cbMostrarTodo" AutoPostBack="true" OnCheckedChanged="cbMostrarTodo_CheckedChanged" runat="server" Checked="true" Text="Ver Todos los dias" />
-                                            <asp:Label ID="Label2" runat="server" Text="Label">---</asp:Label>
-                                            <asp:DropDownList ID="ddDepositos" AppendDataBoundItems="true" runat="server" AutoPostBack="true" CssClass="form-control input-sm entTab" DataTextField="Deposito" DataValueField="idDeposito">
-                                            </asp:DropDownList>
 
-
-                                            <asp:TextBox ID="tbInterno" CssClass="form-control input-sm" Width="50" placeholder="# Int." runat="server"></asp:TextBox>
-                                            <asp:TextBox ID="tbRepuesto" CssClass="form-control input-sm" Width="100" placeholder="# Repuesto" runat="server"></asp:TextBox>
-                                            <asp:TextBox ID="tbDescripcion" CssClass="form-control input-sm " Width="100" placeholder="Desc.Repuesto" runat="server"></asp:TextBox>
-                                        </div>--%>
                                     </header>
                                     <section style="//height: 200px" class="panel-body scrollbar scroll-y m-b">
                                         <div class="panel">
 
+                                            <asp:GridView ID="gvNovedades" runat="server" DataKeyNames="id" AutoGenerateColumns="False" CssClass="table table-striped m-b-none text-small" BorderStyle="None" GridLines="None" OnPreRender="GVPreRender">
+                                                <Columns>
+                                                    <%--<asp:BoundField DataField="novedad" HeaderText="Novedad" ItemStyle-HorizontalAlign="Left" HeaderStyle-HorizontalAlign="Center" SortExpression="obs"></asp:BoundField>--%>
+                                                    <asp:TemplateField HeaderText="Novedad" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="120px">
+                                                        <ItemTemplate>
+                                                            <%--<asp:Label ID="Label2" runat="server" Text='<%# Format(Eval("fechaInicio"), "dd/MM/yy HH:mm")%>'></asp:Label>--%>
+                                                            <%--'aca esta guardada la novedad--%>
+                                                            <asp:Label ID="Label2" runat="server" Text='<%# Eval("novedad")  %>'></asp:Label>
+                                                            <asp:HiddenField ID="hfId" ClientIDMode="Static" runat="server" Value='<%# Eval("id")%>' />
+                                                            <asp:HiddenField ID="hfResultado" ClientIDMode="Static" runat="server" Value='<%# Eval("resultado")%>' />
+                                                            <asp:HiddenField ID="hfOrigen" ClientIDMode="Static" runat="server" Value='<%# Eval("origen")%>' />
+                                                        </ItemTemplate>
+                                                    </asp:TemplateField>
+
+                                                    <%--<asp:BoundField DataField="deposito" HeaderText="Deposito" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" SortExpression="Linea"></asp:BoundField>
+                                                    <asp:BoundField DataField="tipo" HeaderText="Cubierta" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" SortExpression="Linea"></asp:BoundField>
+                                                    <asp:BoundField DataField="estado" HeaderText="Estado" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" SortExpression="Linea"></asp:BoundField>
+                                                    <asp:BoundField DataField="nroPartida" HeaderText="Partida" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" SortExpression="Linea"></asp:BoundField>
+                                                    <asp:BoundField DataField="Accion" HeaderText="Accion" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" SortExpression="Linea"></asp:BoundField>--%>
+                                                    <%--<asp:TemplateField HeaderText="" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center">
+                                                        <ItemTemplate>
+                                                            <asp:CheckBox runat="server" ID="cb" Text="Enviar" />
+                                                        </ItemTemplate>
+                                                    </asp:TemplateField>--%>
+
+                                                    <asp:TemplateField HeaderText="Accion" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center">
+                                                        <ItemTemplate>
+                                                            <asp:DropDownList ID="ddAccionNovedades" OnSelectedIndexChanged="ddAccionNovedades_SelectedIndexChanged" AutoPostBack="true" CssClass="form-control input-sm entTab" data-next="ddMecanico" ClientIDMode="Static" runat="server">
+                                                                <asp:ListItem Text="Accion" Value="-1" Selected="True"></asp:ListItem>
+                                                                <asp:ListItem Text="Reasignar Rubro" Enabled="True" Value="1"></asp:ListItem>
+                                                                <asp:ListItem Text="Cerrar" Enabled="True" Value="2"></asp:ListItem>
+                                                                <asp:ListItem Text="Descartar" Enabled="True" Value="3"></asp:ListItem>
+                                                            </asp:DropDownList>
+
+                                                        </ItemTemplate>
+                                                    </asp:TemplateField>
+
+
+                                                    <asp:TemplateField HeaderText="" ItemStyle-HorizontalAlign="center" HeaderStyle-CssClass="text-center">
+                                                        <ItemTemplate>
+                                                            <asp:DropDownList ID="ddRubro" Visible="false" DataSourceID="rubrosLDS" AppendDataBoundItems="true" DataTextField="Descripcion" DataValueField="id" runat="server" CssClass="form-control col-6 input-sm entTab">
+                                                            </asp:DropDownList>
+                                                            <asp:LinqDataSource ID="rubrosLDS" runat="server" ContextTypeName="legLinq.LegalesDataContext" EntityTypeName="" OrderBy="Descripcion" TableName="mRubros">
+                                                            </asp:LinqDataSource>
+
+                                                        </ItemTemplate>
+                                                    </asp:TemplateField>
+
+
+
+
+                                                    <asp:TemplateField HeaderText="Detalle" ItemStyle-HorizontalAlign="left" HeaderStyle-HorizontalAlign="Center">
+                                                        <ItemTemplate>
+                                                            <asp:TextBox ID="detalle" runat="server" Text='' CssClass="form-control input-sm entTab"></asp:TextBox>
+                                                        </ItemTemplate>
+                                                    </asp:TemplateField>
+
+                                                    <asp:TemplateField HeaderText="Observaciones">
+                                                        <ItemTemplate>
+                                                        <a href="javascript:alert('<%#"" & Eval("detalle") %>')">Ver Observaciones</a>
+                                                        </ItemTemplate>
+                                                    </asp:TemplateField>
+
+
+                                                </Columns>
+                                            </asp:GridView>
+
+
+                                            <br />
+                                            <br />
 
                                             <asp:Label Text="" ID="lError" runat="server" ForeColor="Red"></asp:Label>
 

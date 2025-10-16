@@ -36,7 +36,7 @@
             <form id="form2" runat="server">
                 <input type="hidden" id="imprimir" name="imprimir" value="true" />
                 <div class="row no-gutter">
-                    <div class="col-sm-6">
+                    <div class="col-sm-5">
                         <section class="panel">
                             <div class="panel-body">
                                 <section class="panel">
@@ -52,39 +52,58 @@
                                         <div class="row">
                                             <div class="form-group">
                                                 <div class="col-sm-2">
-                                                    <label for="ddDeposito">Coche</label><asp:TextBox ID="tbCoche" ClientIDMode="Static" runat="server" CssClass="form-control input-sm"></asp:TextBox>
-                                                </div>
-                                                <div class="col-sm-3">
-                                                    <label for="ddDepositoDestino">Patente</label><asp:TextBox ID="tbPatente" Enabled="false" ClientIDMode="Static" runat="server" CssClass="form-control input-sm"></asp:TextBox>
-                                                </div>
-                                                <div class="col-sm-3">
-                                                    <label for="ddDepositoDestino">Legajo Solicitante</label><asp:TextBox ID="tbLegajo" ClientIDMode="Static" runat="server" CssClass="form-control input-sm"></asp:TextBox>
+                                                    <label for="ddDeposito">Coche</label><asp:TextBox ID="tbCoche" AutoPostBack="true" OnTextChanged="tbCoche_TextChanged" ClientIDMode="Static" runat="server" CssClass="form-control input-sm"></asp:TextBox>
                                                 </div>
                                                 <div class="col-sm-4">
-                                                    <label for="ddDepositoDestino">Rubro</label><asp:TextBox ID="tbRubro" ClientIDMode="Static" runat="server" CssClass="form-control input-sm"></asp:TextBox>
+                                                    <label for="ddDepositoDestino">Patente</label><asp:TextBox ID="tbPatente" Enabled="false" ClientIDMode="Static" runat="server" CssClass="form-control input-sm"></asp:TextBox>
+                                                </div>
+
+                                                <div class="col-sm-6">
+                                                    <label class=" control-label">Rubro</label>
+                                                    <asp:DropDownList ID="ddRubro" DataSourceID="rubrosLDS" AppendDataBoundItems="true" DataTextField="Descripcion" DataValueField="id" runat="server" CssClass="form-control col-6 input-sm entTab">
+                                                        <%--<asp:ListItem Text="Seleccione un Ru" Value="-2" Selected="True"></asp:ListItem>--%>
+                                                    </asp:DropDownList>
+                                                    <asp:LinqDataSource ID="rubrosLDS" runat="server" ContextTypeName="legLinq.LegalesDataContext" EntityTypeName="" OrderBy="Descripcion" TableName="mRubros">
+                                                    </asp:LinqDataSource>
+
                                                 </div>
                                             </div>
 
                                         </div>
+
                                         <div class="row">
                                             <div class="form-group">
-                                                <div class="col-lg-12">
+
+                                                <div class="col-sm-3">
+                                                    <label for="ddDepositoDestino">Legajo</label><asp:TextBox ID="tbLegajo" OnTextChanged="tbLegajo_TextChanged" AutoPostBack="true" ClientIDMode="Static" runat="server" CssClass="form-control input-sm"></asp:TextBox>
+                                                </div>
+                                                <div class="col-sm-9">
+                                                    <label for="ddDepositoDestino">Nombre</label><asp:TextBox ID="tbNombre" Enabled="false" ClientIDMode="Static" runat="server" CssClass="form-control input-sm"></asp:TextBox>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+
+                                        <div class="row">
+                                            <div class="form-group">
+
+                                                <div class="col-sm-12">
+                                                    <label for="tbMedicion">Titulo Novedad</label>
+                                                    <asp:TextBox ID="tbNovedad" ClientIDMode="Static" runat="server" CssClass="form-control input-sm"></asp:TextBox>
+                                                </div>
+                                                <div class="col-sm-0">
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="form-group">
+                                                <div class="col-sm-10">
                                                     <label for="ddDepositoDestino">Observaciones</label><asp:TextBox ID="tbObs" TextMode="MultiLine" Rows="3" ClientIDMode="Static" runat="server" CssClass="form-control input-sm"></asp:TextBox>
                                                 </div>
-                                                <div class="col-lg-0"></div>
-                                            </div>
-                                        </div>
-
-
-                                        <div class="row">
-                                            <div class="form-group">
-
-                                                <div class="col-sm-10">
-                                                    <label for="tbMedicion">Novedad</label>
-                                                    <asp:TextBox ID="tbNovedad" ClientIDMode="Static" runat="server" CssClass="form-control input-sm"></asp:TextBox>
-
-                                                </div>
-
                                                 <div class="col-sm-2">
                                                     <label for="buttonPrecio">-</label>
                                                     <asp:Button ID="buttonPrecio" OnClick="buttonPrecio_Click" OnClientClick="this.style.visibility = 'hidden'" ClientIDMode="Static" CssClass=" btn form-control btn-primary btn-xs" runat="server" Text="Agregar" />
@@ -92,6 +111,7 @@
                                                 </div>
                                             </div>
                                         </div>
+
 
                                         <div class="row">
                                             <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" Font-Bold="true" CssClass="DDValidator" Display="Dynamic" />
@@ -120,7 +140,7 @@
 
                     </div>
 
-                    <div class="col-sm-6">
+                    <div class="col-sm-7">
                         <section class="panel">
                             <div class="panel-body">
                                 <section class="panel">
@@ -131,7 +151,8 @@
                                     <div>
                                         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="ds" CssClass="table table-striped m-b-none text-small" BorderStyle="None" GridLines="None" OnPreRender="GVPreRender" ShowFooter="True">
                                             <Columns>
-                                                <asp:DynamicField DataField="detalle" HeaderText="Novedad" />
+                                                <asp:DynamicField DataField="novedad" HeaderText="Novedad" />
+                                                <asp:DynamicField DataField="detalle" HeaderText="Observaciones" />
                                                 <%--<asp:TemplateField ItemStyle-CssClass="btn-group">
                                                                 <ItemTemplate>
                                                                         <asp:LinkButton ID="btnEditar" runat="server"
@@ -144,7 +165,7 @@
                                                                         </asp:LinkButton>
                                                                 </ItemTemplate>
                                                             </asp:TemplateField>--%>
-                                                <asp:CommandField ShowDeleteButton="True" ShowEditButton="true" />
+                                                <asp:CommandField HeaderStyle-Width="10px" EditText="Modificar" DeleteText="Borrar" ShowDeleteButton="True" ShowEditButton="true" />
                                             </Columns>
                                         </asp:GridView>
                                         <asp:LinqDataSource ID="ds" runat="server" EnableDelete="True" EnableUpdate="true" ContextTypeName="leglinq.LegalesDataContext" EntityTypeName="" TableName="mNovedadDetalle" Where="idNovedad == @idNovedad">

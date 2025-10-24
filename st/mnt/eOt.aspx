@@ -57,37 +57,31 @@
                                                             <%--<asp:Label ID="Label2" runat="server" Text='<%# Format(Eval("fechaInicio"), "dd/MM/yy HH:mm")%>'></asp:Label>--%>
                                                             <%--'aca esta guardada la novedad--%>
                                                             <asp:Label ID="Label2" runat="server" Text='<%# Eval("novedad")  %>'></asp:Label>
-                                                            <asp:HiddenField ID="hfId" ClientIDMode="Static" runat="server" Value='<%# Eval("id")%>' />
-                                                            <asp:HiddenField ID="hfResultado" ClientIDMode="Static" runat="server" Value='<%# Eval("resultado")%>' />
-                                                            <asp:HiddenField ID="hfOrigen" ClientIDMode="Static" runat="server" Value='<%# Eval("origen")%>' />
+                                                            <asp:HiddenField ID="hfIdNovedadDetalle" ClientIDMode="Static" runat="server" Value='<%# Eval("idNovedadDetalle")%>' />
+                                                            <asp:HiddenField ID="hfIdOrdenDetalle" ClientIDMode="Static" runat="server" Value='<%# Eval("IdOrdenDetalle")%>' />
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
 
-                                                    <%--<asp:BoundField DataField="deposito" HeaderText="Deposito" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" SortExpression="Linea"></asp:BoundField>
-                                                    <asp:BoundField DataField="tipo" HeaderText="Cubierta" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" SortExpression="Linea"></asp:BoundField>
-                                                    <asp:BoundField DataField="estado" HeaderText="Estado" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" SortExpression="Linea"></asp:BoundField>
-                                                    <asp:BoundField DataField="nroPartida" HeaderText="Partida" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" SortExpression="Linea"></asp:BoundField>
-                                                    <asp:BoundField DataField="Accion" HeaderText="Accion" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" SortExpression="Linea"></asp:BoundField>--%>
+                                                    <asp:BoundField DataField="Rubro" HeaderText="Rubro" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" SortExpression="Linea"></asp:BoundField>
                                                     <%--<asp:TemplateField HeaderText="" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center">
                                                         <ItemTemplate>
                                                             <asp:CheckBox runat="server" ID="cb" Text="Enviar" />
                                                         </ItemTemplate>
                                                     </asp:TemplateField>--%>
 
-                                                    <asp:TemplateField HeaderText="Accion" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center">
+                                                    <asp:TemplateField HeaderText="Accion" ItemStyle-HorizontalAlign="Center" HeaderStyle-Width="160px" HeaderStyle-HorizontalAlign="Center">
                                                         <ItemTemplate>
                                                             <asp:DropDownList ID="ddAccionNovedades" OnSelectedIndexChanged="ddAccionNovedades_SelectedIndexChanged" AutoPostBack="true" CssClass="form-control input-sm entTab" data-next="ddMecanico" ClientIDMode="Static" runat="server">
                                                                 <asp:ListItem Text="Accion" Value="-1" Selected="True"></asp:ListItem>
                                                                 <asp:ListItem Text="Reasignar Rubro" Enabled="True" Value="1"></asp:ListItem>
                                                                 <asp:ListItem Text="Cerrar" Enabled="True" Value="2"></asp:ListItem>
-                                                                <asp:ListItem Text="Descartar" Enabled="True" Value="3"></asp:ListItem>
                                                             </asp:DropDownList>
 
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
 
 
-                                                    <asp:TemplateField HeaderText="" ItemStyle-HorizontalAlign="center" HeaderStyle-CssClass="text-center">
+                                                    <asp:TemplateField HeaderText="" ItemStyle-HorizontalAlign="center" HeaderStyle-Width="250px" HeaderStyle-CssClass="text-center">
                                                         <ItemTemplate>
                                                             <asp:DropDownList ID="ddRubro" Visible="false" DataSourceID="rubrosLDS" AppendDataBoundItems="true" DataTextField="Descripcion" DataValueField="id" runat="server" CssClass="form-control col-6 input-sm entTab">
                                                             </asp:DropDownList>

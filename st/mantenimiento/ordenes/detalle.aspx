@@ -11,7 +11,7 @@
         }
 
         .auto-style3 {
-            width: 76%;
+            width: 76%;     
         }
 
         .auto-style4 {
@@ -146,6 +146,79 @@
                             </section>
                         </div>
                     </div>
+
+
+
+
+
+
+
+
+
+                    
+                    <div class="row">
+                        <div class="panel-body">
+                            <section class="panel">
+                                <header class="panel-heading"><b>Novedades</b></header>
+                                <div>
+                                    <asp:GridView ID="gvNovedades" runat="server"
+                                        ShowFooter="false" AutoGenerateColumns="False"
+                                        DataKeyNames="idOrdenDetalle"
+                                        CssClass="table table-striped m-b-none text-small"
+                                        BorderStyle="None" GridLines="None"
+                                        OnPreRender="GVPreRender">
+
+                                        <Columns>
+
+                                            <asp:BoundField DataField="Novedad"
+                                                HeaderText="Novedad"
+                                                SortExpression="resultado"
+                                                HeaderStyle-CssClass="text-center"
+                                                ItemStyle-HorizontalAlign="left">
+                                                <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
+                                            </asp:BoundField>
+
+                                            <asp:BoundField DataField="detalle"
+                                                HeaderText="Detalle"
+                                                SortExpression="fechaInicio"
+                                                HeaderStyle-CssClass="text-center"
+                                                ItemStyle-HorizontalAlign="left">
+                                                <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
+                                            </asp:BoundField>
+
+                                            <asp:BoundField DataField="obsDetalleOrden"
+                                                HeaderText="Obs.Orden"
+                                                SortExpression="fechaInicio"
+                                                HeaderStyle-CssClass="text-center"
+                                                ItemStyle-HorizontalAlign="left">
+                                                <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
+                                            </asp:BoundField>
+
+
+                                        </Columns>
+
+                                        <RowStyle CssClass="td"></RowStyle>
+                                    </asp:GridView>
+
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                     <div class="row">
                         <div class="panel-body">

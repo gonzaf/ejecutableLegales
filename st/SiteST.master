@@ -28,7 +28,7 @@
 
     For Each p In permisos
         If Not p.tAcciones Is Nothing Then
-            If p.tAcciones.idSistema = "St" Then
+            If p.tAcciones.idSistema = "St" Or p.tAcciones.idSistema = "Ma" Then
                 If p.tAcciones.Accion.Contains("menu") Then
                     c = FindControl(p.tAcciones.Accion)
                     If c IsNot Nothing Then
@@ -402,7 +402,7 @@
                     <li><a href="/st/mnt/ot.aspx">OT en Curso</a></li>
                     <li><a href="/st/mantenimiento/ordenes/consulta.aspx">Consulta Ordenes</a></li>
                     <li><a href="/st/mnt/etdSvc.aspx">Estado de los Servicios</a></li>
-                    <li><a href="/st/mnt/ingNvd.aspx"><i class="fa  fa-search-plus fa-lg"></i><span>Novedades</span></a></li>
+                    <li runat="server" id="menuNovedades" visible="false"><a href="/st/mnt/ingNvd.aspx"><i class="fa  fa-search-plus fa-lg"></i><span>Novedades</span></a></li>
                     <li><a href="/st/mantenimiento/correctivo/alta.aspx"><i class="fa  fa-search-plus fa-lg"></i><span>Nueva Tarea</span></a></li>
                     <li><a href="/st/asistencia/ordenesAsistencia.aspx">Ordenes Asistencia</a></li>
                     <li><a href="/st/asistencia/ordenesAsistenciaCerrada.aspx">Ordenes Asistencia Cerradas</a></li>

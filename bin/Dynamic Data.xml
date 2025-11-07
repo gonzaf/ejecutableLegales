@@ -1259,6 +1259,15 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
+<member name="F:Dynamic_Data.DetalleaOrdenes._gvNovedades">
+<summary>
+Control gvNovedades.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
 <member name="F:Dynamic_Data.DetalleaOrdenes._GridViewTareas">
 <summary>
 Control GridViewTareas.
@@ -1325,6 +1334,15 @@ Para modificarlo, mueva la declaración del campo del archivo del diseñador al 
 <member name="F:Dynamic_Data.ConsultaOrdenes._tbNroPlanilla">
 <summary>
 Control tbNroPlanilla.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Dynamic_Data.ConsultaOrdenes._ddOrigen">
+<summary>
+Control ddOrigen.
 </summary>
 <remarks>
 Campo generado automáticamente.

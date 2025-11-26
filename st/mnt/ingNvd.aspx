@@ -63,7 +63,7 @@
                                                     <asp:DropDownList ID="ddRubro" DataSourceID="rubrosLDS" AppendDataBoundItems="true" DataTextField="Descripcion" DataValueField="id" runat="server" CssClass="form-control col-6 input-sm entTab">
                                                         <%--<asp:ListItem Text="Seleccione un Ru" Value="-2" Selected="True"></asp:ListItem>--%>
                                                     </asp:DropDownList>
-                                                    <asp:LinqDataSource ID="rubrosLDS" runat="server" ContextTypeName="legLinq.LegalesDataContext" EntityTypeName="" OrderBy="Descripcion" TableName="mRubros">
+                                                    <asp:LinqDataSource ID="rubrosLDS" runat="server" ContextTypeName="legLinq.LegalesDataContext" EntityTypeName="" OrderBy="Descripcion" TableName="mRubros" Where="vaEnNovedad == true">
                                                     </asp:LinqDataSource>
 
                                                 </div>
@@ -173,8 +173,100 @@
                                                 <asp:Parameter DefaultValue="-1" Name="idNovedad" Type="Int32" />
                                             </WhereParameters>
                                         </asp:LinqDataSource>
+
+
+
+
+
+
                                     </div>
                                 </section>
+
+
+                                <section class="panel">
+                                    <header class="panel-heading">
+                                        <span class="label bg-danger pull-right">Novedades</span>
+                                        Novedades Pendientes
+                                    </header>
+                                    <div>
+
+
+
+
+                                        <asp:GridView ID="GridView4" runat="server" AutoGenerateColumns="False" DataSourceID="dsPendientes" CssClass="table table-striped m-b-none text-small" BorderStyle="None" GridLines="None" OnPreRender="GVPreRender" ShowFooter="True">
+                                            <Columns>
+                                                <asp:DynamicField DataField="novedad" HeaderText="Novedad" />
+                                                <asp:DynamicField DataField="detalle" HeaderText="Observaciones" />
+                                                <%--<asp:TemplateField ItemStyle-CssClass="btn-group">
+                                                                <ItemTemplate>
+                                                                        <asp:LinkButton ID="btnEditar" runat="server"
+                                                                            CommandName="Edit" ToolTip="Editar">
+                                                                            <i class="fa fa-pencil fa-lg " style="margin-right: 12px;"></i>
+                                                                        </asp:LinkButton>
+                                                                        <asp:LinkButton ID="LinkButton1" runat="server"
+                                                                            CommandName="Delete" ToolTip="Borrar">
+                                                                            <i class="fa fa-times fa-lg text-danger"></i>
+                                                                        </asp:LinkButton>
+                                                                </ItemTemplate>
+                                                            </asp:TemplateField>--%>
+                                                <%--<asp:CommandField HeaderStyle-Width="10px" EditText="Modificar" DeleteText="Borrar" ShowDeleteButton="True" ShowEditButton="true" />--%>
+                                            </Columns>  
+                                        </asp:GridView>
+                                        <asp:LinqDataSource ID="dsPendientes" runat="server" EnableDelete="True" EnableUpdate="true" ContextTypeName="leglinq.LegalesDataContext" EntityTypeName="" TableName="mNovedadDetalle" Where="mNovedad.idCoche == @idCoche && ordenGenerada != true ">
+                                            <WhereParameters>
+                                                <asp:Parameter DefaultValue="-2" Name="idCoche" Type="Int32" />
+                                            </WhereParameters>
+                                        </asp:LinqDataSource>
+
+
+
+
+                                    </div>
+                                </section>
+
+
+
+
+
+                                <section class="panel">
+                                    <header class="panel-heading">
+                                        <span class="label bg-danger pull-right"></span>
+                                        Novedades en Ordenes Generadas
+                                    </header>
+                                    <div>
+
+
+
+
+
+                                        <asp:GridView ID="gvOrdenes" runat="server" AutoGenerateColumns="False" CssClass="table table-striped m-b-none text-small" BorderStyle="None" GridLines="None" OnPreRender="GVPreRender" ShowFooter="True">
+                                            <Columns>
+                                                <asp:BoundField DataField="novedad" HeaderText="Novedad" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" SortExpression="Linea"></asp:BoundField>
+                                                <asp:BoundField DataField="detalle" HeaderText="Observaciones" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" SortExpression="Linea"></asp:BoundField>
+                                                <asp:BoundField DataField="idOrden" HeaderText="Orden" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" SortExpression="Linea"></asp:BoundField>
+                                                <%--<asp:TemplateField ItemStyle-CssClass="btn-group">
+                                                                <ItemTemplate>
+                                                                        <asp:LinkButton ID="btnEditar" runat="server"
+                                                                            CommandName="Edit" ToolTip="Editar">
+                                                                            <i class="fa fa-pencil fa-lg " style="margin-right: 12px;"></i>
+                                                                        </asp:LinkButton>
+                                                                        <asp:LinkButton ID="LinkButton1" runat="server"
+                                                                            CommandName="Delete" ToolTip="Borrar">
+                                                                            <i class="fa fa-times fa-lg text-danger"></i>
+                                                                        </asp:LinkButton>
+                                                                </ItemTemplate>
+                                                            </asp:TemplateField>--%>
+                                                <%--<asp:CommandField HeaderStyle-Width="10px" EditText="Modificar" DeleteText="Borrar" ShowDeleteButton="True" ShowEditButton="true" />--%>
+                                            </Columns>
+                                        </asp:GridView>
+
+
+
+                                    </div>
+                                </section>
+
+
+
                             </div>
                         </section>
                     </div>

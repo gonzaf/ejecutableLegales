@@ -11,6 +11,45 @@ Dim id As String = e.CommandArgument.ToString.Split("/")(0)
 Dim idAccion As String = e.CommandArgument.ToString.Split("/")(1)
 
 
+Private Sub mostrarNovedades(idOrden As Integer, dc As LegalesDataContext)
+
+        Dim sql As String =
+            "select 
+od.id as idOrdenDetalle,
+nd.novedad,
+nd.detalle,
+od.obs as obsDetalleOrden
+from mOrdenDetalle od 
+inner join mOrden o on od.idOrden = o.id
+left join mNovedadDetalle nd on od.idOrigen = nd.id
+left join mNovedad n on n.id = nd.idNovedad
+where idTarea = -10 and idOrden = @idOrden"
+
+        Dim dt As New DataTable()
+        Using cn As New SqlClient.SqlConnection(dc.Connection.ConnectionString)
+            Using cmd As New SqlClient.SqlCommand(sql, cn)
+                cmd.Parameters.AddWithValue("@idOrden", idOrden)
+                Using da As New SqlClient.SqlDataAdapter(cmd)
+                    da.Fill(dt)
+                End Using
+            End Using
+        End Using
+
+        gvNovedades.DataSource = dt
+        gvNovedades.DataBind()
+
+        'Dim datos = dc.ExecuteQuery(Of Object)(sql, idOrden).ToList()
+
+
+        'gvNovedades.DataSource = datos
+        'gvNovedades.DataBind()
+    End Sub
+
+
+
+
+
+
 
 24/9/2
 
@@ -20,3 +59,7 @@ crear accion nro 69 puedeBorrarAsistenciasYQuedos de tipo ma
 2/10
 crear mTarea -10 = Novedades
 crear tabla mNovedad y mNovedadDetalle
+
+
+
+

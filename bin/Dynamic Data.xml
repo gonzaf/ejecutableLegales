@@ -2906,15 +2906,6 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Dynamic_Data.pdtes._rubrosLDS">
-<summary>
-Control rubrosLDS.
-</summary>
-<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member>
 <member name="F:Dynamic_Data.pdtes._ddTareas">
 <summary>
 Control ddTareas.
@@ -3062,6 +3053,15 @@ Para modificarlo, mueva la declaración del campo del archivo del diseñador al 
 <member name="F:Dynamic_Data.pdtes._cbVerUltimasTareas">
 <summary>
 Control cbVerUltimasTareas.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Dynamic_Data.pdtes._cbMarcarDesmarcar">
+<summary>
+Control cbMarcarDesmarcar.
 </summary>
 <remarks>
 Campo generado automáticamente.

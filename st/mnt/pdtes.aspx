@@ -102,11 +102,14 @@
                                                 <asp:ListItem Text="Dias" Value="dias"></asp:ListItem>
                                             </asp:DropDownList>
 
-                                            <asp:DropDownList ID="ddRubro" DataSourceID="rubrosLDS" AppendDataBoundItems="true" DataTextField="Descripcion" DataValueField="id" runat="server" CssClass="form-control col-6 input-sm entTab">
+                                            <asp:DropDownList ID="ddRubro"
+                                                AppendDataBoundItems="true"
+                                                DataTextField="Descripcion" DataValueField="id" runat="server"
+                                                CssClass="form-control col-6 input-sm entTab">
                                                 <asp:ListItem Text="Todos los Rubros" Value="-2" Selected="True"></asp:ListItem>
                                             </asp:DropDownList>
-                                            <asp:LinqDataSource ID="rubrosLDS" runat="server" ContextTypeName="legLinq.LegalesDataContext" EntityTypeName="" OrderBy="Descripcion" TableName="mRubros">
-                                            </asp:LinqDataSource>
+                                            <%--<asp:LinqDataSource ID="rubrosLDS" runat="server" ContextTypeName="legLinq.LegalesDataContext" EntityTypeName="" OrderBy="Descripcion" TableName="mRubros">
+                                            </asp:LinqDataSource>--%>
 
                                             <asp:DropDownList ID="ddTareas" ClientIDMode="Static" DataSourceID="tareasLDS" AppendDataBoundItems="true" DataTextField="Descripcion" DataValueField="id" runat="server" CssClass="form-control col-6 input-sm entTab">
                                                 <asp:ListItem Text="Todas las Tareas" Value="-2" Selected="True"></asp:ListItem>
@@ -166,6 +169,8 @@
                                             <asp:CheckBox ID="cbSoloInterrumpidos" runat="server" Text="Solo Interrumpidos" />
                                             &nbsp;&nbsp;
                                             <asp:CheckBox ID="cbVerUltimasTareas" ClientIDMode="Static" runat="server" Checked="false" Text="Ver Ultimas Tareas" />
+                                            &nbsp;&nbsp;
+                                            <asp:CheckBox ID="cbMarcarDesmarcar" OnCheckedChanged="cbMarcarDesmarcar_CheckedChanged" AutoPostBack="true"  ClientIDMode="Static" runat="server" Checked="false" Text="Desmarcar Todo" />
 
                                             <asp:Button ID="buttonBuscar" OnClientClick="return verificarCoche()" OnClick="buttonBuscar_Click" ClientIDMode="Static" runat="server" Text="Buscar" Display="Dynamic" />
 
@@ -218,6 +223,7 @@
                                                                 Text='<%#String.Concat(Eval("tarea"), " (", Eval("idTarea"), ")") %>'></asp:Label>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
+                                                    <asp:BoundField DataField="rubroDescripcion" HeaderText="Rubro" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center"></asp:BoundField>
                                                     <asp:TemplateField HeaderText="Ult.Serv" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="30px">
                                                         <ItemTemplate>
                                                             <asp:Label ID="Label2" runat="server" Text='<%# Format(Eval("fechaUltServ"), "dd/MM/yy")%>'></asp:Label>
@@ -281,6 +287,7 @@
                                                             <asp:Label ID="Labelsssa2" runat="server" Text='<%#String.Concat(Eval("descripcion"), " (", Eval("idTarea"), ")") %>'></asp:Label>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
+                                                    <asp:BoundField DataField="rubroDescripcion" HeaderText="Rubro" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center"></asp:BoundField>
                                                     <asp:TemplateField HeaderText="Ult.Serv" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="30px">
                                                         <ItemTemplate>
                                                             <asp:Label ID="Label2" runat="server" Text='<%# Format(Eval("fechaCierre"), "dd/MM/yy")%>'></asp:Label>

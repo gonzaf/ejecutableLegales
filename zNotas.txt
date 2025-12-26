@@ -63,3 +63,30 @@ crear tabla mNovedad y mNovedadDetalle
 
 
 
+
+
+
+
+ Private Sub mostrarNovedadesDeOrdenesGeneradas(idCoche As Integer, dc As LegalesDataContext)
+
+        Dim sql As String =
+            "
+select novedad,detalle,idorden from mNovedadDetalle nd 
+left join mOrdenDetalle morddet on nd.id = morddet.idOrigen and morddet.origen = 6
+left join mOrden o on o.id = morddet.idOrden
+where ordenGenerada = 1 and o.fechaCierre is null and idCoche = @idCoche"
+
+        Dim dt As New DataTable()
+        Using cn As New SqlClient.SqlConnection(dc.Connection.ConnectionString)
+            Using cmd As New SqlClient.SqlCommand(sql, cn)
+                cmd.Parameters.AddWithValue("@idCoche", idCoche)
+                Using da As New SqlClient.SqlDataAdapter(cmd)
+                    da.Fill(dt)
+                End Using
+            End Using
+        End Using
+
+        gvOrdenes.DataSource = dt
+        gvOrdenes.DataBind()
+
+    End Sub

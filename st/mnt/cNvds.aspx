@@ -28,7 +28,7 @@
                                             <asp:Label ID="Label2" runat="server" Text="Label">---</asp:Label>
                                             <%--<asp:DropDownList ID="ddDepositos" AppendDataBoundItems="true" runat="server" CssClass="form-control input-sm entTab" DataTextField="Deposito" DataValueField="idDeposito">
                                             </asp:DropDownList>--%>
-                                            <asp:TextBox ID="tbNroCoche" CssClass="form-control input-sm clickbutton" data-button="buttonBuscar" Width="70" placeholder="# Rep." runat="server"></asp:TextBox>
+                                            <asp:TextBox ID="tbNroCoche" CssClass="form-control input-sm clickbutton" data-button="buttonBuscar" Width="70" placeholder="# Coche" runat="server"></asp:TextBox>
                                             <asp:Button ID="buttonBuscar" OnClick="buttonBuscar_Click" ClientIDMode="Static" runat="server" Text="Buscar" />
 
                                         </div>

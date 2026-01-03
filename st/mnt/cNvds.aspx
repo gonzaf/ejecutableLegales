@@ -16,9 +16,9 @@
                             <div class="panel-body">
                                 <section class="panel">
                                     <header class="panel-heading">
-                                        <span class="label bg-danger pull-right">Movimientos</span>
+                                        <span class="label bg-danger pull-right">Novedades</span>
                                         <div class="form-inline">
-                                            Movimientos de Stock&nbsp;&nbsp; 
+                                            Consulta de Novedades&nbsp;&nbsp; 
                                             <asp:TextBox ID="desdeFecha" runat="server" ClientIDMode="Static" CssClass="input-sm form-control datepicker" Width="80px"></asp:TextBox>
                                             <asp:Button ID="buttondesdeFecha" display="dynamic" ClientIDMode="Static" runat="server" Text="Button" type="hidden" Style="display: none" />
                                             <asp:TextBox ID="hastaFecha" runat="server" ClientIDMode="Static" CssClass="input-sm form-control datepicker" Width="80px"></asp:TextBox>

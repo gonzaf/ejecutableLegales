@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" ValidateRequest="false" EnableEventValidation="false" MasterPageFile="~/st/SiteST.master" CodeBehind="cNvds.aspx.vb" Inherits="Dynamic_Data.cNvds" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" ValidateRequest="false" EnableEventValidation="false" MasterPageFile="~/st/SiteST.master" CodeBehind="cIngRp.aspx.vb" Inherits="Dynamic_Data.cIngRp" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -16,9 +16,9 @@
                             <div class="panel-body">
                                 <section class="panel">
                                     <header class="panel-heading">
-                                        <span class="label bg-danger pull-right">Novedades</span>
+                                        <span class="label bg-danger pull-right">Ingresos de repuestos</span>
                                         <div class="form-inline">
-                                            Consulta de Novedades&nbsp;&nbsp; 
+                                            Consulta de Ingresos&nbsp;&nbsp; 
                                             <asp:TextBox ID="desdeFecha" runat="server" ClientIDMode="Static" CssClass="input-sm form-control datepicker" Width="80px"></asp:TextBox>
                                             <asp:Button ID="buttondesdeFecha" display="dynamic" ClientIDMode="Static" runat="server" Text="Button" type="hidden" Style="display: none" />
                                             <asp:TextBox ID="hastaFecha" runat="server" ClientIDMode="Static" CssClass="input-sm form-control datepicker" Width="80px"></asp:TextBox>
@@ -28,8 +28,9 @@
                                             <asp:Label ID="Label2" runat="server" Text="Label">---</asp:Label>
                                             <%--<asp:DropDownList ID="ddDepositos" AppendDataBoundItems="true" runat="server" CssClass="form-control input-sm entTab" DataTextField="Deposito" DataValueField="idDeposito">
                                             </asp:DropDownList>--%>
-                                            <asp:TextBox ID="tbNroCoche" CssClass="form-control input-sm clickbutton" data-button="buttonBuscar" Width="70" placeholder="# Repuesto" runat="server"></asp:TextBox>
+                                            <asp:TextBox ID="tbIdRepuesto" CssClass="form-control input-sm clickbutton" data-button="buttonBuscar" Width="90" placeholder="# Repuesto" runat="server"></asp:TextBox>
                                             <asp:Button ID="buttonBuscar" OnClick="buttonBuscar_Click" ClientIDMode="Static" runat="server" Text="Buscar" />
+                                            <asp:Button ID="nNuevoIngreso" OnClick="nNuevoIngreso_Click" ClientIDMode="Static" runat="server" Text="Cargar Ingreso" />
 
                                         </div>
                                     </header>
@@ -38,33 +39,32 @@
 
                                             <asp:Label Text="" ID="lError" runat="server" ForeColor="Red"></asp:Label>
 
-                                            <asp:GridView ID="gvPartes" HeaderStyle-HorizontalAlign="Center" runat="server" DataKeyNames="id" AutoGenerateColumns="False" CssClass="table table-striped m-b-none text-small" BorderStyle="None" GridLines="None" OnSelectedIndexChanged="gvPartes_SelectedIndexChanged" OnPreRender="GVPreRender">
+                                            <asp:GridView ID="gvIngresos" runat="server"
+                                                AutoGenerateColumns="False"
+                                                CssClass="table table-striped table-bordered"
+                                                AllowPaging="true"
+                                                PageSize="100"
+                                                OnPageIndexChanging="gvIngresos_PageIndexChanging">
+
+                                                <PagerSettings Mode="NextPreviousFirstLast"
+                                                    FirstPageText="<<"
+                                                    LastPageText=">>"
+                                                    NextPageText=">"
+                                                    PreviousPageText="<" />
+                                                <PagerStyle CssClass="pager-bootstrap" HorizontalAlign="Center" />
+
                                                 <Columns>
-
-                                                    <%--o.fecha,c.nroCoche,nd.novedad,nd.detalle,u.Detalle as usuario--%>
-                                                    <asp:TemplateField HeaderText="Fecha" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="30px">
-                                                        <ItemTemplate>
-                                                            <asp:Label ID="Label2" runat="server" Text='<%# Format(Eval("fecha"), "dd/MM/yy")%>'></asp:Label>
-                                                            <asp:HiddenField ID="hfCant" ClientIDMode="Static" runat="server" Value='<%# Eval("id")%>' />
-                                                            <asp:HiddenField ID="hfidDetalle" ClientIDMode="Static" runat="server" Value='<%# Eval("id")%>' />
-                                                        </ItemTemplate>
-                                                    </asp:TemplateField>
-                                                    <asp:BoundField DataField="nroCocHe" HeaderText="Nro.CocHe"></asp:BoundField>
-                                                    <asp:BoundField DataField="novedad" HeaderText="Novedad"></asp:BoundField>
-                                                    <asp:BoundField DataField="detalle" HeaderText="Obs"></asp:BoundField>
-                                                    <asp:BoundField DataField="usuario" HeaderText="Usuario"></asp:BoundField>
-                                                    <asp:BoundField DataField="obs" HeaderText="Obs"></asp:BoundField>
-                                                    <asp:BoundField DataField="Realizada" HeaderText="Realizada"></asp:BoundField>
-                                                    <asp:BoundField DataField="Reasignada" HeaderText="Reasignada"></asp:BoundField>
-                                                    <%--<asp:BoundField DataField="codRepuesto" HeaderText="Cod.Repuesto"></asp:BoundField>
-                                                    <asp:BoundField DataField="Desc_Repuesto" HeaderText="Repuesto"></asp:BoundField>
-                                                    <asp:BoundField DataField="cant" HeaderText="Cant."></asp:BoundField>
-                                                    <asp:BoundField DataField="depositoOut" HeaderText="Deposito Orig."></asp:BoundField>
-                                                    <asp:BoundField DataField="depositoIn" HeaderText="Deposito Dest."></asp:BoundField>
-                                                    <asp:BoundField DataField="ref" HeaderText="Referencia"></asp:BoundField>--%>
-
-
+                                                    <asp:BoundField DataField="fecha" HeaderText="Fecha" DataFormatString="{0:dd/MM/yyyy}" />
+                                                    <asp:BoundField DataField="codComprobante" HeaderText="Tipo Comp." />
+                                                    <asp:BoundField DataField="nroComprobante" HeaderText="Nº Comp." />
+                                                    <asp:BoundField DataField="Proveedor" HeaderText="Proveedor" />
+                                                    <asp:BoundField DataField="idCatalogo" HeaderText="Cod.Repuesto" />
+                                                    <asp:BoundField DataField="descripcion" HeaderText="Descripción" />
+                                                    <asp:BoundField DataField="cant" HeaderText="Cant" />
+                                                    <asp:BoundField DataField="precio" HeaderText="Precio" DataFormatString="{0:N2}" />
                                                 </Columns>
+
+
                                             </asp:GridView>
 
                                         </div>

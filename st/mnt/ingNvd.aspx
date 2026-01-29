@@ -60,11 +60,12 @@
 
                                                 <div class="col-sm-6">
                                                     <label class=" control-label">Rubro</label>
-                                                    <asp:DropDownList ID="ddRubro" DataSourceID="rubrosLDS" AppendDataBoundItems="true" DataTextField="Descripcion" DataValueField="id" runat="server" CssClass="form-control col-6 input-sm entTab">
-                                                        <%--<asp:ListItem Text="Seleccione un Ru" Value="-2" Selected="True"></asp:ListItem>--%>
+                                                    <%--<asp:DropDownList ID="ddRubro" DataSourceID="rubrosLDS" AppendDataBoundItems="true" DataTextField="Descripcion" DataValueField="id" runat="server" CssClass="form-control col-6 input-sm entTab">--%>
+                                                    <asp:DropDownList ID="ddRubro" AppendDataBoundItems="true" DataTextField="Descripcion" DataValueField="id" runat="server" CssClass="form-control col-6 input-sm entTab">
+                                                        <asp:ListItem Text="Seleccione un Rubro" Value="-2" Selected="True"></asp:ListItem>
                                                     </asp:DropDownList>
-                                                    <asp:LinqDataSource ID="rubrosLDS" runat="server" ContextTypeName="legLinq.LegalesDataContext" EntityTypeName="" OrderBy="Descripcion" TableName="mRubros" Where="vaEnNovedad == true">
-                                                    </asp:LinqDataSource>
+<%--                                                    <asp:LinqDataSource ID="rubrosLDS" runat="server" ContextTypeName="legLinq.LegalesDataContext" EntityTypeName="" OrderBy="Descripcion" TableName="mRubros" Where="vaEnNovedad == true">
+                                                    </asp:LinqDataSource>--%>
 
                                                 </div>
                                             </div>
@@ -75,10 +76,10 @@
                                             <div class="form-group">
 
                                                 <div class="col-sm-3">
-                                                    <label for="ddDepositoDestino">Legajo</label><asp:TextBox ID="tbLegajo" OnTextChanged="tbLegajo_TextChanged" AutoPostBack="true" ClientIDMode="Static" runat="server" CssClass="form-control input-sm"></asp:TextBox>
+                                                    <label for="ddDepositoDestino">Legajo</label><asp:TextBox Enabled="false" ID="tbLegajo" OnTextChanged="tbLegajo_TextChanged" AutoPostBack="true" ClientIDMode="Static" runat="server" CssClass="form-control input-sm"></asp:TextBox>
                                                 </div>
                                                 <div class="col-sm-9">
-                                                    <label for="ddDepositoDestino">Nombre</label><asp:TextBox ID="tbNombre" Enabled="false" ClientIDMode="Static" runat="server" CssClass="form-control input-sm"></asp:TextBox>
+                                                    <label for="ddDepositoDestino">Nombre</label><asp:TextBox Enabled="false" ID="tbNombre" ClientIDMode="Static" runat="server" CssClass="form-control input-sm"></asp:TextBox>
                                                 </div>
 
                                             </div>
@@ -210,7 +211,7 @@
                                                                 </ItemTemplate>
                                                             </asp:TemplateField>--%>
                                                 <%--<asp:CommandField HeaderStyle-Width="10px" EditText="Modificar" DeleteText="Borrar" ShowDeleteButton="True" ShowEditButton="true" />--%>
-                                            </Columns>  
+                                            </Columns>
                                         </asp:GridView>
                                         <asp:LinqDataSource ID="dsPendientes" runat="server" EnableDelete="True" EnableUpdate="true" ContextTypeName="leglinq.LegalesDataContext" EntityTypeName="" TableName="mNovedadDetalle" Where="mNovedad.idCoche == @idCoche && ordenGenerada != true ">
                                             <WhereParameters>

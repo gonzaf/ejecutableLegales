@@ -21,6 +21,10 @@
         Response.Redirect("/lgin.aspx")
     End If
 
+    If MySession.Current Is Nothing Then
+        Response.Redirect("/login.aspx")
+    End If
+
 
 
     Dim permisos As tPermisos() = MySession.Current.permisos
@@ -43,6 +47,10 @@
 
     Dim parametros As tParametros() = MySession.Current.parametros
 
+    If parametros Is Nothing Then
+        Response.Redirect("/lgin.aspx")
+    End If
+
     Dim pp As tParametros = parametros.FirstOrDefault(Function(x) x.parametro = "empresa")
     If pp IsNot Nothing Then
         If pp.valor = "105" Then
@@ -52,6 +60,7 @@
             FindControl("cNovedades").Visible = False
             FindControl("AjusteInicial").Visible = False
             FindControl("menuNecesidadCompra").Visible = False
+            FindControl("ingresoRepuestos").Visible = True
 
         End If
     End If
@@ -131,6 +140,44 @@
         .panel {
             overflow: auto;
         }
+
+
+.pager-bootstrap a,
+.pager-bootstrap span {
+    padding: 3px 8px;
+    margin: 2px;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.pager-bootstrap a {
+    /* Convertimos el <a> en un botón Bootstrap */
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    color: #333 !important;
+
+    /* Si querés exactamente bootstrap btn-default btn-xs */
+    padding: 1px 5px;
+    font-size: 16px;
+    border-radius: 3px;
+}
+
+.pager-bootstrap a:hover {
+    background-color: #e6e6e6;
+}
+
+/* Página actual -> como un btn-primary pequeño */
+.pager-bootstrap span {
+    background-color: #337ab7;
+    border: 1px solid #2e6da4;
+    color: white;
+    font-weight: bold;
+    padding: 1px 5px;
+    border-radius: 3px;
+}
+
+
+
     </style>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js" type="text/javascript"></script>
@@ -178,7 +225,7 @@
     </script>
 
 
-<%--    <script type="text/javascript">
+    <%--    <script type="text/javascript">
         window.addEventListener("pageshow", function (event) {
             if (event.persisted || (performance.getEntriesByType("navigation")[0]?.type === "back_forward")) {
                 console.log("⚠️ Volvió con atrás/adelante → recargando");
@@ -189,7 +236,7 @@
     </script>--%>
 
 
-   
+
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -337,7 +384,7 @@
             <li id="menuStock" visible="false" runat="server" class="dropdown-submenu">
                 <a href="#"><i class="fa fa-th fa-lg"></i><span>Stock</span></a>
                 <ul class="dropdown-menu">
-                    <li><a href="/st/ingRp.aspx">Ingreso de Repuestos</a></li>
+                    <li id="ingresoRepuestos" visible="false" runat="server"><a href="/st/cIngRp.aspx">Ingreso de Repuestos</a></li>
                     <li><a href="/st/cMvs.aspx">Movimientos</a></li>
                     <li><a href="/st/st.aspx">Stock Actual</a></li>
                     <li><a href="/st/aj.aspx">Ajuste</a></li>
@@ -508,7 +555,7 @@
     </footer>
 
 
-   
+
 
     <script type="text/javascript">
 

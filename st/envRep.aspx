@@ -12,6 +12,7 @@
                 <div class="row no-gutter">
 
                     <div class="col-sm-12">
+
                         <section class="panel">
                             <div class="panel-body">
                                 <section class="panel">

@@ -37,8 +37,6 @@
                     c = FindControl(p.tAcciones.Accion)
                     If c IsNot Nothing Then
                         c.Visible = True
-                    Else
-                        c.Visible = False
                     End If
                 End If
             End If
@@ -54,10 +52,10 @@
     Dim pp As tParametros = parametros.FirstOrDefault(Function(x) x.parametro = "empresa")
     If pp IsNot Nothing Then
         If pp.valor = "105" Then
-            FindControl("novedades").Visible = False
+            FindControl("menucNovedades").Visible = False
             FindControl("OA").Visible = False
             FindControl("OAC").Visible = False
-            FindControl("cNovedades").Visible = False
+            FindControl("menucNovedades").Visible = False
             FindControl("AjusteInicial").Visible = False
             FindControl("menuNecesidadCompra").Visible = False
             FindControl("ingresoRepuestos").Visible = True
@@ -466,8 +464,8 @@
                     <li><a href="/st/mnt/ot.aspx">OT en Curso</a></li>
                     <li><a href="/st/mantenimiento/ordenes/consulta.aspx">Consulta Ordenes</a></li>
                     <li><a href="/st/mnt/etdSvc.aspx">Estado de los Servicios</a></li>
-                    <li runat="server" id="novedades" visible="false"><a href="/st/mnt/ingNvd.aspx"><i class="fa  fa-search-plus fa-lg"></i><span>Novedades</span></a></li>
-                    <li runat="server" id="cNovedades" visible="true"><a href="/st/mnt/cnvds.aspx"><i class="fa  fa-search-plus fa-lg"></i><span>Consulta Novedades</span></a></li>
+                    <li runat="server" id="menuNovedades" visible="false"><a href="/st/mnt/ingNvd.aspx"><i class="fa  fa-search-plus fa-lg"></i><span>Novedades</span></a></li>
+                    <li runat="server" id="menucNovedades" visible="true"><a href="/st/mnt/cnvds.aspx"><i class="fa  fa-search-plus fa-lg"></i><span>Consulta Novedades</span></a></li>
                     <li><a href="/st/mantenimiento/correctivo/alta.aspx"><i class="fa  fa-search-plus fa-lg"></i><span>Nueva Tarea</span></a></li>
                     <li id="OA" runat="server"><a href="/st/asistencia/ordenesAsistencia.aspx">Ordenes Asistencia</a></li>
                     <li id="OAC" runat="server"><a href="/st/asistencia/ordenesAsistenciaCerrada.aspx">Ordenes Asistencia Cerradas</a></li>

@@ -139,6 +139,17 @@
             overflow: auto;
         }
 
+        .col-sm-12.g {
+            padding-left:2px; 
+            padding-right:2px;
+        } 
+
+        .panel-body.g {
+            padding:5px;
+        }
+
+
+
 
 .pager-bootstrap a,
 .pager-bootstrap span {
@@ -609,7 +620,10 @@
                     value = $(value).find("id").text();
                     //alert(value);
                     $("#tbCodigo").val(value).trigger("change");
-                    $("#Button1").click();
+                    if ($("#Button1").length > 0) {
+                        $("#Button1").click();
+                    }
+
                 }
             }
         };

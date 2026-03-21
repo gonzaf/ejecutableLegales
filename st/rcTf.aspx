@@ -75,7 +75,7 @@
                                         <asp:LinqDataSource ID="LinqDataSource4" runat="server" ContextTypeName="legLinq.LegalesDataContext" EntityTypeName="" OrderBy="Motivo" TableName="stMotivos">
                                         </asp:LinqDataSource>
 
-                                        <asp:LinqDataSource ID="dsPartes" runat="server" ContextTypeName="legLinq.LegalesDataContext" EntityTypeName="" OrderBy="Fecha desc" TableName="vStMovimientosStock" Where='idTipoMov != 2 and (cantAceptada == null) and (@okFecha == -1 or (fecha >= @fechaDesde and fecha <= @fechaHasta)) and idDepositoIn == @ddDepositos'>
+                                        <asp:LinqDataSource ID="dsPartes" runat="server" ContextTypeName="legLinq.LegalesDataContext" EntityTypeName="" OrderBy="Fecha desc" TableName="vStMovimientosStock" Where='idTipoMov == 1 and (cantAceptada == null) and (@okFecha == -1 or (fecha >= @fechaDesde and fecha <= @fechaHasta)) and idDepositoIn == @ddDepositos'>
                                             <WhereParameters>
                                                 <asp:Parameter DefaultValue="20-06-2016" Name="fechaDesde" Type="DateTime" />
                                                 <asp:Parameter DefaultValue="20-06-2016" Name="fechaHasta" Type="DateTime" />

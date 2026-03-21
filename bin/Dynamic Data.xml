@@ -216,6 +216,15 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
+<member name="F:Dynamic_Data.consulta._form2">
+<summary>
+Control form2.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
 <member name="F:Dynamic_Data.vFt._form1">
 <summary>
 Control form1.
@@ -863,81 +872,63 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Dynamic_Data.cIngRp._desdeFecha">
+<member name="F:Dynamic_Data.cIngRp._upPanelIngresos">
 <summary>
-Control desdeFecha.
+Control upPanelIngresos.
 </summary>
 <remarks>
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Dynamic_Data.cIngRp._buttondesdeFecha">
+<member name="F:Dynamic_Data.cIngRp._pMsg">
 <summary>
-Control buttondesdeFecha.
+Control pMsg.
 </summary>
 <remarks>
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Dynamic_Data.cIngRp._hastaFecha">
+<member name="F:Dynamic_Data.cIngRp._txtDesde">
 <summary>
-Control hastaFecha.
+Control txtDesde.
 </summary>
 <remarks>
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Dynamic_Data.cIngRp._buttonhastaFecha">
+<member name="F:Dynamic_Data.cIngRp._txtHasta">
 <summary>
-Control buttonhastaFecha.
+Control txtHasta.
 </summary>
 <remarks>
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Dynamic_Data.cIngRp._Label2">
+<member name="F:Dynamic_Data.cIngRp._txtIdCatalogo">
 <summary>
-Control Label2.
+Control txtIdCatalogo.
 </summary>
 <remarks>
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Dynamic_Data.cIngRp._tbIdRepuesto">
+<member name="F:Dynamic_Data.cIngRp._btnFiltrar">
 <summary>
-Control tbIdRepuesto.
+Control btnFiltrar.
 </summary>
 <remarks>
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Dynamic_Data.cIngRp._buttonBuscar">
+<member name="F:Dynamic_Data.cIngRp._btnLimpiar">
 <summary>
-Control buttonBuscar.
-</summary>
-<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member>
-<member name="F:Dynamic_Data.cIngRp._nNuevoIngreso">
-<summary>
-Control nNuevoIngreso.
-</summary>
-<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member>
-<member name="F:Dynamic_Data.cIngRp._lError">
-<summary>
-Control lError.
+Control btnLimpiar.
 </summary>
 <remarks>
 Campo generado automáticamente.
@@ -947,15 +938,6 @@ Para modificarlo, mueva la declaración del campo del archivo del diseñador al 
 <member name="F:Dynamic_Data.cIngRp._gvIngresos">
 <summary>
 Control gvIngresos.
-</summary>
-<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member>
-<member name="F:Dynamic_Data.cIngRp._cancelar">
-<summary>
-Control cancelar.
 </summary>
 <remarks>
 Campo generado automáticamente.

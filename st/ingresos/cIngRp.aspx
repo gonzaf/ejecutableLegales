@@ -24,7 +24,7 @@
                                                 <small class="text-muted">Finalizados (todos) + Pendientes (míos)</small>
                                             </div>
                                             <div class="col-md-4 text-right">
-                                                <a class="btn btn-primary" href="stIngresoEdit.aspx">Nuevo ingreso</a>
+                                                <a class="btn btn-primary" href="ingRp.aspx">Nuevo ingreso</a>
                                             </div>
                                         </div>
                                     </header>

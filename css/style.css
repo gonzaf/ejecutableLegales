@@ -228,9 +228,10 @@ fieldset[disabled] .btn.active {
 .btn-on.active{color:#fff;border: 1px solid #767676;background: #8e9eae}
 
 .btn-xs {padding: 4px 5px;}
-.btn-sm {padding: 6px 10px;
+.btn-sm {
+    padding: 6px 10px; /*
     top: 21px;
-    left: -379px;
+    left: -379px;*/
 }
 .btn-lg {padding: 11px 16px}
 .btn-white.btn-xs, .btn-default.btn-xs{padding: 3px 6px;}

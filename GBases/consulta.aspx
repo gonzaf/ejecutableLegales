@@ -13,9 +13,9 @@
         <section class="main padder">
             <form id="form2" runat="server">
                 <div class="row no-gutter">
-                    <div class="col-sm-12">
+                    <div class="col-sm-12 g">
                         <section class="panel">
-                            <div class="panel-body">
+                            <div class="panel-body g">
                                 <section class="panel">
                                     <header class="panel-heading">
                                         <span class="label bg-danger pull-right">Ajuste</span>
@@ -23,7 +23,7 @@
                                             Ajuste de Stock&nbsp;&nbsp; 
                                         </div>
                                     </header>
-                                    <div class="panel-body" style="padding: 10px 30px 10px 30px">
+                                    <div class="panel-body ">
 
                                        
                                     </div>

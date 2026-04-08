@@ -397,7 +397,7 @@
             <li id="menuStock" visible="false" runat="server" class="dropdown-submenu">
                 <a href="#"><i class="fa fa-th fa-lg"></i><span>Stock</span></a>
                 <ul class="dropdown-menu">
-                    <li id="ingresoRepuestos" visible="false" runat="server"><a href="/st/cIngRp.aspx">Ingreso de Repuestos</a></li>
+                    <li id="ingresoRepuestos" visible="false" runat="server"><a href="/st/ingresos/cIngresos.aspx">Ingreso de Repuestos</a></li>
                     <li><a href="/st/cMvs.aspx">Movimientos</a></li>
                     <li><a href="/st/st.aspx">Stock Actual</a></li>
                     <li><a href="/st/aj.aspx">Ajuste</a></li>

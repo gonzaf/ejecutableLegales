@@ -87,7 +87,7 @@
                                             <div class="form-group">
                                                 <div class="col-lg-12">
                                                     <asp:TextBox ID="observaciones" runat="server" class="form-control" placeholder="Detalle" Rows="4" TextMode="MultiLine"></asp:TextBox>
-
+                                                    <asp:HiddenField runat="server" ID="hfCodProveedor"/>
                                                     <%--<textarea id="notas"  class="form-control" data-trigger="keyup" data-rangelength="[20,200]"></textarea>--%>
                                                 </div>
                                             </div>

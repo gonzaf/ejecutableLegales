@@ -99,7 +99,22 @@
                                                                 <!-- Botón estándar del FormView -->
                                                                 <asp:LinkButton ID="btnUpdateCab" runat="server" CommandName="Update"
                                                                     CssClass="btn btn-success btn-xs" Text="Guardar" />
-                                                                <a class="btn btn-default btn-xs soloLectura-siempreVisible" href="cIngresos.aspx">Volver</a>
+
+                                                                <asp:LinkButton ID="btnReabrir" runat="server"
+                                                                    CssClass="btn btn-warning btn-xs soloLectura-siempreVisible"
+                                                                    Text="Reabrir"
+                                                                    OnClick="btnReabrir_Click"
+                                                                    OnClientClick="return confirm('¿Reabrir este ingreso? Quedará en pendiente para editar.');" />
+
+                                                                <asp:LinkButton ID="btnEliminarIngreso" runat="server"
+                                                                    CssClass="btn btn-danger btn-xs"
+                                                                    Text="Eliminar"
+                                                                    OnClick="btnEliminarIngreso_Click"
+                                                                    OnClientClick="return confirm('¿Eliminar el ingreso completo?');" />
+
+
+                                                                <a class="btn btn-default btn-xs soloLectura-siempreVisible"
+                                                                    href="cIngresos.aspx">Volver</a>
                                                             </div>
                                                         </div>
                                                     </div>

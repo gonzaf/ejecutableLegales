@@ -215,6 +215,16 @@
                                                     <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
                                                 </asp:BoundField>
 
+                                                
+                                                <asp:BoundField DataField="kmsDesdeUltCambio" HeaderText="Rend" SortExpression="cant" HeaderStyle-CssClass="text-center" ItemStyle-HorizontalAlign="Center">
+                                                    <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
+                                                </asp:BoundField>
+
+                                                                                                
+                                                <asp:BoundField DataField="kmsEsperados" HeaderText="Kms.Esperados" SortExpression="Kms.Esperados" HeaderStyle-CssClass="text-center" ItemStyle-HorizontalAlign="Center">
+                                                    <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
+                                                </asp:BoundField>
+
 
                                                 <asp:CommandField ShowDeleteButton="True" DeleteText="Borrar" ItemStyle-HorizontalAlign="Center" />
 

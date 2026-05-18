@@ -230,7 +230,7 @@
                                                                 ControlStyle-CssClass="btn btn-warning btn-xs"
                                                                 Style="color: #000000; background-color: yellow"
                                                                 Text="Ultimas"
-                                                                CommandName="ultimas" CommandArgument='<%# Eval("idTarea") & "/" & Eval("nroCoche")  %>' />
+                                                                CommandName="ultimas" CommandArgument='<%# Eval("idTarea") & "/" & Eval("idCoche")  %>' />
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
 

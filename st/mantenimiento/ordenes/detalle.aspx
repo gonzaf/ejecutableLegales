@@ -11,7 +11,7 @@
         }
 
         .auto-style3 {
-            width: 76%;     
+            width: 76%;
         }
 
         .auto-style4 {
@@ -155,7 +155,7 @@
 
 
 
-                    
+
                     <div class="row">
                         <div class="panel-body">
                             <section class="panel">
@@ -332,6 +332,10 @@
 
                     <div class="flex flex-end">
                         <div>
+
+                            <asp:HyperLink ID="verOE" runat="server" Text="Ver OE." Target="_blank" 
+                                CssClass="btn btn-primary"
+                                Style="color: #242424; cursor: pointer;" />
                             <asp:Button ID="reimprimir" runat="server" Text="Reimprimir"
                                 CssClass="btn btn-primary"
                                 Style="color: #242424; cursor: pointer;" />

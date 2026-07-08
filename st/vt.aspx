@@ -37,7 +37,7 @@
                             <div class="panel-body">
                                 <section class="panel">
                                     <header class="panel-heading">
-                                        <span class="label bg-danger pull-right">Orden de Entrega</span>
+                                        <span class="label bg-danger pull-right"><label id="lTitulo" runat="server"></label></span>
                                         <div class="form-inline">
                                             Orden de Entrega&nbsp;&nbsp; 
                                         </div>

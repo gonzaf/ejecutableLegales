@@ -2348,6 +2348,15 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
+<member name="F:Dynamic_Data.ot._gvOEactual">
+<summary>
+Control gvOEactual.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
 <member name="F:Dynamic_Data.ot._gvUltimasTareas">
 <summary>
 Control gvUltimasTareas.
@@ -14169,6 +14178,15 @@ Para modificarlo, mueva la declaración del campo del archivo del diseñador al 
 <member name="F:Dynamic_Data.vt._form2">
 <summary>
 Control form2.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Dynamic_Data.vt._lTitulo">
+<summary>
+Control lTitulo.
 </summary>
 <remarks>
 Campo generado automáticamente.

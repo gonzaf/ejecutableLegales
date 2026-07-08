@@ -300,7 +300,7 @@
 
                                                     <asp:TemplateField HeaderText="" ItemStyle-HorizontalAlign="Center" HeaderStyle-Width="30px" HeaderStyle-HorizontalAlign="Center">
                                                         <ItemTemplate>
-                                                            <asp:LinkButton ID="lbVerOrdenes" ToolTip="Ordenes" OnCommand="lbVerOrdenes_Command" CommandArgument='<%# String.Concat(Eval("idTarea"), "/", Eval("idCoche")) %>' runat="server">Ver Ordenes</asp:LinkButton>
+                                                            <asp:LinkButton ID="lbVerOrdenes" ToolTip="Ordenes" OnCommand="lbVerOrdenes_Command" CommandArgument='<%# String.Concat(Eval("idTarea"), "/", Eval("idCoche"), "/", Eval("id")) %>' runat="server">Ver Ordenes</asp:LinkButton>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
 
@@ -327,64 +327,104 @@
                                             </div>
 
 
-                                                   <div class="modal fade" id="myModal" data-background="false" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-           <div class="modal-dialog modal-dialog modal-lg" role="document">
-               <div class="modal-content">
-                   <div class="modal-header">
-                       <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                       <h4 class="modal-title" id="myModalLabel">Ultimas Tareas</h4>
-                   </div>
-                   <div class="modal-body">
+                                            <div class="modal fade" id="myModal" data-background="false" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                                <div class="modal-dialog modal-dialog modal-lg" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                            <h4 class="modal-title" id="myModalLabel">Ordenes de entrega</h4>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            Orden Actual
+                                                             <asp:GridView ID="gvOEactual" runat="server" ShowFooter="true" AutoGenerateColumns="False" DataKeyNames="idDetalle" CssClass="table table-striped m-b-none text-small" BorderStyle="None" GridLines="None" OnPreRender="GVPreRender">
+                                                                 <Columns>
+                                                                     <asp:BoundField DataField="codRepuesto" HeaderText="Codigo" SortExpression="codRepuesto" HeaderStyle-CssClass="text-center" ItemStyle-HorizontalAlign="Center">
+                                                                         <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
+                                                                     </asp:BoundField>
+
+                                                                     <asp:BoundField DataField="Desc_Repuesto" HeaderText="Repuesto" SortExpression="Desc_Repuesto" HeaderStyle-CssClass="text-center" ItemStyle-HorizontalAlign="Center">
+                                                                         <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
+                                                                     </asp:BoundField>
+
+                                                                     <asp:BoundField DataField="nroPartida" HeaderText="#Partida" SortExpression="nroPartida" HeaderStyle-CssClass="text-center" ItemStyle-HorizontalAlign="Center">
+                                                                         <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
+                                                                     </asp:BoundField>
+
+                                                                     <asp:BoundField DataField="cant" HeaderText="Cant." SortExpression="cant" HeaderStyle-CssClass="text-center" ItemStyle-HorizontalAlign="Center">
+                                                                         <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
+                                                                     </asp:BoundField>
+
+                                                                     <asp:BoundField DataField="Ubicacion" HeaderText="Ubicacion" SortExpression="Ubicacion" HeaderStyle-CssClass="text-center" ItemStyle-HorizontalAlign="Center">
+                                                                         <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
+                                                                     </asp:BoundField>
 
 
-                       <asp:GridView ID="gvUltimasTareas" runat="server"
-                           AutoGenerateColumns="False"
-                           CssClass="table table-striped m-b-none text-small"
-                           BorderStyle="None" GridLines="None"
-                           OnPreRender="GVPreRender"
-                           EmptyDataText="No hay tareas realizadas.">
+                                                                     <asp:BoundField DataField="kmsDesdeUltCambio" HeaderText="Rend" SortExpression="cant" HeaderStyle-CssClass="text-center" ItemStyle-HorizontalAlign="Center">
+                                                                         <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
+                                                                     </asp:BoundField>
 
-                           <Columns>
-                               <asp:BoundField DataField="FechaCierre" HeaderText="Fecha"
-                                   DataFormatString="{0:dd/MM/yyyy}" ItemStyle-HorizontalAlign="Center" HeaderStyle-Width="100px" HeaderStyle-HorizontalAlign="Center" />
 
-                               <asp:BoundField DataField="idOrden" HeaderText="OE." ItemStyle-HorizontalAlign="Center"
-                                   HeaderStyle-Width="100px" HeaderStyle-CssClass="text-center" />
+                                                                     <asp:BoundField DataField="kmsEsperados" HeaderText="Kms.Esperados" SortExpression="Kms.Esperados" HeaderStyle-CssClass="text-center" ItemStyle-HorizontalAlign="Center">
+                                                                         <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
+                                                                     </asp:BoundField>
 
-                               <asp:BoundField DataField="codRepuesto" HeaderText="#Repuesto" />
 
-                               <asp:BoundField DataField="desc_repuesto" HeaderText="Mecanico" />
+                                                                    
+                                                                 </Columns>
 
-                               <asp:BoundField DataField="kmsEsperados" HeaderText="Kms Esperados"
-                                   DataFormatString="{0:N0}" ItemStyle-HorizontalAlign="Center"
-                                   HeaderStyle-Width="100px" HeaderStyle-CssClass="text-center" />
+                                                                 <RowStyle CssClass="td"></RowStyle>
+                                                             </asp:GridView>
 
-                               <asp:BoundField DataField="kmsDesdeUltCambio" HeaderText="Rend."
-                                   DataFormatString="{0:N0}" ItemStyle-HorizontalAlign="Center"
-                                   HeaderStyle-Width="100px" HeaderStyle-HorizontalAlign="Center" />
 
-                               
-                               <asp:BoundField DataField="Mecanico" HeaderText="Mecanico" />
-                               <asp:BoundField DataField="Deposito" HeaderText="Deposito" />
-                           <%--    <asp:TemplateField HeaderText="OE" HeaderStyle-Width="40px">
+                                                            Ordenes Anteriores
+                                                            <asp:GridView ID="gvUltimasTareas" runat="server"
+                                                                AutoGenerateColumns="False"
+                                                                CssClass="table table-striped m-b-none text-small"
+                                                                BorderStyle="None" GridLines="None"
+                                                                OnPreRender="GVPreRender"
+                                                                EmptyDataText="No hay tareas realizadas.">
+
+                                                                <Columns>
+                                                                    <asp:BoundField DataField="FechaCierre" HeaderText="Fecha"
+                                                                        DataFormatString="{0:dd/MM/yyyy}" ItemStyle-HorizontalAlign="Center" HeaderStyle-Width="100px" HeaderStyle-HorizontalAlign="Center" />
+
+                                                                    <asp:BoundField DataField="idOrden" HeaderText="OE." ItemStyle-HorizontalAlign="Center"
+                                                                        HeaderStyle-Width="100px" HeaderStyle-CssClass="text-center" />
+
+                                                                    <asp:BoundField DataField="codRepuesto" HeaderText="#Repuesto" />
+
+                                                                    <asp:BoundField DataField="desc_repuesto" HeaderText="Mecanico" />
+
+                                                                    <asp:BoundField DataField="kmsEsperados" HeaderText="Kms Esperados"
+                                                                        DataFormatString="{0:N0}" ItemStyle-HorizontalAlign="Center"
+                                                                        HeaderStyle-Width="100px" HeaderStyle-CssClass="text-center" />
+
+                                                                    <asp:BoundField DataField="kmsDesdeUltCambio" HeaderText="Rend."
+                                                                        DataFormatString="{0:N0}" ItemStyle-HorizontalAlign="Center"
+                                                                        HeaderStyle-Width="100px" HeaderStyle-HorizontalAlign="Center" />
+
+
+                                                                    <asp:BoundField DataField="Mecanico" HeaderText="Mecanico" />
+                                                                    <asp:BoundField DataField="Deposito" HeaderText="Deposito" />
+                                                                    <%--    <asp:TemplateField HeaderText="OE" HeaderStyle-Width="40px">
                                    <ItemTemplate>
                                        <asp:HyperLink ID="HyperLink1"
                                            NavigateUrl='<%# string.Format("/st/vt.aspx?id={0}&idEmpresa={1}", Eval("idOrden"), Eval("idEmpresa")) %>' 
                                            Target="_blank" runat="server">OE.</asp:HyperLink>
                                    </ItemTemplate>
                                </asp:TemplateField>--%>
-                           </Columns>
-                       </asp:GridView>
+                                                                </Columns>
+                                                            </asp:GridView>
 
 
-                   </div>
-                   <div class="modal-footer">
-                       <%--   <asp:Button ID="bCancelarAgregar"  CssClass="btn btn-default btn-xs" OnClientClick="verificar()" ClientIDMode="Static" runat="server" Text="Cancelar" Display="Dynamic" />
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <%--   <asp:Button ID="bCancelarAgregar"  CssClass="btn btn-default btn-xs" OnClientClick="verificar()" ClientIDMode="Static" runat="server" Text="Cancelar" Display="Dynamic" />
                        <asp:Button ID="bGuardarAgregar" CssClass="btn btn-primary btn-xs" ClientIDMode="Static" runat="server" Text="Guardar" Display="Dynamic" />--%>
-                   </div>
-               </div>
-           </div>
-       </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
 
 
 
